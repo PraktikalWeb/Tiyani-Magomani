@@ -2,10 +2,11 @@
   <rect width="512" height="512" fill="#061D31"/>
   <text
     x="256"
-    y="333"
+    y="256"
+    dominant-baseline="middle"
     fill="#F8F3ED"
     font-family="Lora, serif"
-    font-size="236"
+    font-size="230"
     font-weight="500"
     letter-spacing="-18"
     text-anchor="middle"
