@@ -12,6 +12,7 @@ export async function POST(request: Request) {
     // Spam / Honeypot check
     if (data.companyWebsite) {
       // Silently accept spam bots without sending emails
+      console.warn('Enquiry rejected by the honeypot check.');
       return NextResponse.json({ success: true });
     }
 
@@ -47,8 +48,11 @@ export async function POST(request: Request) {
     const replyToEmail = process.env.RESEND_REPLY_TO_EMAIL || internalEmail;
 
     if (!process.env.RESEND_API_KEY) {
-      console.warn('RESEND_API_KEY is not set. Simulation successful.');
-      return NextResponse.json({ success: true, simulated: true });
+      console.error('RESEND_API_KEY is not set. Email was not sent.');
+      return NextResponse.json(
+        { error: 'Email delivery is not configured yet. Please contact the site administrator.' },
+        { status: 503 }
+      );
     }
     
     if (!internalEmail) {
@@ -72,7 +76,7 @@ export async function POST(request: Request) {
     const userHtml = buildUserConfirmationEmail(emailData);
 
     // Send internal notification email
-    await resend.emails.send({
+    const internalResult = await resend.emails.send({
       from: fromEmail,
       to: internalEmail,
       replyTo: email, // Reply-to client's email
@@ -80,8 +84,18 @@ export async function POST(request: Request) {
       html: internalHtml,
     });
 
+    if (internalResult.error) {
+      console.error('Resend failed to queue the internal enquiry email.', internalResult.error);
+      return NextResponse.json(
+        { error: 'We could not send your enquiry at this time. Please try again shortly.' },
+        { status: 502 }
+      );
+    }
+
+    console.info('Internal enquiry email queued.', { id: internalResult.data?.id });
+
     // Send user confirmation email
-    await resend.emails.send({
+    const confirmationResult = await resend.emails.send({
       from: fromEmail,
       to: email,
       replyTo: replyToEmail, // Reply-to business email
@@ -89,7 +103,23 @@ export async function POST(request: Request) {
       html: userHtml,
     });
 
-    return NextResponse.json({ success: true });
+    if (confirmationResult.error) {
+      console.error('Resend failed to queue the enquiry confirmation email.', confirmationResult.error);
+      return NextResponse.json(
+        { error: 'Your enquiry was received, but we could not send the confirmation email.' },
+        { status: 502 }
+      );
+    }
+
+    console.info('Enquiry confirmation email queued.', { id: confirmationResult.data?.id });
+
+    return NextResponse.json({
+      success: true,
+      emailIds: {
+        internal: internalResult.data?.id,
+        confirmation: confirmationResult.data?.id,
+      },
+    });
   } catch (error) {
     console.error('Error sending enquiry:', error);
     return NextResponse.json(

@@ -55,11 +55,22 @@ function ContactContent() {
       const paramInterest = searchParams.get('interest');
       const paramProduct = searchParams.get('product');
 
-      if (source === 'compare-investments') {
+      if (source === 'compare-investments' || source === 'product-calculator') {
+        const parsedAmount = paramAmount ? parseInt(paramAmount) : null;
+        let mappedAmount = 'Prefer not to say';
+        
+        if (parsedAmount !== null) {
+          if (parsedAmount >= 1000000) mappedAmount = 'R1,000,000+';
+          else if (parsedAmount >= 500000) mappedAmount = 'R500,000 - R999,999';
+          else if (parsedAmount >= 250000) mappedAmount = 'R250,000 - R499,999';
+          else if (parsedAmount >= 100000) mappedAmount = 'R100,000 - R249,999';
+          else if (parsedAmount >= 50000) mappedAmount = 'R50,000 - R99,999';
+        }
+
         setFormData(prev => ({
           ...prev,
-          calculatorType: 'Comparison Tool',
-          amount: paramAmount ? `R${parseInt(paramAmount).toLocaleString('en-US')}` : prev.amount,
+          calculatorType: source === 'compare-investments' ? 'Comparison Tool' : 'Product Calculator',
+          amount: mappedAmount,
           term: paramTerm || prev.term,
           interestType: paramInterest || prev.interestType,
           productName: paramProduct || prev.productName,
@@ -77,7 +88,16 @@ function ContactContent() {
       const checked = (e.target as HTMLInputElement).checked;
       setFormData(prev => ({ ...prev, [name]: checked }));
     } else {
-      setFormData(prev => ({ ...prev, [name]: value }));
+      setFormData(prev => {
+        const newData = { ...prev, [name]: value };
+        if (name === 'interest') {
+          const isOffshore = value === 'Offshore Global Option';
+          if (!isOffshore && newData.amount === 'R50,000 - R99,999') {
+            newData.amount = 'Prefer not to say';
+          }
+        }
+        return newData;
+      });
     }
     // Clear error when user makes changes
     if (error) setError('');
@@ -117,9 +137,13 @@ function ContactContent() {
         throw new Error(data.error || 'Failed to submit');
       }
 
+      if (!data.emailIds?.internal || !data.emailIds?.confirmation) {
+        throw new Error('We could not confirm that your enquiry email was queued. Please try again.');
+      }
+
       router.push('/thank-you');
     } catch (err: any) {
-      setError('Something went wrong while sending your enquiry. Please try again.');
+      setError(err.message || 'Something went wrong while sending your enquiry. Please try again.');
       setIsSubmitting(false);
     }
   };
@@ -305,6 +329,7 @@ function ContactContent() {
                           Estimated Investment Amount
                         </label>
                         <div className="relative">
+                          {formData.interest === 'Offshore Global Option' ? (
                           <select 
                             id="amount"
                             name="amount"
@@ -313,16 +338,36 @@ function ContactContent() {
                             className="w-full bg-soft-grey border border-border-grey p-4 font-sans text-ink focus:outline-none focus:border-navy transition-colors appearance-none cursor-pointer"
                           >
                             <option value="Prefer not to say">Prefer not to say</option>
-                            <option value="Under R10,000">Under R10,000</option>
-                            <option value="R10,000 - R50,000">R10,000 - R50,000</option>
-                            <option value="R50,000 - R100,000">R50,000 - R100,000</option>
-                            <option value="R100,000 - R250,000">R100,000 - R250,000</option>
-                            <option value="R250,000+">R250,000+</option>
+                            <option value="R50,000 - R99,999">R50,000 - R99,999</option>
+                            <option value="R100,000 - R249,999">R100,000 - R249,999</option>
+                            <option value="R250,000 - R499,999">R250,000 - R499,999</option>
+                            <option value="R500,000 - R999,999">R500,000 - R999,999</option>
+                            <option value="R1,000,000+">R1,000,000+</option>
                           </select>
+                          ) : (
+                          <select 
+                            id="amount"
+                            name="amount"
+                            value={formData.amount}
+                            onChange={handleChange}
+                            className="w-full bg-soft-grey border border-border-grey p-4 font-sans text-ink focus:outline-none focus:border-navy transition-colors appearance-none cursor-pointer"
+                          >
+                            <option value="Prefer not to say">Prefer not to say</option>
+                            <option value="R100,000 - R249,999">R100,000 - R249,999</option>
+                            <option value="R250,000 - R499,999">R250,000 - R499,999</option>
+                            <option value="R500,000 - R999,999">R500,000 - R999,999</option>
+                            <option value="R1,000,000+">R1,000,000+</option>
+                          </select>
+                          )}
                           <div className="pointer-events-none absolute inset-y-0 right-0 flex items-center px-4 text-muted-blue">
                             <svg className="fill-current h-4 w-4" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20"><path d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z"/></svg>
                           </div>
                         </div>
+                        {formData.interest === 'Offshore Global Option' ? (
+                          <p className="text-xs text-muted-blue mt-2 font-sans">Minimum investment for Offshore Global is R50,000.</p>
+                        ) : (
+                          <p className="text-xs text-muted-blue mt-2 font-sans">Minimum investment for this option is R100,000.</p>
+                        )}
                       </div>
                       
                       <div>
