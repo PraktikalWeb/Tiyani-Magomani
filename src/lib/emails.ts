@@ -31,7 +31,6 @@ export function buildInternalEnquiryEmail(data: any) {
   } = data;
 
   const siteUrl = getPublicSiteUrl();
-  const logoUrl = `${siteUrl}/tiyani-logo-email.png`;
 
   return `
     <!DOCTYPE html>
@@ -44,7 +43,7 @@ export function buildInternalEnquiryEmail(data: any) {
           body { font-family: 'Arial', sans-serif; background-color: #F8F3ED; margin: 0; padding: 0; color: #111827; }
           .container { max-w-width: 600px; margin: 0 auto; background-color: #ffffff; }
           .header { background-color: #061D31; padding: 30px 20px; text-align: center; }
-          .header img { max-width: 220px; display: block; margin: 0 auto 15px auto; }
+          .email-logo { color: #F8F3ED; font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 1.2; margin: 0 auto 15px; }
           .header h1 { color: #ffffff; margin: 0; font-size: 24px; font-weight: normal; font-family: 'Times New Roman', serif; }
           .content { padding: 30px; }
           .section { margin-bottom: 25px; border-bottom: 1px solid #E5E7EB; padding-bottom: 20px; }
@@ -61,7 +60,7 @@ export function buildInternalEnquiryEmail(data: any) {
       <body>
         <div class="container">
           <div class="header">
-            <img src="${logoUrl}" alt="Tiyani Magomani" width="220" style="display:block; width:220px; max-width:100%; height:auto; margin:0 auto 15px; border:0;" />
+            <div class="email-logo" style="color:#F8F3ED; font-family:Georgia, 'Times New Roman', serif; font-size:30px; line-height:1.2; margin:0 auto 15px;">Tiyani Magomani</div>
             <h1>New enquiry received</h1>
           </div>
           <div class="content">
@@ -113,7 +112,6 @@ export function buildInternalEnquiryEmail(data: any) {
 export function buildUserConfirmationEmail(data: any) {
   const { firstName } = data;
   const siteUrl = getPublicSiteUrl();
-  const logoUrl = `${siteUrl}/tiyani-logo-email.png`;
 
   return `
     <!DOCTYPE html>
@@ -126,7 +124,7 @@ export function buildUserConfirmationEmail(data: any) {
           body { font-family: 'Arial', sans-serif; background-color: #F8F3ED; margin: 0; padding: 0; color: #111827; }
           .container { max-w-width: 600px; margin: 0 auto; background-color: #ffffff; }
           .header { background-color: #061D31; padding: 30px 20px; text-align: center; }
-          .header img { max-width: 220px; display: block; margin: 0 auto 15px auto; }
+          .email-logo { color: #F8F3ED; font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 1.2; margin: 0 auto 15px; }
           .content { padding: 30px; line-height: 1.6; }
           .btn-container { text-align: center; margin-top: 30px; margin-bottom: 20px; }
           .btn { display: inline-block; background-color: #061D31; color: #ffffff; text-decoration: none; padding: 14px 28px; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; font-size: 13px; }
@@ -137,7 +135,7 @@ export function buildUserConfirmationEmail(data: any) {
       <body>
         <div class="container">
           <div class="header">
-            <img src="${logoUrl}" alt="Tiyani Magomani" width="220" style="display:block; width:220px; max-width:100%; height:auto; margin:0 auto 15px; border:0;" />
+            <div class="email-logo" style="color:#F8F3ED; font-family:Georgia, 'Times New Roman', serif; font-size:30px; line-height:1.2; margin:0 auto 15px;">Tiyani Magomani</div>
           </div>
           <div class="content">
             <p>Hi ${firstName || 'there'},</p>
