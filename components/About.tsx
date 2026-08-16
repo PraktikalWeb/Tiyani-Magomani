@@ -155,7 +155,7 @@ export default function About() {
               <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Our Approach</span>
               <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Simple information before serious decisions.</h2>
               <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal max-w-3xl">
-                Investment decisions should not be rushed. Tiyani Magomani’s digital pathway gives visitors a calm, structured way to review options, use the Investment Calculator and submit an enquiry for follow-up.
+                Investment decisions should not be rushed. Tiyani Magomani’s digital pathway gives visitors a calm, structured way to review options, use the Compare Investments and submit an enquiry for follow-up.
               </p>
             </FadeIn>
           </div>
@@ -164,7 +164,7 @@ export default function About() {
             <FadeIn>
               <h3 className="text-2xl font-serif text-ink mb-6">A structured digital pathway</h3>
               <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-                Visitors can begin by reviewing the investment options page, then explore product-specific pages and use the calculator to estimate possible outcomes. From there, they can submit an enquiry for more information.
+                Visitors can begin by reviewing the investment options page, then explore product-specific pages and Compare Investments to estimate possible outcomes. From there, they can submit an enquiry for more information.
               </p>
             </FadeIn>
             <FadeIn delay={0.2}>
@@ -173,7 +173,7 @@ export default function About() {
                   {[
                     "Explore options",
                     "Compare categories",
-                    "Use the calculator",
+                    "Compare Investments",
                     "Submit an enquiry",
                     "Review formal information"
                   ].map((step, index) => (
@@ -338,14 +338,14 @@ export default function About() {
               },
               {
                 q: "Can I invest directly on the website?",
-                a: "No. The website provides information and an enquiry pathway only. Visitors can explore options, use the calculator and submit an enquiry for follow-up."
+                a: "No. The website provides information and an enquiry pathway only. Visitors can explore options, Compare Investments and submit an enquiry for follow-up."
               },
               {
                 q: "Is the website information financial advice?",
                 a: "No. Website information is for general guidance only and does not replace formal financial advice or product documentation."
               },
               {
-                q: "Are calculator results guaranteed?",
+                q: "Are calculator and comparison results guaranteed?",
                 a: "No. Calculator results are estimates only and do not represent guaranteed outcomes or confirmed product figures."
               }
             ].map((faq, i) => (

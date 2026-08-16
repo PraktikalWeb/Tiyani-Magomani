@@ -49,8 +49,7 @@ export default function Footer() {
 
           <FooterSection title="Support">
             <ul className="space-y-4 text-sm text-soft-grey/80">
-              <li><Link href="/how-it-works" className="hover:text-white transition-colors">How It Works</Link></li>
-              <li><Link href="/calculator" className="hover:text-white transition-colors">Calculator</Link></li>
+              <li><Link href="/compare" className="hover:text-white transition-colors">Compare Investments</Link></li>
               <li><Link href="/faqs" className="hover:text-white transition-colors">FAQs</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Contact</Link></li>
               <li><Link href="/contact" className="hover:text-white transition-colors">Enquiry Process</Link></li>

@@ -1,7 +1,6 @@
 import { 
   ArrowRight, 
   BarChart3, 
-  Calculator as CalcIcon, 
   ChevronRight, 
   FileText, 
   Globe, 
@@ -237,80 +236,53 @@ export default function Home() {
       {/* 7. Calculator / Comparison Section */}
       <section className="py-24 bg-white" id="calculator">
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-16">
-            <div className="w-full lg:w-1/2">
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Investment Calculator</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-ink mb-6 leading-tight">Estimate, compare and enquire.</h2>
-              <p className="text-muted-blue font-sans leading-relaxed mb-8 text-lg">
-                Use the calculator to enter an amount, select an investment category and view an estimate before submitting an enquiry.
-              </p>
-              
-              <ul className="space-y-4 mb-10">
-                {[
-                  "Select an investment amount",
-                  "Choose an investment category",
-                  "Select an investment period",
-                  "View an estimate",
-                  "Submit an enquiry for follow-up"
-                ].map((item, i) => (
-                  <li key={i} className="flex items-start">
-                    <ChevronRight className="w-5 h-5 text-navy mt-0.5 mr-3 flex-shrink-0" />
-                    <span className="text-ink font-sans">{item}</span>
-                  </li>
-                ))}
-              </ul>
-              
-              <Link href="/calculator" className="inline-block bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors">
-                Use Calculator
-              </Link>
-            </div>
-            
-            <div className="w-full lg:w-1/2">
-              <div className="bg-soft-grey p-8 md:p-12 border border-border-grey">
-                <div className="flex items-center mb-8 pb-6 border-b border-border-grey">
-                  <CalcIcon className="w-6 h-6 text-navy mr-3" />
-                  <h3 className="text-xl font-serif text-ink">Investment Calculator</h3>
-                </div>
-                
-                <div className="space-y-6">
-                  <div>
-                    <label className="block text-sm font-medium text-ink mb-2">Investment Amount</label>
-                    <div className="relative">
-                      <span className="absolute left-4 top-1/2 -translate-y-1/2 text-muted-blue">R</span>
-                      <input type="text" placeholder="1,000,000" className="w-full bg-white border border-border-grey p-4 pl-8 text-ink focus:outline-none focus:border-navy transition-colors font-sans" />
-                    </div>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-ink mb-2">Investment Option</label>
-                    <select className="w-full bg-white border border-border-grey p-4 text-ink focus:outline-none focus:border-navy transition-colors font-sans appearance-none">
-                      <option>Private Equity Growth Option</option>
-                      <option>Fixed Return Income Option</option>
-                      <option>Offshore Global Option</option>
-                    </select>
-                  </div>
-                  
-                  <div>
-                    <label className="block text-sm font-medium text-ink mb-2">Investment Period</label>
-                    <select className="w-full bg-white border border-border-grey p-4 text-ink focus:outline-none focus:border-navy transition-colors font-sans appearance-none">
-                      <option>5 Years</option>
-                      <option>10 Years</option>
-                    </select>
-                  </div>
-                  
-                  <div className="bg-white border border-border-grey p-6 mt-8">
-                    <span className="block text-xs font-sans uppercase tracking-widest text-muted-blue mb-2">Estimated Output</span>
-                    <div className="text-3xl font-serif text-navy">R 0.00</div>
-                  </div>
-                  
-                  <div className="bg-navy/5 border-l-4 border-navy p-4 mt-6">
-                    <p className="text-xs text-muted-blue font-sans leading-relaxed">
-                      Estimates are estimates only and do not represent guaranteed outcomes. Final figures are subject to formal product terms and documentation.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+          <div className="text-center max-w-3xl mx-auto mb-16">
+            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Compare Investments</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Compare Investment Options</h2>
+            <p className="text-muted-blue font-sans text-lg leading-relaxed">
+              Use the Compare Investments page to enter your initial investment and compare estimated growth or income across available options.
+            </p>
+          </div>
+
+          <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 mb-16">
+            {[
+              {
+                title: "Compare by Term",
+                desc: "Short-term and long-term investment options."
+              },
+              {
+                title: "Compare by Goal",
+                desc: "Growth-focused and income-focused options."
+              },
+              {
+                title: "View Estimated Results",
+                desc: "See estimated values, monthly income and scenario outputs."
+              },
+              {
+                title: "Make an Enquiry",
+                desc: "Submit your details for follow-up after comparing options."
+              }
+            ].map((card, i) => (
+              <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-8 flex flex-col justify-center text-center h-full">
+                <h3 className="text-lg font-serif text-ink mb-4">{card.title}</h3>
+                <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">{card.desc}</p>
+              </FadeInStaggerItem>
+            ))}
+          </FadeInStagger>
+
+          <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
+            <Link href="/compare" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors text-center uppercase tracking-wider text-[13px]">
+              Compare Investments
+            </Link>
+            <Link href="/contact" className="border border-border-grey text-navy px-8 py-4 font-medium hover:bg-soft-grey transition-colors text-center uppercase tracking-wider text-[13px]">
+              Start an Enquiry
+            </Link>
+          </div>
+
+          <div className="max-w-4xl mx-auto text-center border-t border-border-grey pt-8">
+            <p className="text-xs font-sans text-muted-blue leading-relaxed">
+              Comparison results are estimates based on displayed product assumptions and are shown for general information only. Final figures are subject to formal product documentation.
+            </p>
           </div>
         </FadeIn>
       </section>
@@ -534,9 +506,7 @@ export default function Home() {
             <Link href="/contact" className="bg-white text-navy px-8 py-4 font-medium hover:bg-off-white transition-colors w-full sm:w-auto">
               Start Investing
             </Link>
-            <Link href="/calculator" className="bg-transparent border border-white text-white px-8 py-4 font-medium hover:bg-white/10 transition-colors w-full sm:w-auto">
-              Use Calculator
-            </Link>
+            <Link href="/compare" className="bg-transparent border border-white text-white px-8 py-4 font-medium hover:bg-white/10 transition-colors w-full sm:w-auto">Compare Investments</Link>
           </div>
         </FadeIn>
       </section>

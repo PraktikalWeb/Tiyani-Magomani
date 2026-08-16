@@ -224,12 +224,12 @@ export default function Header() {
                       </div>
                     </Link>
 
-                    <Link href="/calculator" className="group flex gap-4 items-start hover:opacity-70 transition-opacity" onClick={closeMenus}>
+                    <Link href="/compare" className="group flex gap-4 items-start hover:opacity-70 transition-opacity" onClick={closeMenus}>
                       <div className="w-10 h-10 bg-soft-grey flex items-center justify-center flex-shrink-0 text-navy group-hover:bg-navy group-hover:text-white transition-colors">
                         <Calculator className="w-5 h-5" />
                       </div>
                       <div>
-                        <span className="block font-sans font-medium text-ink mb-1 text-sm">Investment Calculator</span>
+                        <span className="block font-sans font-medium text-ink mb-1 text-sm">Compare Investments</span>
                         <span className="block text-xs text-muted-blue leading-relaxed font-normal">Calculate estimates across available categories.</span>
                       </div>
                     </Link>
@@ -272,13 +272,11 @@ export default function Header() {
                     <div>
                       <h3 className="text-lg font-serif text-ink mb-3">Compare before you enquire.</h3>
                       <p className="text-sm text-muted-blue font-normal leading-relaxed mb-8">
-                        Use the Investment Calculator to compare estimates across the available investment categories before submitting an enquiry.
+                        Use the Compare Investments to compare estimates across the available investment categories before submitting an enquiry.
                       </p>
                     </div>
                     <div>
-                      <Link href="/calculator" className="bg-navy text-white px-6 py-4 text-[13px] font-bold hover:bg-ink transition-colors flex items-center justify-center group mb-4 uppercase tracking-wider w-full" onClick={closeMenus}>
-                        Use Calculator
-                        <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <Link href="/compare" className="bg-navy text-white px-6 py-4 text-[13px] font-bold hover:bg-ink transition-colors flex items-center justify-center group mb-4 uppercase tracking-wider w-full" onClick={closeMenus}>Compare Investments<ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                       <Link href="/investments" className="text-[13px] text-navy hover:text-ink font-medium underline underline-offset-2 text-center block w-full" onClick={closeMenus}>
                         View all investment options
@@ -358,10 +356,8 @@ export default function Header() {
                                 <Globe className="w-4 h-4 text-navy/70" />
                                 Offshore Global Option
                               </Link>
-                              <Link href="/calculator" onClick={closeMenus} className="flex items-center gap-3 text-xs font-sans text-ink hover:text-navy">
-                                <Calculator className="w-4 h-4 text-navy/70" />
-                                Investment Calculator
-                              </Link>
+                              <Link href="/compare" onClick={closeMenus} className="flex items-center gap-3 text-xs font-sans text-ink hover:text-navy">
+                                <Calculator className="w-4 h-4 text-navy/70" />Compare Investments</Link>
                               <Link href="/digital-investing" onClick={closeMenus} className="flex items-center gap-3 text-xs font-sans text-ink hover:text-navy">
                                 <MonitorSmartphone className="w-4 h-4 text-navy/70" />
                                 Digital Investing
@@ -372,9 +368,7 @@ export default function Header() {
                               </Link>
                               
                               <div className="pt-3 border-t border-border-grey/50 mt-2">
-                                <Link href="/calculator" onClick={closeMenus} className="flex items-center text-[12px] font-bold uppercase tracking-widest text-navy hover:opacity-70 group">
-                                  Use Calculator
-                                  <ArrowRight className="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" />
+                                <Link href="/compare" onClick={closeMenus} className="flex items-center text-[12px] font-bold uppercase tracking-widest text-navy hover:opacity-70 group">Compare Investments<ArrowRight className="ml-1 w-3 h-3 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                               </div>
                             </div>

@@ -36,7 +36,7 @@ export default function FAQs() {
         },
         {
           q: "Can I invest directly on the website?",
-          a: "No. The website provides information and an enquiry pathway only. Visitors can explore options, use the calculator and submit an enquiry for follow-up."
+          a: "No. The website provides information and an enquiry pathway only. Visitors can explore options, Compare Investments and submit an enquiry for follow-up."
         },
         {
           q: "Is the website information financial advice?",
@@ -77,23 +77,23 @@ export default function FAQs() {
       heading: "Calculator Questions",
       items: [
         {
-          q: "What is the Investment Calculator for?",
-          a: "The Investment Calculator allows visitors to select an investment option, enter an amount and choose a period to view a basic estimate before submitting an enquiry."
+          q: "What is the Compare Investments for?",
+          a: "The Compare Investments allows visitors to select an investment option, enter an amount and choose a period to view a basic estimate before submitting an enquiry."
         },
         {
-          q: "Are calculator results guaranteed?",
+          q: "Are calculator and comparison results guaranteed?",
           a: "No. Calculator results are estimates only and do not represent guaranteed outcomes or confirmed product figures."
         },
         {
           q: "Can I calculate all investment options?",
-          a: "Yes. The main calculator page allows visitors to choose from all available investment categories."
+          a: "Yes. The main Compare Investments page allows visitors to choose from all available investment categories."
         },
         {
           q: "Why do income options show different results?",
           a: "Income-focused options may show estimated monthly income and estimated total income, while growth-focused options may show estimated future value and estimated growth."
         },
         {
-          q: "Should I use the calculator before enquiring?",
+          q: "Should I Compare Investments before enquiring?",
           a: "Yes, if you want a basic estimate first. The calculator can help you compare categories, but it does not replace formal product information."
         }
       ]
@@ -124,7 +124,7 @@ export default function FAQs() {
       items: [
         {
           q: "Are returns guaranteed?",
-          a: "No. Website information and calculator results do not represent guaranteed outcomes. Any confirmed terms or figures must be stated in formal product documentation."
+          a: "No. Website information and calculator and comparison results do not represent guaranteed outcomes. Any confirmed terms or figures must be stated in formal product documentation."
         },
         {
           q: "Can investment values go down?",
@@ -189,7 +189,7 @@ export default function FAQs() {
               <span className="text-sm font-sans text-muted-blue">Growth, income, flexible-access, fixed-return and offshore categories</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
-              <span className="text-lg font-serif text-ink mb-1">Calculator</span>
+              <span className="text-lg font-serif text-ink mb-1">Compare Investments</span>
               <span className="text-sm font-sans text-muted-blue">Basic estimates before enquiry</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
@@ -279,10 +279,10 @@ export default function FAQs() {
                 link: "/investments"
               },
               {
-                title: "Investment Calculator",
+                title: "Compare Investments",
                 desc: "Calculate a basic estimate before enquiring.",
-                btnText: "Use Calculator",
-                link: "/calculator"
+                btnText: "Compare Investments",
+                link: "/compare"
               },
               {
                 title: "Digital Investing",

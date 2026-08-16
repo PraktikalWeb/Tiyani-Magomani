@@ -148,7 +148,7 @@ export default function LegalCenter() {
           <FadeIn className="mb-12">
             <h2 className="text-3xl font-serif text-ink mb-6">General website information</h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal max-w-4xl">
-              The Tiyani Magomani website provides general investment information and an enquiry pathway only. Website content, calculator results and product summaries should not be treated as financial advice, guaranteed outcomes, confirmed product terms or a completed investment application.
+              The Tiyani Magomani website provides general investment information and an enquiry pathway only. Website content, calculator and comparison results and product summaries should not be treated as financial advice, guaranteed outcomes, confirmed product terms or a completed investment application.
             </p>
           </FadeIn>
           
@@ -195,7 +195,7 @@ export default function LegalCenter() {
           <FadeIn>
             <h2 className="text-3xl font-serif text-ink mb-6">Raising a concern</h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal mb-10">
-              Visitors can raise concerns about website information, calculator results, enquiry communication or privacy-related matters through the contact page. The Complaints Policy explains how concerns may be reviewed.
+              Visitors can raise concerns about website information, calculator and comparison results, enquiry communication or privacy-related matters through the contact page. The Complaints Policy explains how concerns may be reviewed.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/complaints" className="bg-navy text-white px-8 py-4 font-bold hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">

@@ -50,9 +50,7 @@ export default function Investments() {
                 Start an Enquiry
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-sm flex items-center justify-center w-full sm:w-auto">
-                Use Calculator
-              </Link>
+              <Link href="/compare" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-sm flex items-center justify-center w-full sm:w-auto">Compare Investments</Link>
             </div>
           </FadeIn>
 
@@ -224,7 +222,7 @@ export default function Investments() {
       <section className="py-24 bg-white">
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Compare Options</span>
+            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Compare Investments</span>
             <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Compare key product figures</h2>
             <p className="text-muted-blue font-sans text-lg max-w-3xl leading-relaxed">
               Use this comparison as a high-level guide before reviewing each product page or submitting an enquiry. Formal details, risks, terms and eligibility requirements are subject to official product documentation.
@@ -422,13 +420,13 @@ export default function Investments() {
           <div className="absolute inset-0 bg-navy/50"></div>
         </div>
         <FadeIn className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl">
-          <span className="text-xs font-sans uppercase tracking-widest text-soft-grey mb-6 block">Investment Calculator</span>
+          <span className="text-xs font-sans uppercase tracking-widest text-soft-grey mb-6 block">Compare Investments</span>
           <h2 className="text-3xl md:text-5xl font-serif mb-6">Estimate before you enquire.</h2>
           <p className="text-soft-grey/90 font-sans leading-relaxed mb-10 max-w-2xl mx-auto text-lg">
-            Use the calculator to select an investment amount, choose a category and view an estimate before submitting an enquiry. Estimates are estimates only and do not represent guaranteed outcomes.
+            Compare Investments to select an investment amount, choose a category and view an estimate before submitting an enquiry. Estimates are estimates only and do not represent guaranteed outcomes.
           </p>
-          <Link href="/calculator" className="inline-block bg-transparent border border-white text-white px-8 py-4 font-medium hover:bg-white hover:text-navy transition-colors relative overflow-hidden group">
-            <span className="relative z-10">Use Calculator</span>
+          <Link href="/compare" className="inline-block bg-transparent border border-white text-white px-8 py-4 font-medium hover:bg-white hover:text-navy transition-colors relative overflow-hidden group">
+            <span className="relative z-10">Compare Investments</span>
             <div className="absolute inset-0 bg-white transform scale-x-0 group-hover:scale-x-100 transition-transform origin-left"></div>
           </Link>
         </FadeIn>
@@ -531,16 +529,14 @@ export default function Investments() {
         <FadeIn className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <h2 className="text-4xl md:text-5xl font-serif mb-6">Ready to explore your investment options?</h2>
           <p className="text-muted-blue font-sans text-lg mb-10 leading-relaxed">
-            Start with a simple enquiry or use the calculator to compare estimates across the available investment categories.
+            Start with a simple enquiry or Compare Investments to compare estimates across the available investment categories.
           </p>
           <div className="flex flex-col sm:flex-row justify-center gap-6">
             <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center justify-center group">
               Start an Enquiry
               <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
-            <Link href="/calculator" className="bg-white border border-border-grey text-navy px-8 py-4 font-medium hover:border-navy transition-colors flex items-center justify-center">
-              Use Calculator
-            </Link>
+            <Link href="/compare" className="bg-white border border-border-grey text-navy px-8 py-4 font-medium hover:border-navy transition-colors flex items-center justify-center">Compare Investments</Link>
           </div>
         </FadeIn>
       </section>

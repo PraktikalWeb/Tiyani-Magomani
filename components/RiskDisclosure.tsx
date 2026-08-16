@@ -73,7 +73,7 @@ export default function RiskDisclosure() {
               <span className="text-sm font-sans text-muted-blue">Values may rise or fall</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
-              <span className="text-lg font-serif text-ink mb-1">Calculator</span>
+              <span className="text-lg font-serif text-ink mb-1">Compare Investments</span>
               <span className="text-sm font-sans text-muted-blue">Estimates only</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
@@ -101,7 +101,7 @@ export default function RiskDisclosure() {
             <h2 className="text-3xl font-serif text-ink mb-6">General investment risk</h2>
             <div className="prose prose-lg prose-p:text-muted-blue prose-p:font-sans prose-p:leading-relaxed max-w-none mb-8">
               <p>
-                Investment categories shown on this website are provided for general information and enquiry purposes only. Investment values may rise or fall, and visitors should not rely only on website content or calculator results when making financial decisions.
+                Investment categories shown on this website are provided for general information and enquiry purposes only. Investment values may rise or fall, and visitors should not rely only on website content or calculator and comparison results when making financial decisions.
               </p>
             </div>
             <p className="text-sm font-sans text-muted-blue border-l-2 border-border-grey pl-4 max-w-4xl">
@@ -166,9 +166,9 @@ export default function RiskDisclosure() {
       <section className="py-20 lg:py-32 bg-white border-b border-border-grey">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <h2 className="text-3xl font-serif text-ink mb-6">Investment Calculator results</h2>
+            <h2 className="text-3xl font-serif text-ink mb-6">Compare Investments results</h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal mb-8">
-              The Investment Calculator is provided as a general estimate tool only. Calculator results are based on placeholder or supplied assumptions and do not represent guaranteed outcomes, confirmed product figures or financial advice.
+              The Compare Investments is provided as a general estimate tool only. Calculator results are based on placeholder or supplied assumptions and do not represent guaranteed outcomes, confirmed product figures or financial advice.
             </p>
             
             <ul className="space-y-4 mb-12">
@@ -187,9 +187,7 @@ export default function RiskDisclosure() {
               ))}
             </ul>
             
-            <Link href="/calculator" className="bg-navy text-white px-8 py-4 text-[13px] font-bold hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-max uppercase tracking-wider">
-              Use Calculator
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Link href="/compare" className="bg-navy text-white px-8 py-4 text-[13px] font-bold hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-max uppercase tracking-wider">Compare Investments<ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </FadeIn>
         </div>
@@ -263,7 +261,7 @@ export default function RiskDisclosure() {
           <div className="space-y-6">
             {[
               { step: "Step 1: Explore the category", desc: "Review the broad purpose of the investment option." },
-              { step: "Step 2: Use the calculator carefully", desc: "Treat calculator results as estimates only." },
+              { step: "Step 2: Compare Investments carefully", desc: "Treat calculator and comparison results as estimates only." },
               { step: "Step 3: Submit an enquiry", desc: "Request follow-up information from the team." },
               { step: "Step 4: Review formal documents", desc: "Confirm product details, risks, fees, timelines and terms before any decision." }
             ].map((item, index) => (
@@ -301,14 +299,14 @@ export default function RiskDisclosure() {
             {[
               {
                 q: "Are investment returns guaranteed?",
-                a: "No. Website information and calculator results do not represent guaranteed outcomes. Any confirmed terms must be stated in formal product documentation."
+                a: "No. Website information and calculator and comparison results do not represent guaranteed outcomes. Any confirmed terms must be stated in formal product documentation."
               },
               {
                 q: "Can investment values go down?",
                 a: "Yes. Investment values may rise or fall depending on the product category, market conditions and other risks."
               },
               {
-                q: "Are calculator results final?",
+                q: "Are calculator and comparison results final?",
                 a: "No. Calculator results are estimates only and may differ from final product figures."
               },
               {
@@ -359,7 +357,7 @@ export default function RiskDisclosure() {
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore with the right context?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Review the investment options, use the calculator carefully or submit an enquiry for follow-up information.
+              Review the investment options, Compare Investments carefully or submit an enquiry for follow-up information.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/investments" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto uppercase tracking-wider">

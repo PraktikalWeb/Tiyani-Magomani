@@ -2,7 +2,8 @@
 import { ArrowRight } from 'lucide-react';
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { useRouter, useSearchParams } from 'next/navigation';
+import { Suspense, useEffect } from 'react';
 import React, { useState } from 'react';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
@@ -26,8 +27,9 @@ function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }
   );
 }
 
-export default function Contact() {
+function ContactContent() {
   const router = useRouter();
+  const searchParams = useSearchParams();
   const [formData, setFormData] = useState({
     fullName: '',
     email: '',
@@ -36,8 +38,35 @@ export default function Contact() {
     amount: 'Prefer not to say',
     contactMethod: 'Phone call',
     message: '',
-    terms: false
+    terms: false,
+    companyWebsite: '', // honeypot
+    calculatorType: '',
+    term: '',
+    interestType: '',
+    productName: '',
+    calculatedResult: ''
   });
+
+  useEffect(() => {
+    if (searchParams) {
+      const source = searchParams.get('source');
+      const paramAmount = searchParams.get('amount');
+      const paramTerm = searchParams.get('term');
+      const paramInterest = searchParams.get('interest');
+      const paramProduct = searchParams.get('product');
+
+      if (source === 'compare-investments') {
+        setFormData(prev => ({
+          ...prev,
+          calculatorType: 'Comparison Tool',
+          amount: paramAmount ? `R${parseInt(paramAmount).toLocaleString('en-US')}` : prev.amount,
+          term: paramTerm || prev.term,
+          interestType: paramInterest || prev.interestType,
+          productName: paramProduct || prev.productName,
+        }));
+      }
+    }
+  }, [searchParams]);
   
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [error, setError] = useState('');
@@ -54,10 +83,15 @@ export default function Contact() {
     if (error) setError('');
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     
-    // Frontend validation
+    if (formData.companyWebsite) {
+      // Honeypot tripped
+      router.push('/thank-you');
+      return;
+    }
+
     if (!formData.fullName || !formData.email || !formData.phone || !formData.interest || !formData.contactMethod || !formData.terms) {
       setError('Please complete all required fields before submitting your enquiry.');
       return;
@@ -66,11 +100,28 @@ export default function Contact() {
     setError('');
     setIsSubmitting(true);
     
-    // Simulate network request for UI purposes only
-    setTimeout(() => {
-      setIsSubmitting(false);
+    try {
+      const res = await fetch('/api/enquiries', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({
+          ...formData,
+          submissionType: 'contact_enquiry',
+          sourcePage: window.location.href,
+        })
+      });
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || 'Failed to submit');
+      }
+
       router.push('/thank-you');
-    }, 1000);
+    } catch (err: any) {
+      setError('Something went wrong while sending your enquiry. Please try again.');
+      setIsSubmitting(false);
+    }
   };
 
   return (
@@ -312,6 +363,19 @@ export default function Contact() {
                       ></textarea>
                     </div>
                     
+                    
+                    <div className="hidden" aria-hidden="true">
+                      <label htmlFor="companyWebsite">Company Website</label>
+                      <input 
+                        type="text" 
+                        id="companyWebsite"
+                        name="companyWebsite"
+                        value={formData.companyWebsite}
+                        onChange={handleChange}
+                        tabIndex={-1}
+                        autoComplete="off"
+                      />
+                    </div>
                     <div className="flex items-start">
                       <div className="flex items-center h-5 mt-1">
                         <input 
@@ -335,7 +399,7 @@ export default function Contact() {
                       disabled={isSubmitting}
                       className="w-full bg-navy text-white px-8 py-4 text-[13px] font-bold hover:bg-ink transition-colors flex items-center justify-center cursor-pointer uppercase tracking-wider disabled:opacity-70 disabled:cursor-not-allowed mt-4"
                     >
-                      {isSubmitting ? 'Submitting...' : 'Submit Enquiry'}
+                      {isSubmitting ? 'Sending...' : 'Submit Enquiry'}
                     </button>
                   </form>
               </div>
@@ -381,10 +445,10 @@ export default function Contact() {
                 link: "/investments"
               },
               {
-                title: "Use the calculator",
+                title: "Compare Investments",
                 desc: "Compare estimated results across available investment categories.",
-                btnText: "Use Calculator",
-                link: "/calculator"
+                btnText: "Compare Investments",
+                link: "/compare"
               },
               {
                 title: "Digital investing pathway",
@@ -494,11 +558,11 @@ export default function Contact() {
                 a: "No. Submitting an enquiry only requests follow-up information. It does not represent a completed application or investment commitment."
               },
               {
-                q: "Can I use the calculator before enquiring?",
-                a: "Yes. You can use the Investment Calculator to compare estimated results before submitting an enquiry."
+                q: "Can I Compare Investments before enquiring?",
+                a: "Yes. You can use the Compare Investments to compare estimated results before submitting an enquiry."
               },
               {
-                q: "Are the calculator results guaranteed?",
+                q: "Are the calculator and comparison results guaranteed?",
                 a: "No. Calculator results are estimates only and do not represent guaranteed outcomes or confirmed product figures."
               },
               {
@@ -533,5 +597,14 @@ export default function Contact() {
         </div>
       </section>
     </div>
+  );
+}
+
+
+export default function Contact() {
+  return (
+    <Suspense fallback={<div className="pt-32 text-center text-navy font-sans">Loading form...</div>}>
+      <ContactContent />
+    </Suspense>
   );
 }

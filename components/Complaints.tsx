@@ -265,8 +265,8 @@ export default function Complaints() {
                 a: "You can raise a concern through the contact page. Include your contact details and a clear description of the issue so the matter can be reviewed."
               },
               {
-                q: "Can I complain about calculator results?",
-                a: "Yes. You can raise a concern if calculator results were unclear or confusing. Calculator results are estimates only and do not represent guaranteed outcomes."
+                q: "Can I complain about calculator and comparison results?",
+                a: "Yes. You can raise a concern if calculator and comparison results were unclear or confusing. Calculator results are estimates only and do not represent guaranteed outcomes."
               },
               {
                 q: "Should I upload documents with my complaint?",

@@ -45,9 +45,7 @@ export default function GrowthOptions() {
                   Start an Enquiry
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
-                  Use Calculator
-                </Link>
+                <Link href="/compare" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">Compare Investments</Link>
               </div>
             </FadeIn>
             <FadeIn delay={0.2} className="relative h-full flex justify-end">
@@ -276,18 +274,16 @@ export default function GrowthOptions() {
         </div>
       </section>
 
-      {/* Investment Calculator CTA */}
+      {/* Compare Investments CTA */}
       <section className="py-24 bg-navy text-white text-center">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn>
-            <span className="text-xs font-sans uppercase tracking-widest text-soft-grey mb-4 block">Investment Calculator</span>
+            <span className="text-xs font-sans uppercase tracking-widest text-soft-grey mb-4 block">Compare Investments</span>
             <h2 className="text-4xl font-serif mb-6">Calculate a growth-focused estimate.</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed font-normal mb-10">
-              Use the Investment Calculator to select a growth option, enter an amount and choose a period. Calculator results are estimates only and do not represent guaranteed outcomes.
+              Use the Compare Investments to select a growth option, enter an amount and choose a period. Calculator results are estimates only and do not represent guaranteed outcomes.
             </p>
-            <Link href="/calculator" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors inline-flex items-center group justify-center uppercase tracking-wider">
-              Use Calculator
-              <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+            <Link href="/compare" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors inline-flex items-center group justify-center uppercase tracking-wider">Compare Investments<ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
             </Link>
           </FadeIn>
         </div>
@@ -299,7 +295,7 @@ export default function GrowthOptions() {
           <FadeIn className="bg-white border border-border-grey p-8 md:p-12 text-center">
             <h2 className="text-xl font-serif text-ink mb-4">Important considerations</h2>
             <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              Growth-focused investment categories are shown for general information and enquiry purposes only. Investment values may rise or fall, and calculator results do not represent guaranteed outcomes. Final product details, risks, fees, terms, timelines and eligibility requirements are subject to formal documentation.
+              Growth-focused investment categories are shown for general information and enquiry purposes only. Investment values may rise or fall, and calculator and comparison results do not represent guaranteed outcomes. Final product details, risks, fees, terms, timelines and eligibility requirements are subject to formal documentation.
             </p>
           </FadeIn>
         </div>
@@ -324,7 +320,7 @@ export default function GrowthOptions() {
               },
               {
                 q: "Are growth returns guaranteed?",
-                a: "No. Website content and calculator results are estimates only and do not represent guaranteed outcomes."
+                a: "No. Website content and calculator and comparison results are estimates only and do not represent guaranteed outcomes."
               },
               {
                 q: "Which growth option should I choose?",
@@ -371,16 +367,14 @@ export default function GrowthOptions() {
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore growth-focused investment options?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Compare the available growth options, use the calculator or submit an enquiry so the team can follow up with relevant information.
+              Compare the available growth options, Compare Investments or submit an enquiry so the team can follow up with relevant information.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/contact" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto uppercase tracking-wider">
                 Start an Enquiry
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/calculator" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">
-                Use Calculator
-              </Link>
+              <Link href="/compare" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">Compare Investments</Link>
             </div>
           </FadeIn>
         </div>

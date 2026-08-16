@@ -101,7 +101,7 @@ export default function CookiesPolicy() {
             <h2 className="text-3xl font-serif text-ink mb-6">Introduction</h2>
             <div className="prose prose-lg prose-p:text-muted-blue prose-p:font-sans prose-p:leading-relaxed max-w-none mb-8">
               <p>
-                This Cookie Policy explains how cookies and similar technologies may be used when visitors browse the Tiyani Magomani website, use the Investment Calculator, view investment information or submit an enquiry.
+                This Cookie Policy explains how cookies and similar technologies may be used when visitors browse the Tiyani Magomani website, use the Compare Investments, view investment information or submit an enquiry.
               </p>
             </div>
             <p className="text-sm font-sans text-muted-blue border-l-2 border-border-grey pl-4 max-w-4xl">
@@ -199,7 +199,7 @@ export default function CookiesPolicy() {
             <h2 className="text-3xl font-serif text-ink mb-6">Calculator and enquiry pathway</h2>
             <div className="prose prose-lg prose-p:text-muted-blue prose-p:font-sans prose-p:leading-relaxed max-w-none mb-8">
               <p>
-                Cookies or similar technologies may support the user experience when visitors use the Investment Calculator or submit an enquiry. Calculator results are estimates only and do not represent guaranteed outcomes, financial advice or confirmed product terms.
+                Cookies or similar technologies may support the user experience when visitors use the Compare Investments or submit an enquiry. Calculator results are estimates only and do not represent guaranteed outcomes, financial advice or confirmed product terms.
               </p>
             </div>
             <p className="text-sm font-sans text-muted-blue border-l-2 border-border-grey pl-4 max-w-4xl">
@@ -319,7 +319,7 @@ export default function CookiesPolicy() {
                 a: "Some parts of the website may still work, but certain functionality, preferences or performance features may be affected."
               },
               {
-                q: "Are calculator results stored through cookies?",
+                q: "Are calculator and comparison results stored through cookies?",
                 a: "Calculator results should not be treated as stored financial information unless storage functionality is specifically added. If calculator inputs are stored in future, the relevant policies must be updated."
               },
               {

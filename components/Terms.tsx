@@ -50,7 +50,7 @@ export default function Terms() {
               <span className="text-sm font-sans text-muted-blue">General public information</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
-              <span className="text-lg font-serif text-ink mb-1">Calculator</span>
+              <span className="text-lg font-serif text-ink mb-1">Compare Investments</span>
               <span className="text-sm font-sans text-muted-blue">Estimates only</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
@@ -104,7 +104,7 @@ export default function Terms() {
             {[
               { title: "General guidance", desc: "Website content is intended to help visitors understand broad investment categories." },
               { title: "No financial advice", desc: "The website does not replace professional financial advice or formal product documentation." },
-              { title: "No guaranteed outcomes", desc: "Website content and calculator results do not represent guaranteed outcomes." },
+              { title: "No guaranteed outcomes", desc: "Website content and calculator and comparison results do not represent guaranteed outcomes." },
               { title: "Formal documents required", desc: "Final product terms, risks, fees and eligibility requirements are subject to formal documentation." }
             ].map((card, i) => (
               <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-8 flex flex-col justify-center min-h-[220px]">
@@ -156,9 +156,9 @@ export default function Terms() {
 
           {/* Calculator Terms */}
           <FadeIn>
-            <h2 className="text-2xl font-serif text-ink mb-4">Investment Calculator</h2>
+            <h2 className="text-2xl font-serif text-ink mb-4">Compare Investments</h2>
             <p className="text-base font-sans text-muted-blue leading-relaxed mb-8">
-              The Investment Calculator is provided as a general estimate tool only. Calculator results are based on placeholder or supplied assumptions and do not represent guaranteed outcomes, financial advice or confirmed product figures.
+              The Compare Investments is provided as a general estimate tool only. Calculator results are based on placeholder or supplied assumptions and do not represent guaranteed outcomes, financial advice or confirmed product figures.
             </p>
             
             <ul className="space-y-3">
@@ -227,7 +227,7 @@ export default function Terms() {
           <FadeIn>
             <h2 className="text-2xl font-serif text-ink mb-4">Limitation of liability</h2>
             <p className="text-base font-sans text-muted-blue leading-relaxed">
-              To the extent permitted by applicable law, Tiyani Magomani should not be held liable for losses arising from the use of website information, calculator results, third-party links or decisions made without reviewing formal documentation and seeking appropriate guidance.
+              To the extent permitted by applicable law, Tiyani Magomani should not be held liable for losses arising from the use of website information, calculator and comparison results, third-party links or decisions made without reviewing formal documentation and seeking appropriate guidance.
             </p>
           </FadeIn>
 

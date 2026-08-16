@@ -38,7 +38,7 @@ export default function HowItWorks() {
                 A clear pathway from exploring options to submitting an enquiry.
               </h1>
               <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                Tiyani Magomani gives visitors a structured way to explore investment categories, compare basic estimates using the Investment Calculator and submit an enquiry for follow-up information.
+                Tiyani Magomani gives visitors a structured way to explore investment categories, compare basic estimates using the Compare Investments and submit an enquiry for follow-up information.
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">
@@ -78,7 +78,7 @@ export default function HowItWorks() {
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
               <span className="text-lg font-serif text-ink mb-1">Calculate</span>
-              <span className="text-sm font-sans text-muted-blue">Use the Investment Calculator</span>
+              <span className="text-sm font-sans text-muted-blue">Use the Compare Investments</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
               <span className="text-lg font-serif text-ink mb-1">Enquire</span>
@@ -102,7 +102,7 @@ export default function HowItWorks() {
             <h2 className="text-3xl font-serif text-ink mb-6">Start with information before taking the next step.</h2>
             <div className="prose prose-lg prose-p:text-muted-blue prose-p:font-sans prose-p:leading-relaxed max-w-none">
               <p>
-                The Tiyani Magomani website is designed to help visitors understand the available investment categories before submitting an enquiry. Visitors can review the investment options, compare broad positioning, use the Investment Calculator and then request follow-up information from the team.
+                The Tiyani Magomani website is designed to help visitors understand the available investment categories before submitting an enquiry. Visitors can review the investment options, compare broad positioning, use the Compare Investments and then request follow-up information from the team.
               </p>
             </div>
           </FadeIn>
@@ -130,7 +130,7 @@ export default function HowItWorks() {
               },
               {
                 step: "Step 3",
-                title: "Use the Investment Calculator",
+                title: "Use the Compare Investments",
                 desc: "Enter an investment amount, choose a period and view a basic estimate across the available investment categories."
               },
               {
@@ -200,14 +200,12 @@ export default function HowItWorks() {
       <section className="py-20 lg:py-32 bg-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="text-xs font-sans uppercase tracking-widest text-soft-grey/80 mb-4 block">Investment Calculator</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Calculate an estimate before you enquire.</h2>
+            <span className="text-xs font-sans uppercase tracking-widest text-soft-grey/80 mb-4 block">Compare Investments</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Compare investment options before you enquire.</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Use the Investment Calculator to compare estimated results across the available investment categories. Calculator results are estimates only and do not represent guaranteed outcomes.
+              Use the Compare Investments to compare estimated results across the available investment categories. Calculator results are estimates only and do not represent guaranteed outcomes.
             </p>
-            <Link href="/calculator" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors inline-flex items-center uppercase tracking-wider">
-              Use Calculator
-            </Link>
+            <Link href="/compare" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors inline-flex items-center uppercase tracking-wider">Compare Investments</Link>
           </FadeIn>
         </div>
       </section>
@@ -270,7 +268,7 @@ export default function HowItWorks() {
             <FadeIn>
               <h2 className="text-3xl font-serif text-ink mb-6">A guided process, not a rushed decision.</h2>
               <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-                The enquiry pathway is designed to give visitors a structured starting point. Website content, calculator results and product summaries are provided for general guidance only and should not be treated as financial advice, guaranteed outcomes or confirmed product terms.
+                The enquiry pathway is designed to give visitors a structured starting point. Website content, calculator and comparison results and product summaries are provided for general guidance only and should not be treated as financial advice, guaranteed outcomes or confirmed product terms.
               </p>
             </FadeIn>
             
@@ -321,8 +319,8 @@ export default function HowItWorks() {
                 a: 'No. You can submit a general enquiry or choose "Not sure yet" if you are still comparing options.'
               },
               {
-                q: "Should I use the calculator first?",
-                a: "You can use the Investment Calculator before enquiring if you want a basic estimate across the available investment categories."
+                q: "Should I Compare Investments first?",
+                a: "You can use the Compare Investments before enquiring if you want a basic estimate across the available investment categories."
               },
               {
                 q: "What happens after I submit an enquiry?",
@@ -345,7 +343,7 @@ export default function HowItWorks() {
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to start the enquiry pathway?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Explore the investment categories, use the calculator or submit an enquiry so the team can follow up with relevant information.
+              Explore the investment categories, Compare Investments or submit an enquiry so the team can follow up with relevant information.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/investments" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto uppercase tracking-wider">

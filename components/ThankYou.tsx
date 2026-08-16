@@ -22,9 +22,7 @@ export default function ThankYou() {
                   View Investment Options
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
-                  Use Calculator
-                </Link>
+                <Link href="/compare" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">Compare Investments</Link>
               </div>
             </FadeIn>
             <FadeIn delay={0.2} className="relative h-full flex justify-end">
@@ -114,10 +112,10 @@ export default function ThankYou() {
                 link: "/investments"
               },
               {
-                title: "Investment Calculator",
+                title: "Compare Investments",
                 desc: "Calculate a basic estimate across the available investment categories.",
-                button: "Use Calculator",
-                link: "/calculator"
+                button: "Compare Investments",
+                link: "/compare"
               },
               {
                 title: "Digital Investing",
@@ -127,7 +125,7 @@ export default function ThankYou() {
               },
               {
                 title: "FAQs",
-                desc: "Read common questions about investment options, calculator results and enquiries.",
+                desc: "Read common questions about investment options, calculator and comparison results and enquiries.",
                 button: "View FAQs",
                 link: "/faqs"
               }
@@ -163,16 +161,14 @@ export default function ThankYou() {
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Want to review the options again?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              You can return to the investment options page or use the calculator to compare estimated results before the team follows up.
+              You can return to the investment options page or Compare Investments to compare estimated results before the team follows up.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/investments" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto uppercase tracking-wider">
                 View Investment Options
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/calculator" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">
-                Use Calculator
-              </Link>
+              <Link href="/compare" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">Compare Investments</Link>
             </div>
           </FadeIn>
         </div>

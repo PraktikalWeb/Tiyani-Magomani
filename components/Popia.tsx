@@ -15,7 +15,7 @@ export default function Popia() {
                 Responsible handling of personal information.
               </h1>
               <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                This POPIA Policy explains how personal information submitted through the Tiyani Magomani website may be collected, processed, protected and managed when visitors explore investment options, use the calculator or submit an enquiry.
+                This POPIA Policy explains how personal information submitted through the Tiyani Magomani website may be collected, processed, protected and managed when visitors explore investment options, Compare Investments or submit an enquiry.
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">
@@ -80,7 +80,7 @@ export default function Popia() {
             <h2 className="text-3xl font-serif text-ink mb-6">Introduction</h2>
             <div className="prose prose-lg prose-p:text-muted-blue prose-p:font-sans prose-p:leading-relaxed max-w-none">
               <p>
-                Tiyani Magomani respects the privacy of visitors and aims to handle personal information responsibly. This POPIA Policy explains how personal information may be processed when visitors use the website, submit an enquiry, use the Investment Calculator or request follow-up information.
+                Tiyani Magomani respects the privacy of visitors and aims to handle personal information responsibly. This POPIA Policy explains how personal information may be processed when visitors use the website, submit an enquiry, use the Compare Investments or request follow-up information.
               </p>
               <div className="bg-white border border-border-grey p-6 mt-8">
                 <p className="text-sm font-sans text-muted-blue m-0">
@@ -257,7 +257,7 @@ export default function Popia() {
           <FadeIn>
             <h2 className="text-2xl font-serif text-ink mb-4">Calculator information</h2>
             <p className="text-base font-sans text-muted-blue leading-relaxed mb-6">
-              The Investment Calculator is provided for general information only. Any information entered into the calculator is used to generate a basic estimate on the website. Calculator results are estimates only and do not represent guaranteed outcomes, financial advice or confirmed product terms.
+              The Compare Investments is provided for general information only. Any information entered into the calculator is used to generate a basic estimate on the website. Calculator results are estimates only and do not represent guaranteed outcomes, financial advice or confirmed product terms.
             </p>
             <p className="text-sm font-sans text-muted-blue border-l-2 border-border-grey pl-4">
               <span className="font-semibold text-ink">Note:</span> If calculator inputs are not stored, make this clear. If the website later stores calculator inputs, this policy must be updated accordingly.

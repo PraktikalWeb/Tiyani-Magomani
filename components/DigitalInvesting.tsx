@@ -45,9 +45,7 @@ export default function DigitalInvesting() {
                   Start an Enquiry
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
-                  Use Calculator
-                </Link>
+                <Link href="/compare" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">Compare Investments</Link>
               </div>
             </FadeIn>
             <FadeIn delay={0.2} className="relative h-full flex justify-end">
@@ -74,7 +72,7 @@ export default function DigitalInvesting() {
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
               <span className="text-lg font-serif text-ink mb-1">Compare</span>
-              <span className="text-sm font-sans text-muted-blue">Use the Investment Calculator</span>
+              <span className="text-sm font-sans text-muted-blue">Use the Compare Investments</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
               <span className="text-lg font-serif text-ink mb-1">Enquire</span>
@@ -119,7 +117,7 @@ export default function DigitalInvesting() {
               {[
                 { title: "Explore the options", desc: "Review the available investment categories, including growth, income, flexible-access, fixed-return and offshore-focused options." },
                 { title: "Compare the categories", desc: "Use the Investment Options page to understand the purpose, flexibility and positioning of each category." },
-                { title: "Use the calculator", desc: "Enter an amount, select a period and compare estimated results across the available investment categories." },
+                { title: "Compare Investments", desc: "Enter an amount, select a period and compare estimated results across the available investment categories." },
                 { title: "Submit an enquiry", desc: "Send your contact details so the team can follow up with the relevant information." },
                 { title: "Review formal information", desc: "The team can provide the relevant product details, risks, terms and next steps before any decision is made." }
               ].map((step, index) => (
@@ -150,7 +148,7 @@ export default function DigitalInvesting() {
             {[
               { title: "Clear starting point", desc: "Begin by understanding the available investment categories before submitting an enquiry." },
               { title: "Easy comparison", desc: "Compare broad investment routes such as growth, income, flexible access and offshore exposure." },
-              { title: "Calculator support", desc: "Use the Investment Calculator to view basic estimates before speaking to the team." },
+              { title: "Calculator support", desc: "Use the Compare Investments to view basic estimates before speaking to the team." },
               { title: "Enquiry-led process", desc: "The online journey helps visitors request follow-up without completing a full investment application." }
             ].map((card, i) => (
               <FadeInStaggerItem key={i} className="bg-white border border-border-grey p-8 flex flex-col justify-center min-h-[240px]">
@@ -239,14 +237,12 @@ export default function DigitalInvesting() {
         </div>
         <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="text-xs font-sans uppercase tracking-widest text-soft-grey/70 mb-4 block">Investment Calculator</span>
+            <span className="text-xs font-sans uppercase tracking-widest text-soft-grey/70 mb-4 block">Compare Investments</span>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Compare estimates before you enquire.</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Use the Investment Calculator to select an investment category, enter an amount and view a basic estimate. Calculator results are estimates only and do not represent guaranteed outcomes.
+              Use the Compare Investments to select an investment category, enter an amount and view a basic estimate. Calculator results are estimates only and do not represent guaranteed outcomes.
             </p>
-            <Link href="/calculator" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center justify-center w-full sm:w-auto inline-flex uppercase tracking-wider">
-              Use Calculator
-              <ArrowRight className="ml-2 w-5 h-5" />
+            <Link href="/compare" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center justify-center w-full sm:w-auto inline-flex uppercase tracking-wider">Compare Investments<ArrowRight className="ml-2 w-5 h-5" />
             </Link>
           </FadeIn>
         </div>
@@ -303,10 +299,10 @@ export default function DigitalInvesting() {
             {[
               {
                 q: "Can I invest directly on the website?",
-                a: "No. The website provides a digital enquiry pathway only. Visitors can explore options, use the calculator and submit an enquiry for follow-up."
+                a: "No. The website provides a digital enquiry pathway only. Visitors can explore options, Compare Investments and submit an enquiry for follow-up."
               },
               {
-                q: "Are calculator results guaranteed?",
+                q: "Are calculator and comparison results guaranteed?",
                 a: "No. Calculator results are estimates only and do not represent guaranteed outcomes or confirmed product figures."
               },
               {
@@ -334,16 +330,14 @@ export default function DigitalInvesting() {
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Start your digital investment enquiry.</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Explore the available investment categories, use the calculator and submit an enquiry when you are ready for the team to follow up.
+              Explore the available investment categories, Compare Investments and submit an enquiry when you are ready for the team to follow up.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/contact" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto uppercase tracking-wider">
                 Start an Enquiry
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/calculator" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">
-                Use Calculator
-              </Link>
+              <Link href="/compare" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">Compare Investments</Link>
             </div>
           </FadeIn>
         </div>

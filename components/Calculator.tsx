@@ -3,7 +3,7 @@ import { ArrowRight } from 'lucide-react';
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import React, { useState } from 'react';
-import CalculatorEngine from './CalculatorEngine';
+import InvestmentComparisonCalculator from './InvestmentComparisonCalculator';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
   const { faq } = props;
@@ -34,12 +34,12 @@ export default function Calculator() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
             <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Calculation estimate</span>
+              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Compare Investments</span>
               <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Estimate your investment options before you enquire.
+                Compare Investment Options
               </h1>
               <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                Use the calculator to compare estimated outcomes across Tiyani Magomani’s investment categories. Calculator results are estimates only and are shown for general information purposes. They do not constitute financial advice. Final figures may differ and are subject to formal product documentation.
+                Enter an initial amount and compare estimated growth or income across available investment options. Calculator results are estimates only and are shown for general information purposes. They do not constitute financial advice or a guaranteed return. Final figures may differ and are subject to formal product documentation.
               </p>
               <div className="flex flex-wrap items-center gap-6">
                 <a href="#calculator" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
@@ -70,7 +70,7 @@ export default function Calculator() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Compare Options</span>
+              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Compare Investments</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ink mb-8 leading-tight">
                 One calculator for all investment categories.
               </h2>
@@ -96,7 +96,7 @@ export default function Calculator() {
       </section>
 
       {/* Main Calculator Engine Injection */}
-      <CalculatorEngine />
+      <InvestmentComparisonCalculator />
 
       {/* Product Guidance Section */}
       <section className="py-20 lg:py-32 bg-white">
@@ -201,7 +201,7 @@ export default function Calculator() {
           <div className="space-y-4">
             {[
               {
-                q: "Are calculator results final?",
+                q: "Are calculator and comparison results final?",
                 a: "No. Calculator results are estimates only and do not represent guaranteed outcomes or confirmed product figures."
               },
               {
@@ -210,7 +210,7 @@ export default function Calculator() {
               },
               {
                 q: "Can I calculate all investment options?",
-                a: "Yes. The main calculator page allows visitors to choose from all available investment categories."
+                a: "Yes. The main Compare Investments page allows visitors to choose from all available investment categories."
               },
               {
                 q: "What should I do after calculating?",

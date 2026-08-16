@@ -47,9 +47,7 @@ export default function FixedReturnGrowth() {
                   Start an Enquiry
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </Link>
-                <Link href="/calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
-                  Use Calculator
-                </Link>
+                <Link href="#calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">Calculate</Link>
               </div>
             </FadeIn>
             <FadeIn delay={0.2} className="relative h-full flex justify-end">
@@ -167,7 +165,7 @@ export default function FixedReturnGrowth() {
           <FadeIn className="bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
             <h2 className="text-xl font-serif text-ink mb-4">Important considerations</h2>
             <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              The Fixed Return Growth Option is shown for general information and enquiry purposes only. Fixed-return-style positioning does not mean all outcomes are guaranteed unless confirmed in formal product documentation. Investment values may rise or fall, and calculator results shown on the website do not represent guaranteed outcomes. Clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
+              The Fixed Return Growth Option is shown for general information and enquiry purposes only. Fixed-return-style positioning does not mean all outcomes are guaranteed unless confirmed in formal product documentation. Investment values may rise or fall, and calculator and comparison results shown on the website do not represent guaranteed outcomes. Clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
             </p>
           </FadeIn>
         </div>
@@ -190,7 +188,7 @@ export default function FixedReturnGrowth() {
             <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
               {[
                 { step: "1", title: "Review the option", desc: "Understand the purpose, positioning and defined-term considerations." },
-                { step: "2", title: "Use the calculator", desc: "View a basic estimate based on your selected amount and period." },
+                { step: "2", title: "Compare Investments", desc: "View a basic estimate based on your selected amount and period." },
                 { step: "3", title: "Submit an enquiry", desc: "Send your contact details so the team can follow up." },
                 { step: "4", title: "Review formal information", desc: "The team can provide the relevant information, terms and next steps." }
               ].map((item, i) => (
@@ -224,7 +222,7 @@ export default function FixedReturnGrowth() {
               },
               {
                 q: "Does fixed return mean guaranteed outcome?",
-                a: "No. Website wording and calculator results are for general information only. Any confirmed terms, figures or guarantees must be stated in formal product documentation."
+                a: "No. Website wording and calculator and comparison results are for general information only. Any confirmed terms, figures or guarantees must be stated in formal product documentation."
               },
               {
                 q: "Is this option flexible?",
@@ -285,16 +283,14 @@ export default function FixedReturnGrowth() {
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore the Fixed Return Growth Option?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Start with a simple enquiry or use the calculator to view an estimated result before taking the next step.
+              Start with a simple enquiry or Compare Investments to view an estimated result before taking the next step.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <Link href="/contact" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto">
                 Start an Enquiry
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/calculator" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">
-                Use Calculator
-              </Link>
+              <Link href="/compare" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">Compare Investments</Link>
             </div>
           </FadeIn>
         </div>
