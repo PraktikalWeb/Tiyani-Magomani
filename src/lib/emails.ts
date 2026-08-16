@@ -124,6 +124,7 @@ export function buildUserConfirmationEmail(data: any) {
           body { font-family: 'Arial', sans-serif; background-color: #F8F3ED; margin: 0; padding: 0; color: #111827; }
           .container { max-w-width: 600px; margin: 0 auto; background-color: #ffffff; }
           .header { background-color: #061D31; padding: 30px 20px; text-align: center; }
+          .header h1 { color: #ffffff; margin: 0; font-size: 24px; font-weight: normal; font-family: 'Times New Roman', serif; }
           .email-logo { color: #F8F3ED; font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 1.2; margin: 0 auto 15px; }
           .content { padding: 30px; line-height: 1.6; }
           .btn-container { text-align: center; margin-top: 30px; margin-bottom: 20px; }
@@ -136,6 +137,7 @@ export function buildUserConfirmationEmail(data: any) {
         <div class="container">
           <div class="header">
             <div class="email-logo" style="color:#F8F3ED; font-family:Georgia, 'Times New Roman', serif; font-size:30px; line-height:1.2; margin:0 auto 15px;">Tiyani Magomani</div>
+            <h1>Enquiry received</h1>
           </div>
           <div class="content">
             <p>Hi ${firstName || 'there'},</p>
