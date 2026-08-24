@@ -80,7 +80,7 @@ export async function POST(request: Request) {
       from: fromEmail,
       to: internalEmail,
       replyTo: email, // Reply-to client's email
-      subject: data.calculatorType ? 'New Tiyani Magomani Calculator Enquiry' : 'New Tiyani Magomani Enquiry',
+      subject: data.submissionType === 'product_calculator_enquiry' ? 'New Tiyani Magomani Calculator Enquiry' : 'New Tiyani Magomani Enquiry',
       html: internalHtml,
     });
 

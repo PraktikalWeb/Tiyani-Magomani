@@ -27,10 +27,22 @@ export function buildInternalEnquiryEmail(data: any) {
     term,
     interestType,
     productName,
-    calculatedResult
+    calculatedResult,
+    submissionType,
+    productId,
+    selectedMode,
+    selectedRate,
+    calculationType,
+    resultRows
   } = data;
 
   const siteUrl = getPublicSiteUrl();
+  const calculatorResultRows = submissionType === 'product_calculator_enquiry' && Array.isArray(resultRows)
+    ? resultRows
+      .filter((row) => typeof row?.label === 'string' && typeof row?.value === 'string')
+      .map((row) => `<div class="row"><span class="label">${row.label}:</span><span class="value">${row.value}</span></div>`)
+      .join('')
+    : '';
 
   return `
     <!DOCTYPE html>
@@ -41,7 +53,7 @@ export function buildInternalEnquiryEmail(data: any) {
         <title>New Tiyani Magomani Enquiry</title>
         <style>
           body { font-family: 'Arial', sans-serif; background-color: #F8F3ED; margin: 0; padding: 0; color: #111827; }
-          .container { max-w-width: 600px; margin: 0 auto; background-color: #ffffff; }
+          .container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; }
           .header { background-color: #061D31; padding: 30px 20px; text-align: center; }
           .email-logo { color: #F8F3ED; font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 1.2; margin: 0 auto 15px; }
           .header h1 { color: #ffffff; margin: 0; font-size: 24px; font-weight: normal; font-family: 'Times New Roman', serif; }
@@ -81,8 +93,14 @@ export function buildInternalEnquiryEmail(data: any) {
               ${term ? `<div class="row"><span class="label">Term:</span><span class="value">${term}</span></div>` : ''}
               ${interestType ? `<div class="row"><span class="label">Interest Type:</span><span class="value">${interestType}</span></div>` : ''}
               ${productName ? `<div class="row"><span class="label">Product / Comparison Option:</span><span class="value">${productName}</span></div>` : ''}
+              ${productId ? `<div class="row"><span class="label">Product ID:</span><span class="value">${productId}</span></div>` : ''}
               ${calculatedResult ? `<div class="row"><span class="label">Estimated Result Context:</span><span class="value">${calculatedResult}</span></div>` : ''}
+              ${selectedRate ? `<div class="row"><span class="label">Selected Rate:</span><span class="value">${selectedRate}</span></div>` : ''}
+              ${selectedMode ? `<div class="row"><span class="label">Selected Mode:</span><span class="value">${selectedMode}</span></div>` : ''}
+              ${calculationType ? `<div class="row"><span class="label">Calculation Type:</span><span class="value">${calculationType}</span></div>` : ''}
             </div>
+
+            ${calculatorResultRows ? `<div class="section"><div class="section-title">Calculation Breakdown</div>${calculatorResultRows}</div>` : ''}
 
             <div class="section">
               <div class="section-title">Message</div>
@@ -122,7 +140,7 @@ export function buildUserConfirmationEmail(data: any) {
         <title>We received your Tiyani Magomani enquiry</title>
         <style>
           body { font-family: 'Arial', sans-serif; background-color: #F8F3ED; margin: 0; padding: 0; color: #111827; }
-          .container { max-w-width: 600px; margin: 0 auto; background-color: #ffffff; }
+          .container { width: 100%; max-width: 600px; margin: 0 auto; background-color: #ffffff; }
           .header { background-color: #061D31; padding: 30px 20px; text-align: center; }
           .header h1 { color: #ffffff; margin: 0; font-size: 24px; font-weight: normal; font-family: 'Times New Roman', serif; }
           .email-logo { color: #F8F3ED; font-family: Georgia, 'Times New Roman', serif; font-size: 30px; line-height: 1.2; margin: 0 auto 15px; }

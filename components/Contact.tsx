@@ -309,11 +309,11 @@ function ContactContent() {
                           className="w-full bg-soft-grey border border-border-grey p-4 font-sans text-ink focus:outline-none focus:border-navy transition-colors appearance-none cursor-pointer"
                         >
                           <option value="Not sure yet">Not sure yet</option>
-                          <option value="Private Equity Growth Option">Private Equity Growth Option</option>
-                          <option value="Private Equity Income Option">Private Equity Income Option</option>
-                          <option value="Private Equity Flexible Access Option">Private Equity Flexible Access Option</option>
-                          <option value="Fixed Return Growth Option">Fixed Return Growth Option</option>
-                          <option value="Fixed Return Income Option">Fixed Return Income Option</option>
+                          <option value="Private Equity: Growth">Private Equity: Growth</option>
+                          <option value="Private Equity: Income">Private Equity: Income</option>
+                          <option value="Private Equity: Flexi Access">Private Equity: Flexi Access</option>
+                          <option value="Fixed Return Growth Portfolio">Fixed Return Growth Portfolio</option>
+                          <option value="Fixed Return Income Portfolio">Fixed Return Income Portfolio</option>
                           <option value="Offshore Global Option">Offshore Global Option</option>
                           <option value="General investment enquiry">General investment enquiry</option>
                         </select>

@@ -1,5 +1,130 @@
 @import "tailwindcss";
 
+@keyframes hero-image-one {
+  0% { opacity: 1; transform: scale(1); }
+  45% { opacity: 1; transform: scale(1.075); }
+  50% { opacity: 0; transform: scale(1.08); }
+  95% { opacity: 0; transform: scale(1); }
+  100% { opacity: 1; transform: scale(1); }
+}
+
+@keyframes hero-image-two {
+  0%, 45% { opacity: 0; transform: scale(1); }
+  50% { opacity: 1; transform: scale(1); }
+  95% { opacity: 1; transform: scale(1.075); }
+  100% { opacity: 0; transform: scale(1.08); }
+}
+
+@keyframes hero-dot-one {
+  0%, 47% { background-color: rgba(255, 255, 255, 1); transform: scale(1); }
+  52%, 100% { background-color: rgba(255, 255, 255, 0.4); transform: scale(0.8); }
+}
+
+@keyframes hero-dot-two {
+  0%, 47% { background-color: rgba(255, 255, 255, 0.4); transform: scale(0.8); }
+  52%, 97% { background-color: rgba(255, 255, 255, 1); transform: scale(1); }
+  100% { background-color: rgba(255, 255, 255, 0.4); transform: scale(0.8); }
+}
+
+.hero-background-image {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform-origin: center;
+  will-change: opacity, transform;
+}
+
+.hero-background-image-one { animation: hero-image-one 18s linear infinite; }
+.hero-background-image-two { animation: hero-image-two 18s linear infinite; }
+
+.hero-slide-indicators {
+  position: absolute;
+  z-index: 20;
+  right: 1.5rem;
+  bottom: 1.5rem;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.hero-slide-dot {
+  display: block;
+  width: 0.5rem;
+  height: 0.5rem;
+  border-radius: 9999px;
+  background-color: rgba(255, 255, 255, 0.4);
+}
+
+.hero-slide-dot-one { animation: hero-dot-one 18s linear infinite; }
+.hero-slide-dot-two { animation: hero-dot-two 18s linear infinite; }
+
+.home-brand-card {
+  border: 0;
+  border-left: 3px solid #115c85;
+  border-radius: 0;
+  box-shadow: 0 14px 30px rgba(7, 26, 45, 0.14);
+}
+
+.home-brand-card:hover {
+  box-shadow: 0 20px 38px rgba(7, 26, 45, 0.2);
+}
+
+.home-two-tone-heading {
+  color: var(--color-ink);
+}
+
+.home-two-tone-heading span,
+.home-heading-accent {
+  color: #115c85;
+}
+
+.home-landing .rounded-2xl {
+  border-radius: 0;
+}
+
+
+@font-face {
+  font-family: "Poppins Local";
+  src: url("/fonts/poppins/Poppins-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Local";
+  src: url("/fonts/poppins/Poppins-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Local";
+  src: url("/fonts/poppins/Poppins-Medium.ttf") format("truetype");
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Local";
+  src: url("/fonts/poppins/Poppins-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "Poppins Local";
+  src: url("/fonts/poppins/Poppins-Bold.ttf") format("truetype");
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
 @theme {
   --color-navy: #071A2D;
   --color-ink: #0B1117;
@@ -8,9 +133,11 @@
   --color-border-grey: #D9DEE5;
   --color-muted-blue: #6B7C93;
   --color-accent-blue: #1F5EFF;
+  --text-xs: 0.8125rem;
+  --text-xs--line-height: 1.25rem;
   
-  --font-serif: "Lora", serif;
-  --font-sans: "DM Sans", sans-serif;
+  --font-serif: "Poppins Local", sans-serif;
+  --font-sans: "Poppins Local", sans-serif;
 }
 
 @layer base {
@@ -22,5 +149,81 @@
   
   h1, h2, h3, h4, h5, h6 {
     font-family: var(--font-serif);
+    font-weight: 600;
+    line-height: 1.1 !important;
+  }
+
+  body, button, input, select, textarea {
+    font-family: var(--font-sans);
+  }
+}
+
+.header-desktop-dropdown .text-ink,
+.header-desktop-dropdown .text-navy {
+  color: #ffffff;
+}
+
+.header-desktop-dropdown .text-muted-blue {
+  color: #d8e9f3;
+}
+
+.header-desktop-dropdown .border-border-grey {
+  border-color: rgba(255, 255, 255, 0.22);
+}
+
+.header-desktop-dropdown .bg-soft-grey {
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.brand-circle-motif {
+  position: absolute;
+  top: -24rem;
+  right: -24rem;
+  z-index: 0;
+  width: 44rem;
+  height: 44rem;
+  pointer-events: none;
+  opacity: 0.6;
+  background-image:
+    radial-gradient(circle at center, transparent 0 8rem, rgba(117, 200, 240, 0.72) 8.1rem 8.25rem, transparent 8.35rem),
+    radial-gradient(circle at center, transparent 0 14rem, rgba(255, 255, 255, 0.38) 14.1rem 14.2rem, transparent 14.3rem),
+    radial-gradient(circle at center, transparent 0 20rem, rgba(117, 200, 240, 0.52) 20.1rem 20.2rem, transparent 20.3rem);
+}
+
+.brand-circle-motif-bottom-left {
+  top: auto;
+  right: auto;
+  bottom: -24rem;
+  left: -24rem;
+  opacity: 0.42;
+  transform: scale(0.9);
+  transform-origin: bottom left;
+}
+
+@media (max-width: 1023px) {
+  .brand-circle-motif {
+    top: -26rem;
+    right: -26rem;
+  }
+
+  .brand-circle-motif-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: -26rem;
+    left: -26rem;
+  }
+}
+
+@media (max-width: 639px) {
+  .brand-circle-motif {
+    top: -28rem;
+    right: -28rem;
+  }
+
+  .brand-circle-motif-bottom-left {
+    top: auto;
+    right: auto;
+    bottom: -28rem;
+    left: -28rem;
   }
 }

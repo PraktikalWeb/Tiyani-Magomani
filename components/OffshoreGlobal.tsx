@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';import { investmentProducts } from '.
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import CalculatorEngine from './CalculatorEngine';
+import ProductFiguresGrid from './ProductFiguresGrid';
 import { useState } from 'react';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
@@ -75,15 +76,7 @@ export default function OffshoreGlobal() {
             </p>
           </FadeIn>
           
-          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {investmentProducts["offshore-global"].figures.map((fig, i) => (
-              <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-6 flex flex-col justify-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-muted-blue block mb-2">{fig.label}</span>
-                <span className="text-2xl font-serif text-ink">{fig.value}</span>
-                {fig.subtext && <span className="text-sm font-sans text-muted-blue mt-2">{fig.subtext}</span>}
-              </FadeInStaggerItem>
-            ))}
-          </FadeInStagger>
+          <ProductFiguresGrid figures={investmentProducts["offshore-global"].figures} />
           
           <FadeIn className="bg-soft-grey border border-border-grey p-6 md:p-8">
             <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">

@@ -1,7 +1,7 @@
 import PrivateEquityGrowth from '@/components/PrivateEquityGrowth';
 
 export const metadata = {
-  title: 'Private Equity Growth Option | Tiyani Magomani',
+  title: 'Private Equity: Growth | Tiyani Magomani',
   description: 'Explore structured investment pathways built around growth, income and flexibility.',
 };
 

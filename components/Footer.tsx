@@ -26,12 +26,18 @@ function FooterSection({ title, children }: { title: string, children: ReactNode
 
 export default function Footer() {
   return (
-    <footer className="bg-navy text-white py-16">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <footer className="relative overflow-hidden bg-navy text-white py-16">
+      <div className="brand-circle-motif" aria-hidden="true"></div>
+      <div className="brand-circle-motif brand-circle-motif-bottom-left" aria-hidden="true"></div>
+      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0 sm:gap-12 lg:gap-8">
           <div className="sm:col-span-2 lg:col-span-1 mb-8 sm:mb-0">
             <Link href="/">
-              <span className="font-serif text-3xl text-white block mb-6">Tiyani Magomani</span>
+              <img
+                src="/tiyani-logo.png"
+                alt="Tiyani Magomani"
+                className="w-[225px] max-w-[65vw] sm:w-[280px] sm:max-w-none h-auto brightness-0 invert mb-6"
+              />
             </Link>
 
           </div>

@@ -1,7 +1,7 @@
 import PrivateEquityIncome from '@/components/PrivateEquityIncome';
 
 export const metadata = {
-  title: 'Private Equity Income Option | Tiyani Magomani',
+  title: 'Private Equity: Income | Tiyani Magomani',
   description: 'Explore structured investment pathways built around growth, income and flexibility.',
 };
 

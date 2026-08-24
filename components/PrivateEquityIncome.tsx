@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';import { investmentProducts } from '.
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import CalculatorEngine from './CalculatorEngine';
+import ProductFiguresGrid from './ProductFiguresGrid';
 import { useState } from 'react';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
@@ -37,7 +38,7 @@ export default function PrivateEquityIncome() {
             <FadeIn>
               <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Investment Option</span>
               <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Private Equity Income Option
+                Private Equity: Income
               </h1>
               <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
                 An income-focused investment category for clients considering structured private-equity-style exposure with regular income potential.
@@ -75,19 +76,11 @@ export default function PrivateEquityIncome() {
             </p>
           </FadeIn>
           
-          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {investmentProducts["private-equity-income"].figures.map((fig, i) => (
-              <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-6 flex flex-col justify-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-muted-blue block mb-2">{fig.label}</span>
-                <span className="text-2xl font-serif text-ink">{fig.value}</span>
-                {fig.subtext && <span className="text-sm font-sans text-muted-blue mt-2">{fig.subtext}</span>}
-              </FadeInStaggerItem>
-            ))}
-          </FadeInStagger>
+          <ProductFiguresGrid figures={investmentProducts["private-equity-income"].figures} />
           
           <FadeIn className="bg-soft-grey border border-border-grey p-6 md:p-8">
             <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">
-              Figures are shown for general information and enquiry purposes only. They do not constitute financial advice or a guaranteed outcome. Final product details, risks, fees, tax treatment, eligibility requirements and terms are subject to formal product documentation.
+              Expected yields are projections based on prevailing market conditions and are not guaranteed. Historical performance offers no assurance of future outcomes, and investor capital remains subject to risk, including the potential loss of principal.
             </p>
           </FadeIn>
         </div>
@@ -102,7 +95,7 @@ export default function PrivateEquityIncome() {
               Built for clients focused on income potential.
             </h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              The Private Equity Income Option is positioned for clients who are considering an investment route with regular income potential. It is suited to visitors who want to explore structured investment opportunities where the primary objective is income positioning rather than only long-term capital growth.
+              Private Equity: Income is positioned for clients who are considering an investment route with regular income potential. It is suited to visitors who want to explore structured investment opportunities where the primary objective is income positioning rather than only long-term capital growth.
             </p>
           </FadeIn>
         </div>
@@ -165,7 +158,7 @@ export default function PrivateEquityIncome() {
           <FadeIn className="bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
             <h2 className="text-xl font-serif text-ink mb-4">Important considerations</h2>
             <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              The Private Equity Income Option is shown for general information and enquiry purposes only. Income figures shown on the website are estimates and do not represent guaranteed outcomes. Investment values may rise or fall, and clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
+              Private Equity: Income is shown for general information and enquiry purposes only. Income figures shown on the website are estimates and do not represent guaranteed outcomes. Investment values may rise or fall, and clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
             </p>
           </FadeIn>
         </div>
@@ -211,14 +204,14 @@ export default function PrivateEquityIncome() {
       <section className="py-20 lg:py-32 bg-off-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about the Private Equity Income Option</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about Private Equity: Income</h2>
           </FadeIn>
           
           <div className="space-y-4">
             {[
               {
                 q: "Is this option focused on capital growth?",
-                a: "The primary focus of this option is income potential. Clients who are mainly focused on long-term capital growth may prefer to review the Private Equity Growth Option."
+                a: "The primary focus of this option is income potential. Clients who are mainly focused on long-term capital growth may prefer to review Private Equity: Growth."
               },
               {
                 q: "Does this option provide guaranteed income?",
@@ -249,17 +242,17 @@ export default function PrivateEquityIncome() {
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Private Equity Growth Option",
+                title: "Private Equity: Growth",
                 desc: "For clients focused on long-term capital growth.",
                 link: "/investments/private-equity-growth"
               },
               {
-                title: "Private Equity Flexible Access Option",
+                title: "Private Equity: Flexi Access",
                 desc: "For clients who may need a more adaptable investment route.",
                 link: "/investments/private-equity-flexible-access"
               },
               {
-                title: "Fixed Return Income Option",
+                title: "Fixed Return Income Portfolio",
                 desc: "For clients considering income-focused positioning with defined terms.",
                 link: "/investments/fixed-return-income"
               }
@@ -281,7 +274,7 @@ export default function PrivateEquityIncome() {
       <section className="py-20 bg-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore the Private Equity Income Option?</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore Private Equity: Income?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
               Start with a simple enquiry or Compare Investments to view an estimated result before taking the next step.
             </p>

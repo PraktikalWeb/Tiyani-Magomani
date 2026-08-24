@@ -1,7 +1,7 @@
 import PrivateEquityFlexibleAccess from '@/components/PrivateEquityFlexibleAccess';
 
 export const metadata = {
-  title: 'Private Equity Flexible Access Option | Tiyani Magomani',
+  title: 'Private Equity: Flexi Access | Tiyani Magomani',
   description: 'Explore structured investment pathways built around growth, income and flexibility.',
 };
 

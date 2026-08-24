@@ -1,6 +1,6 @@
 export type TermCategory = 'short' | 'long';
 export type InterestType = 'growth' | 'income';
-export type CalculationType = 'simple-growth' | 'compound-growth' | 'monthly-income' | 'offshore-scenario';
+export type CalculationType = 'simple-growth' | 'compound-growth' | 'monthly-income' | 'monthly-dividend' | 'offshore-scenario';
 
 export interface ComparisonProduct {
   id: string;
@@ -24,7 +24,7 @@ export const comparisonProducts: ComparisonProduct[] = [
   // A. Short Term + Growth
   {
     id: "pe-flex-growth",
-    name: "Private Equity Flexible Access Option",
+    name: "Private Equity: Flexi Access",
     termCategory: "short",
     interestType: "growth",
     rate: 0.11, // 11%
@@ -32,61 +32,58 @@ export const comparisonProducts: ComparisonProduct[] = [
     calculationType: "simple-growth",
     minimumInvestment: 100000,
     route: "/investments/private-equity-flexible-access",
-    description: "For clients who may need a more adaptable investment route.",
+    description: "For clients considering a 12-month private equity investment route.",
     resultLabel: "Estimated value after 12 months",
-    supportingLabel: "Based on 11% p.a."
+    supportingLabel: "Based on 11% target return"
   },
   {
     id: "fixed-2yr-growth",
-    name: "2-Year Fixed Return Growth Option",
+    name: "Fixed Return Growth Portfolio",
     termCategory: "short",
     interestType: "growth",
-    rate: 0.118, // 11.8%
-    termMonths: 24, // 2 years
+    rate: 0.118,
+    termMonths: 24,
     calculationType: "compound-growth",
     minimumInvestment: 100000,
-    route: "/contact", 
-    description: "Structured short-term growth with defined terms.",
+    route: "/investments/fixed-return-growth",
+    description: "Structured two-year growth with a defined term.",
     resultLabel: "Estimated value after 2 years",
     supportingLabel: "Based on 11.8% p.a.",
-    capitalProtection: "subject to formal product terms"
-  },
-
-  // B. Short Term + Income
-  {
-    id: "pe-flex-income",
-    name: "Private Equity Flexible Access Option",
-    termCategory: "short",
-    interestType: "income",
-    rate: 0.11, // 11%
-    termMonths: 12,
-    calculationType: "monthly-income",
-    minimumInvestment: 100000,
-    route: "/investments/private-equity-flexible-access",
-    description: "For clients who may need a more adaptable investment route.",
-    resultLabel: "Estimated gross monthly dividend",
-    supportingLabel: "Per month, before tax"
+    capitalProtection: "Capital protection applies to the original investment amount at maturity, subject to the terms of the product."
   },
   {
     id: "fixed-2yr-income",
-    name: "2-Year Fixed Return Income Option",
+    name: "Fixed Return Income Portfolio",
     termCategory: "short",
     interestType: "income",
-    rate: 0.118, // 11.8%
+    rate: 0.118,
     termMonths: 24,
     calculationType: "monthly-income",
     minimumInvestment: 100000,
-    route: "/contact", 
-    description: "Structured short-term income with defined terms.",
-    resultLabel: "Estimated gross monthly income",
-    supportingLabel: "Per month, before tax",
-    capitalProtection: "subject to formal product terms"
+    route: "/investments/fixed-return-income",
+    description: "Structured two-year income with a defined term.",
+    resultLabel: "Gross Monthly Income",
+    supportingLabel: "Estimated from the 11.8% target return",
+    capitalProtection: "Capital protection applies to the original investment amount at maturity, subject to the terms of the product."
   },
-
-  // C. Long Term + Growth
+  {
+    id: "pe-flex-income",
+    name: "Private Equity: Flexi Access",
+    termCategory: "short",
+    interestType: "income",
+    rate: 0.11,
+    termMonths: 12,
+    calculationType: "monthly-dividend",
+    minimumInvestment: 100000,
+    route: "/investments/private-equity-flexible-access",
+    description: "For clients seeking a monthly dividend estimate over a 12-month term.",
+    resultLabel: "Gross Monthly Dividend",
+    supportingLabel: "Based on 11% target return"
+  },
+  // B. Long Term + Growth
   {
     id: "pe-growth",
-    name: "Private Equity Growth Option",
+    name: "Private Equity: Growth",
     termCategory: "long",
     interestType: "growth",
     rate: 0.132, // 13.2%
@@ -100,7 +97,7 @@ export const comparisonProducts: ComparisonProduct[] = [
   },
   {
     id: "fixed-growth",
-    name: "Fixed Return Growth Option",
+    name: "Fixed Return Growth Portfolio",
     termCategory: "long",
     interestType: "growth",
     rate: 0.126, // 12.6%
@@ -130,10 +127,10 @@ export const comparisonProducts: ComparisonProduct[] = [
     capitalProtection: "subject to formal product terms"
   },
 
-  // D. Long Term + Income
+  // C. Long Term + Income
   {
     id: "pe-income",
-    name: "Private Equity Income Option",
+    name: "Private Equity: Income",
     termCategory: "long",
     interestType: "income",
     rate: 0.132, // 13.2%
@@ -143,12 +140,11 @@ export const comparisonProducts: ComparisonProduct[] = [
     route: "/investments/private-equity-income",
     description: "For clients interested in income-focused investment positioning.",
     resultLabel: "Estimated gross monthly income",
-    supportingLabel: "Per month, before tax",
-    bonusRule: true // 1% bonus if >= 1,000,000
+    supportingLabel: "Estimated gross monthly income based on the target return"
   },
   {
     id: "fixed-income",
-    name: "Fixed Return Income Option",
+    name: "Fixed Return Income Portfolio",
     termCategory: "long",
     interestType: "income",
     rate: 0.126, // 12.6%
@@ -158,8 +154,7 @@ export const comparisonProducts: ComparisonProduct[] = [
     route: "/investments/fixed-return-income",
     description: "For clients considering income-focused positioning with defined terms.",
     resultLabel: "Estimated gross monthly income",
-    supportingLabel: "Per month, before tax",
-    capitalProtection: "subject to formal product terms",
-    bonusRule: true
+    supportingLabel: "Estimated gross monthly income based on the target return",
+    capitalProtection: "Capital protection applies to the original investment amount at maturity, subject to the terms of the product."
   }
 ];

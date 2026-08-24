@@ -47,12 +47,16 @@ export default function Header() {
   };
 
   return (
-    <header className="fixed w-full top-0 z-50 bg-white border-b border-border-grey">
+    <header className="fixed w-full top-0 z-50 bg-[#115c85] border-b border-[#0c4d70]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative">
         <div className="flex justify-between items-center h-20">
           <div className="flex-shrink-0 flex items-center h-full">
             <Link href="/" className="flex items-center" onClick={closeMenus}>
-              <span className="font-serif text-3xl text-navy">Tiyani Magomani</span>
+              <img
+                src="/tiyani-logo.png"
+                alt="Tiyani Magomani"
+                className="w-[225px] max-w-[65vw] sm:w-[280px] sm:max-w-none h-auto brightness-0 invert"
+              />
             </Link>
           </div>
           
@@ -87,7 +91,7 @@ export default function Header() {
                   >
                     <Link 
                       href={link.path} 
-                      className={`text-[13px] font-sans font-bold uppercase tracking-widest text-ink transition-opacity ${active ? 'opacity-70' : 'hover:opacity-70'}`}
+                      className={`text-[13px] font-sans font-bold uppercase tracking-widest text-white transition-opacity ${active ? 'opacity-70' : 'hover:opacity-70'}`}
                       onClick={closeMenus}
                     >
                       {link.name}
@@ -95,7 +99,7 @@ export default function Header() {
                     {showIndicator && (
                       <motion.div
                         layoutId="header-nav-indicator"
-                        className="absolute bottom-[-1px] left-0 right-0 h-[3px] bg-navy z-10"
+                        className="absolute bottom-[-1px] left-0 right-0 h-[3px] bg-white z-10"
                         transition={{ type: "spring", stiffness: 350, damping: 30 }}
                       />
                     )}
@@ -104,7 +108,7 @@ export default function Header() {
               })}
             </nav>
             
-            <Link href="/contact" className="bg-navy text-white px-6 py-3 text-[13px] font-bold hover:bg-ink transition-colors flex-shrink-0" onClick={closeMenus}>
+            <Link href="/contact" className="bg-white text-[#115c85] px-5 py-2.5 text-[13px] font-bold hover:bg-off-white transition-colors flex-shrink-0" onClick={closeMenus}>
               Start Investing
             </Link>
           </div>
@@ -112,7 +116,7 @@ export default function Header() {
           <div className="xl:hidden flex items-center h-full">
             <button 
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-              className="text-ink hover:text-navy p-2"
+              className="text-white hover:text-white/80 p-2"
               aria-label="Toggle mobile menu"
             >
               {isMobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
@@ -129,7 +133,7 @@ export default function Header() {
             animate={{ opacity: 1, y: 0 }}
             exit={{ opacity: 0, y: -10 }}
             transition={{ duration: 0.2 }}
-            className="hidden xl:block absolute top-full left-0 w-full bg-white border-b border-border-grey shadow-sm overflow-hidden z-40"
+            className="header-desktop-dropdown hidden xl:block absolute top-full left-0 w-full bg-[#115c85] border-b border-[#0c4d70] shadow-sm overflow-hidden z-40"
             onMouseEnter={() => {
                 clearTimeout(menuTimeout);
                 setActiveMenu('/investments');
@@ -142,7 +146,8 @@ export default function Header() {
                 }, 150);
             }}
           >
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
+            <div className="brand-circle-motif" aria-hidden="true"></div>
+            <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
               <div className="grid grid-cols-12 gap-8">
                 {/* Column 1 */}
                 <div className="col-span-4">
@@ -276,7 +281,7 @@ export default function Header() {
                       </p>
                     </div>
                     <div>
-                      <Link href="/compare" className="bg-navy text-white px-6 py-4 text-[13px] font-bold hover:bg-ink transition-colors flex items-center justify-center group mb-4 uppercase tracking-wider w-full" onClick={closeMenus}>Compare Investments<ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                      <Link href="/compare" className="bg-white text-[#115c85] px-6 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center justify-center group mb-4 uppercase tracking-wider w-full" onClick={closeMenus}>Compare Investments<ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
                       </Link>
                       <Link href="/investments" className="text-[13px] text-navy hover:text-ink font-medium underline underline-offset-2 text-center block w-full" onClick={closeMenus}>
                         View all investment options

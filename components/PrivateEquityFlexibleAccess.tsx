@@ -4,6 +4,7 @@ import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';import { inve
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import CalculatorEngine from './CalculatorEngine';
+import ProductFiguresGrid from './ProductFiguresGrid';
 import { useState } from 'react';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
@@ -37,7 +38,7 @@ export default function PrivateEquityFlexibleAccess() {
             <FadeIn>
               <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Investment Option</span>
               <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Private Equity Flexible Access Option
+                Private Equity: Flexi Access
               </h1>
               <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
                 A growth-focused investment category for clients considering long-term value creation through structured private-equity-style exposure.
@@ -75,15 +76,7 @@ export default function PrivateEquityFlexibleAccess() {
             </p>
           </FadeIn>
           
-          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {investmentProducts["private-equity-flexible-access"].figures.map((fig, i) => (
-              <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-6 flex flex-col justify-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-muted-blue block mb-2">{fig.label}</span>
-                <span className="text-2xl font-serif text-ink">{fig.value}</span>
-                {fig.subtext && <span className="text-sm font-sans text-muted-blue mt-2">{fig.subtext}</span>}
-              </FadeInStaggerItem>
-            ))}
-          </FadeInStagger>
+          <ProductFiguresGrid figures={investmentProducts["private-equity-flexible-access"].figures} />
           
           <FadeIn className="bg-soft-grey border border-border-grey p-6 md:p-8">
             <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">
@@ -102,7 +95,7 @@ export default function PrivateEquityFlexibleAccess() {
               Built for clients focused on future value creation.
             </h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              The Private Equity Flexible Access Option is positioned for clients who are considering a longer-term investment route with a focus on capital growth. It is suited to visitors who want to explore structured investment opportunities where the primary objective is future value creation rather than immediate income.
+              Private Equity: Flexi Access is positioned for clients who are considering a 12-month investment route. It is suited to visitors who want to explore structured investment opportunities before making an enquiry.
             </p>
           </FadeIn>
         </div>
@@ -165,7 +158,7 @@ export default function PrivateEquityFlexibleAccess() {
           <FadeIn className="bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
             <h2 className="text-xl font-serif text-ink mb-4">Important considerations</h2>
             <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              The Private Equity Flexible Access Option is shown for general information and enquiry purposes only. Investment values may rise or fall, and estimates shown on the website do not represent guaranteed outcomes. Clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
+              Expected yields are projections based on prevailing market conditions and are not guaranteed. Historical performance offers no assurance of future outcomes, and investor capital remains subject to risk, including the potential loss of principal.
             </p>
           </FadeIn>
         </div>
@@ -211,7 +204,7 @@ export default function PrivateEquityFlexibleAccess() {
       <section className="py-20 lg:py-32 bg-off-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about the Private Equity Flexible Access Option</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about Private Equity: Flexi Access</h2>
           </FadeIn>
           
           <div className="space-y-4">
@@ -249,17 +242,17 @@ export default function PrivateEquityFlexibleAccess() {
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Private Equity Income Option",
+                title: "Private Equity: Income",
                 desc: "For clients interested in income-focused investment positioning.",
                 link: "/investments/private-equity-income"
               },
               {
-                title: "Private Equity Flexible Access Option",
+                title: "Private Equity: Flexi Access",
                 desc: "For clients who may need a more adaptable investment route.",
                 link: "/investments/private-equity-flexible-access"
               },
               {
-                title: "Fixed Return Growth Option",
+                title: "Fixed Return Growth Portfolio",
                 desc: "For clients who prefer defined terms with structured growth positioning.",
                 link: "/investments/fixed-return-growth"
               }
@@ -281,7 +274,7 @@ export default function PrivateEquityFlexibleAccess() {
       <section className="py-20 bg-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore the Private Equity Flexible Access Option?</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore Private Equity: Flexi Access?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
               Start with a simple enquiry or Compare Investments to view an estimate before taking the next step.
             </p>

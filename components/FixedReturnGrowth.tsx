@@ -4,6 +4,7 @@ import { ArrowRight } from 'lucide-react';import { investmentProducts } from '.
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import CalculatorEngine from './CalculatorEngine';
+import ProductFiguresGrid from './ProductFiguresGrid';
 import { useState } from 'react';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
@@ -37,7 +38,7 @@ export default function FixedReturnGrowth() {
             <FadeIn>
               <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Investment Option</span>
               <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Fixed Return Growth Option
+                Fixed Return Growth Portfolio
               </h1>
               <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
                 A structured growth investment category for clients considering defined-term investment positioning with a focus on future value creation.
@@ -75,19 +76,11 @@ export default function FixedReturnGrowth() {
             </p>
           </FadeIn>
           
-          <FadeInStagger className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 mb-16">
-            {investmentProducts["fixed-return-growth"].figures.map((fig, i) => (
-              <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-6 flex flex-col justify-center">
-                <span className="text-xs font-semibold uppercase tracking-widest text-muted-blue block mb-2">{fig.label}</span>
-                <span className="text-2xl font-serif text-ink">{fig.value}</span>
-                {fig.subtext && <span className="text-sm font-sans text-muted-blue mt-2">{fig.subtext}</span>}
-              </FadeInStaggerItem>
-            ))}
-          </FadeInStagger>
+          <ProductFiguresGrid figures={investmentProducts["fixed-return-growth"].figures} />
           
           <FadeIn className="bg-soft-grey border border-border-grey p-6 md:p-8">
             <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">
-              Figures are shown for general information and enquiry purposes only. They do not constitute financial advice or a guaranteed outcome. Final product details, risks, fees, tax treatment, eligibility requirements and terms are subject to formal product documentation. Capital protection applies only where expressly stated in the formal product documentation and only if the product is held until maturity. The relevant security is not guaranteed by any party.
+              Capital protection applies to the original investment amount at maturity, subject to the terms of the product. Expected yields are projections based on prevailing market conditions and are not guaranteed. Historical performance offers no assurance of future outcomes.
             </p>
           </FadeIn>
         </div>
@@ -102,7 +95,7 @@ export default function FixedReturnGrowth() {
               Built for clients who prefer defined growth positioning.
             </h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              The Fixed Return Growth Option is positioned for clients who are considering a structured investment route with a defined-term approach and a focus on capital growth. It is suited to visitors who want clearer investment positioning while still reviewing all formal product details before making a decision.
+              Fixed Return Growth Portfolio is positioned for clients who are considering a structured investment route with a defined-term approach and a focus on capital growth. It is suited to visitors who want clearer investment positioning while still reviewing all formal product details before making a decision.
             </p>
           </FadeIn>
         </div>
@@ -165,7 +158,7 @@ export default function FixedReturnGrowth() {
           <FadeIn className="bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
             <h2 className="text-xl font-serif text-ink mb-4">Important considerations</h2>
             <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              The Fixed Return Growth Option is shown for general information and enquiry purposes only. Fixed-return-style positioning does not mean all outcomes are guaranteed unless confirmed in formal product documentation. Investment values may rise or fall, and calculator and comparison results shown on the website do not represent guaranteed outcomes. Clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
+              Capital protection applies to the original investment amount at maturity, subject to the terms of the product. Expected yields are projections based on prevailing market conditions and are not guaranteed. Historical performance offers no assurance of future outcomes.
             </p>
           </FadeIn>
         </div>
@@ -211,14 +204,14 @@ export default function FixedReturnGrowth() {
       <section className="py-20 lg:py-32 bg-off-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about the Fixed Return Growth Option</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about the Fixed Return Growth Portfolio</h2>
           </FadeIn>
           
           <div className="space-y-4">
             {[
               {
                 q: "Is this option focused on income?",
-                a: "The primary focus of this option is structured growth. Clients interested in regular income may prefer to review the Fixed Return Income Option or Private Equity Income Option."
+                a: "The primary focus of this option is structured growth. Clients interested in regular income may prefer to review the Fixed Return Income Portfolio or Private Equity: Income."
               },
               {
                 q: "Does fixed return mean guaranteed outcome?",
@@ -249,12 +242,12 @@ export default function FixedReturnGrowth() {
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {[
               {
-                title: "Fixed Return Income Option",
+                title: "Fixed Return Income Portfolio",
                 desc: "For clients considering income-focused positioning with defined terms.",
                 link: "/investments/fixed-return-income"
               },
               {
-                title: "Private Equity Growth Option",
+                title: "Private Equity: Growth",
                 desc: "For clients focused on long-term capital growth.",
                 link: "/investments/private-equity-growth"
               },
@@ -281,7 +274,7 @@ export default function FixedReturnGrowth() {
       <section className="py-20 bg-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore the Fixed Return Growth Option?</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore the Fixed Return Growth Portfolio?</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
               Start with a simple enquiry or Compare Investments to view an estimated result before taking the next step.
             </p>

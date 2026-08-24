@@ -122,7 +122,7 @@ export default function Investments() {
               {
                 id: "growth",
                 category: "Capital Growth",
-                title: "Private Equity Growth Option",
+                title: "Private Equity: Growth",
                 desc: "For clients considering long-term growth-focused investment exposure through a structured private-equity-style category.",
                 focus: "Long-term capital growth",
                 suited: "Clients looking for future value creation and a longer investment horizon.",
@@ -132,7 +132,7 @@ export default function Investments() {
               {
                 id: "income",
                 category: "Regular Income",
-                title: "Private Equity Income Option",
+                title: "Private Equity: Income",
                 desc: "For clients interested in income-focused investment structures and regular income potential.",
                 focus: "Income potential",
                 suited: "Clients who want an investment category positioned around income generation.",
@@ -142,7 +142,7 @@ export default function Investments() {
               {
                 id: "flexible-access",
                 category: "Flexible Access",
-                title: "Private Equity Flexible Access Option",
+                title: "Private Equity: Flexi Access",
                 desc: "For clients who want a more adaptable investment route with flexible-access positioning.",
                 focus: "Flexibility and access",
                 suited: "Clients who may need more flexibility while still exploring structured investment opportunities.",
@@ -152,7 +152,7 @@ export default function Investments() {
               {
                 id: "fixed-return",
                 category: "Structured Growth",
-                title: "Fixed Return Growth Option",
+                title: "Fixed Return Growth Portfolio",
                 desc: "For clients interested in structured growth with defined investment terms and fixed-return style positioning.",
                 focus: "Defined terms and growth positioning",
                 suited: "Clients who prefer a clearer investment structure and a defined investment period.",
@@ -161,7 +161,7 @@ export default function Investments() {
               },
               {
                 category: "Fixed Income",
-                title: "Fixed Return Income Option",
+                title: "Fixed Return Income Portfolio",
                 desc: "For clients looking at fixed-income style positioning and regular income potential.",
                 focus: "Income structure",
                 suited: "Clients considering an income-focused route with defined terms.",
@@ -236,8 +236,8 @@ export default function Investments() {
                 <thead>
                   <tr className="bg-soft-grey text-xs uppercase tracking-widest text-muted-blue border-b border-border-grey">
                     <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Investment Option</th>
-                    <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Minimum</th>
-                    <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Rate / Performance</th>
+                    <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Fund Entry</th>
+                    <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Target Return</th>
                     <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Term</th>
                     <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Income / Growth Focus</th>
                     <th className="p-4 border-r border-border-grey font-sans font-semibold whitespace-nowrap">Risk Profile</th>
@@ -247,49 +247,49 @@ export default function Investments() {
                 <tbody className="text-sm font-sans text-ink">
                   {[
                     {
-                      name: "Private Equity Growth Option",
-                      min: "R100,000",
-                      rate: "13.2% p.a.",
+                      name: "Private Equity: Growth",
+                      min: "Minimum R100,000",
+                      rate: "13.2%",
                       term: "5 years",
                       focus: "Growth on capital",
                       risk: "Medium–High",
                       access: "Long-term private-equity-style exposure"
                     },
                     {
-                      name: "Private Equity Income Option",
-                      min: "R100,000",
-                      rate: "13.2% p.a.",
+                      name: "Private Equity: Income",
+                      min: "Minimum R100,000",
+                      rate: "13.2%",
                       term: "5 years",
-                      focus: "Monthly income",
+                      focus: "Income-focused positioning",
                       risk: "Medium–High",
-                      access: "1% annual bonus over R1 million"
+                      access: "Subject to formal product documentation"
                     },
                     {
-                      name: "Private Equity Flexible Access Option",
-                      min: "R100,000",
-                      rate: "11% p.a.",
+                      name: "Private Equity: Flexi Access",
+                      min: "Minimum R100,000",
+                      rate: "11%",
                       term: "12 months",
-                      focus: "Growth or monthly dividend",
+                      focus: "12-month private equity positioning",
                       risk: "Medium–High",
-                      access: "Access to available accrued interest, subject to terms"
+                      access: "Subject to formal product documentation"
                     },
                     {
-                      name: "Fixed Return Growth Option",
-                      min: "R100,000",
-                      rate: "12.6% p.a.",
+                      name: "Fixed Return Growth Portfolio",
+                      min: "Minimum R100,000",
+                      rate: "12.6%",
                       term: "5 years",
                       focus: "Growth on capital",
                       risk: "Low–Medium",
-                      access: "100% capital protection at maturity, subject to terms"
+                      access: "Capital protection applies to the original investment amount at maturity, subject to the terms of the product."
                     },
                     {
-                      name: "Fixed Return Income Option",
-                      min: "R100,000",
-                      rate: "12.6% p.a.",
+                      name: "Fixed Return Income Portfolio",
+                      min: "Minimum R100,000",
+                      rate: "12.6%",
                       term: "5 years",
-                      focus: "Monthly income",
+                      focus: "Income-focused positioning",
                       risk: "Low–Medium",
-                      access: "100% capital protection at maturity, subject to terms"
+                      access: "Capital protection applies to the original investment amount at maturity, subject to the terms of the product."
                     },
                     {
                       name: "Offshore Global Option",
@@ -307,7 +307,7 @@ export default function Investments() {
                       <td className="p-4 border-r border-border-grey">{row.rate}</td>
                       <td className="p-4 border-r border-border-grey">{row.term}</td>
                       <td className="p-4 border-r border-border-grey">{row.focus}</td>
-                      <td className="p-4 border-r border-border-grey">{row.risk}</td>
+                      <td className="p-4 border-r border-border-grey">{row.name === 'Private Equity: Income' ? 'Moderate–High' : row.risk}</td>
                       <td className="p-4">{row.access}</td>
                     </tr>
                   ))}
@@ -319,49 +319,49 @@ export default function Investments() {
             <div className="lg:hidden space-y-6">
               {[
                 {
-                  name: "Private Equity Growth Option",
-                  min: "R100,000",
-                  rate: "13.2% p.a.",
+                  name: "Private Equity: Growth",
+                  min: "Minimum R100,000",
+                  rate: "13.2%",
                   term: "5 years",
                   focus: "Growth on capital",
                   risk: "Medium–High",
                   access: "Long-term private-equity-style exposure"
                 },
                 {
-                  name: "Private Equity Income Option",
-                  min: "R100,000",
-                  rate: "13.2% p.a.",
+                  name: "Private Equity: Income",
+                  min: "Minimum R100,000",
+                  rate: "13.2%",
                   term: "5 years",
-                  focus: "Monthly income",
+                  focus: "Income-focused positioning",
                   risk: "Medium–High",
-                  access: "1% annual bonus over R1 million"
+                  access: "Subject to formal product documentation"
                 },
                 {
-                  name: "Private Equity Flexible Access Option",
-                  min: "R100,000",
-                  rate: "11% p.a.",
+                  name: "Private Equity: Flexi Access",
+                  min: "Minimum R100,000",
+                  rate: "11%",
                   term: "12 months",
-                  focus: "Growth or monthly dividend",
+                  focus: "12-month private equity positioning",
                   risk: "Medium–High",
-                  access: "Access to available accrued interest, subject to terms"
+                  access: "Subject to formal product documentation"
                 },
                 {
-                  name: "Fixed Return Growth Option",
-                  min: "R100,000",
-                  rate: "12.6% p.a.",
+                  name: "Fixed Return Growth Portfolio",
+                  min: "Minimum R100,000",
+                  rate: "12.6%",
                   term: "5 years",
                   focus: "Growth on capital",
                   risk: "Low–Medium",
-                  access: "100% capital protection at maturity, subject to terms"
+                  access: "Capital protection applies to the original investment amount at maturity, subject to the terms of the product."
                 },
                 {
-                  name: "Fixed Return Income Option",
-                  min: "R100,000",
-                  rate: "12.6% p.a.",
+                  name: "Fixed Return Income Portfolio",
+                  min: "Minimum R100,000",
+                  rate: "12.6%",
                   term: "5 years",
-                  focus: "Monthly income",
+                  focus: "Income-focused positioning",
                   risk: "Low–Medium",
-                  access: "100% capital protection at maturity, subject to terms"
+                  access: "Capital protection applies to the original investment amount at maturity, subject to the terms of the product."
                 },
                 {
                   name: "Offshore Global Option",
@@ -394,7 +394,7 @@ export default function Investments() {
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs uppercase tracking-widest text-muted-blue mb-1">Risk Profile</span>
-                      <span className="text-ink">{row.risk}</span>
+                      <span className="text-ink">{row.name === 'Private Equity: Income' ? 'Moderate–High' : row.risk}</span>
                     </div>
                     <div className="flex flex-col">
                       <span className="text-xs uppercase tracking-widest text-muted-blue mb-1">Access / Capital Protection</span>

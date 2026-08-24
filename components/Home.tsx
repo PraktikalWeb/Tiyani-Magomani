@@ -21,38 +21,49 @@ import Link from 'next/link';
 
 export default function Home() {
   return (
-    <main className="pt-20">
+    <main className="home-landing pt-20">
       
       {/* 2. Hero Section */}
       <section className="relative bg-navy text-white min-h-[85vh] flex items-center">
-        <div className="absolute inset-0 z-0">
-          <img 
-            src="/images/investment-hero.png" 
-            alt="Two financial professionals discussing investment planning" 
-            className="w-full h-full object-cover opacity-40"
+        <div className="absolute inset-0 z-0 overflow-hidden" aria-hidden="true">
+          <img
+            src="/images/investment-options-team.png"
+            alt=""
+            className="hero-background-image hero-background-image-one"
           />
-          <div className="absolute inset-0 bg-navy/50"></div>
+          <img
+            src="/images/investment-solutions-advisory.png"
+            alt=""
+            className="hero-background-image hero-background-image-two"
+          />
+          <div className="absolute inset-0 bg-navy/70"></div>
+        </div>
+
+        <div className="hero-slide-indicators" aria-hidden="true">
+          <span className="hero-slide-dot hero-slide-dot-one"></span>
+          <span className="hero-slide-dot hero-slide-dot-two"></span>
         </div>
         
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-24 md:py-32">
-          <FadeIn delay={0.2} className="max-w-3xl">
-            <h1 className="text-5xl md:text-7xl font-serif leading-tight mb-8">
+          <FadeIn delay={0.2} className="max-w-3xl mx-auto text-center">
+            <h1 className="text-4xl md:text-6xl font-serif leading-tight mb-8">
               Investment solutions for growth, income and long-term clarity.
             </h1>
             <p className="text-lg md:text-xl font-sans text-soft-grey/90 leading-relaxed mb-12 max-w-2xl">
               Tiyani Magomani helps clients explore structured investment options across growth, income, flexible-access, fixed-return and offshore-focused categories through a clear public enquiry process.
             </p>
-            <div className="flex flex-col sm:flex-row items-start sm:items-center gap-6">
-              <Link href="/contact" className="bg-white text-navy px-8 py-4 font-medium hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto">
+            <div className="flex flex-row items-center justify-center gap-2 sm:gap-6">
+              <Link href="/contact" className="bg-white text-navy h-12 px-2 sm:px-7 text-xs sm:text-base font-medium hover:bg-off-white transition-colors flex items-center group justify-center flex-1 sm:flex-none sm:w-[220px] min-w-0">
                 Start Investing
-                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+                <ArrowRight className="hidden sm:block ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/investments" className="text-white px-8 py-4 font-medium border border-white/30 hover:bg-white/10 transition-colors justify-center w-full sm:w-auto text-center flex items-center">
-                View Investment Options
+              <Link href="/investments" className="text-white h-12 px-2 sm:px-7 text-xs sm:text-base font-medium border border-white/35 hover:bg-white/10 transition-colors justify-center flex-1 sm:flex-none sm:w-[220px] min-w-0 text-center flex items-center whitespace-nowrap">
+                <span className="sm:hidden">View Options</span>
+                <span className="hidden sm:inline">View Investment Options</span>
               </Link>
             </div>
-            <div className="mt-8 text-center sm:text-left">
-              <Link href="/investments" className="text-sm font-sans text-soft-grey/80 hover:text-white underline underline-offset-4 transition-colors">
+            <div className="mt-8 text-center">
+              <Link href="/investments" className="text-sm font-sans text-soft-grey/85 hover:text-white underline underline-offset-4 transition-colors">
                 Compare Investment Solutions
               </Link>
             </div>
@@ -61,10 +72,10 @@ export default function Home() {
       </section>
 
       {/* 3. Quick Action Tiles */}
-      <section className="py-24 bg-soft-grey" id="options">
+      <section className="py-24 bg-white" id="options">
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink">What would you like to explore?</h2>
+            <h2 className="home-two-tone-heading text-3xl md:text-4xl font-serif"><span>What would you</span> like to explore?</h2>
           </div>
           
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -106,7 +117,7 @@ export default function Home() {
                 linkText: "Explore Offshore Options"
               }
             ].map((tile, i) => (
-              <FadeInStaggerItem key={i} className="bg-white p-10 border border-border-grey hover:border-navy/30 transition-colors group">
+              <FadeInStaggerItem key={i} className="home-brand-card bg-white p-10 shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-2xl transition-shadow group">
                 <div className="mb-6">{tile.icon}</div>
                 <h3 className="text-sm font-sans uppercase tracking-widest text-ink mb-4">{tile.title}</h3>
                 <p className="text-muted-blue font-sans mb-8 leading-relaxed text-sm">
@@ -123,22 +134,22 @@ export default function Home() {
       </section>
 
       {/* 4. Dark Navy CTA Band */}
-      <section className="relative bg-navy py-24 text-white overflow-hidden">
+      <section className="relative bg-white py-24 text-navy overflow-hidden">
         <div className="absolute inset-0 z-0">
           <img 
             src="/images/investment-enquiry-banner.png" 
             alt="Client and adviser reviewing investment information" 
             className="w-full h-full object-cover opacity-30"
           />
-          <div className="absolute inset-0 bg-navy/60"></div>
+          <div className="absolute inset-0 bg-white/80"></div>
         </div>
         <FadeIn className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-4xl mx-auto">
-          <span className="text-xs font-sans uppercase tracking-widest text-soft-grey mb-6 block">Digital access. Clear guidance.</span>
-          <h2 className="text-3xl md:text-5xl font-serif mb-6">Explore investment options before taking the next step.</h2>
-          <p className="text-soft-grey/90 font-sans leading-relaxed mb-10 max-w-2xl mx-auto text-lg">
+          <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Digital access. Clear guidance.</span>
+          <h2 className="home-two-tone-heading text-3xl md:text-5xl font-serif mb-6"><span>Explore investment options</span> before taking the next step.</h2>
+          <p className="text-muted-blue font-sans leading-relaxed mb-10 max-w-2xl mx-auto text-lg">
             The website introduces key investment categories, estimates and enquiry pathways so visitors can make informed enquiries before continuing with a formal process.
           </p>
-          <a href="#enquire" className="inline-block bg-transparent border border-white text-white px-8 py-4 font-medium hover:bg-white hover:text-navy transition-colors">
+          <a href="#enquire" className="inline-block bg-transparent border border-navy text-navy px-7 py-3 font-medium hover:bg-navy hover:text-white transition-colors">
             Start an Investment Enquiry
           </a>
         </FadeIn>
@@ -150,11 +161,11 @@ export default function Home() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">
               <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Investment Solutions</span>
-              <h2 className="text-4xl md:text-5xl font-serif text-ink mb-6 leading-tight">A structured range of investment pathways.</h2>
+              <h2 className="home-two-tone-heading text-4xl md:text-5xl font-serif mb-6 leading-tight"><span>A structured range</span> of investment pathways.</h2>
               <p className="text-muted-blue font-sans leading-relaxed mb-10 text-lg">
                 Tiyani Magomani presents investment pathways across private-equity-style growth, income-focused structures, flexible-access options, fixed-return style products and offshore opportunities. Each category should help visitors understand the purpose of the option before submitting an enquiry.
               </p>
-              <Link href="/investments" className="inline-block bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors">
+              <Link href="/investments" className="inline-block bg-navy text-white px-7 py-3 font-medium hover:bg-ink transition-colors">
                 View Investment Options
               </Link>
             </div>
@@ -172,10 +183,10 @@ export default function Home() {
       </section>
 
       {/* 6. Product Preview Section */}
-      <section className="py-24 bg-off-white">
+      <section className="py-24 bg-white">
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink text-center">Investment options at a glance.</h2>
+            <h2 className="home-two-tone-heading text-3xl md:text-4xl font-serif text-center"><span>Investment options</span> at a glance.</h2>
           </div>
           
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -211,7 +222,7 @@ export default function Home() {
                 focus: "Global exposure"
               }
             ].map((product, i) => (
-              <FadeInStaggerItem key={i} className="bg-white border border-border-grey p-8 hover:border-navy/30 transition-colors flex flex-col h-full">
+              <FadeInStaggerItem key={i} className="home-brand-card bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-2xl p-8 transition-shadow flex flex-col h-full">
                 <div className="mb-auto">
                   <span className="inline-block bg-soft-grey text-navy px-3 py-1 text-xs font-sans uppercase tracking-wider mb-6">
                     {product.focus}
@@ -238,7 +249,7 @@ export default function Home() {
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Compare Investments</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Compare Investment Options</h2>
+            <h2 className="home-two-tone-heading text-3xl md:text-4xl font-serif mb-6"><span>Compare</span> Investment Options</h2>
             <p className="text-muted-blue font-sans text-lg leading-relaxed">
               Use the Compare Investments page to enter your initial investment and compare estimated growth or income across available options.
             </p>
@@ -263,7 +274,7 @@ export default function Home() {
                 desc: "Submit your details for follow-up after comparing options."
               }
             ].map((card, i) => (
-              <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-8 flex flex-col justify-center text-center h-full">
+              <FadeInStaggerItem key={i} className="home-brand-card bg-white shadow-md hover:shadow-lg rounded-2xl p-8 flex flex-col justify-center text-center h-full transition-shadow">
                 <h3 className="text-lg font-serif text-ink mb-4">{card.title}</h3>
                 <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">{card.desc}</p>
               </FadeInStaggerItem>
@@ -271,7 +282,7 @@ export default function Home() {
           </FadeInStagger>
 
           <div className="flex flex-col sm:flex-row justify-center gap-6 mb-12">
-            <Link href="/compare" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors text-center uppercase tracking-wider text-[13px]">
+            <Link href="/compare" className="inline-flex items-center justify-center bg-navy text-white px-7 py-3 font-medium hover:bg-ink transition-colors text-center uppercase tracking-wider text-[13px]">
               Compare Investments
             </Link>
             <Link href="/contact" className="border border-border-grey text-navy px-8 py-4 font-medium hover:bg-soft-grey transition-colors text-center uppercase tracking-wider text-[13px]">
@@ -288,11 +299,11 @@ export default function Home() {
       </section>
 
       {/* 8. Trust and Compliance Section */}
-      <section className="py-24 bg-off-white">
+      <section className="py-24 bg-white">
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Trust and Transparency</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Clear information for considered investment decisions.</h2>
+            <h2 className="home-two-tone-heading text-3xl md:text-4xl font-serif mb-6"><span>Clear information</span> for considered investment decisions.</h2>
             <p className="text-muted-blue font-sans text-lg">
               The website supports a trust-first investment journey by presenting investment categories, enquiry routes, important notices and policy links in a clear public-facing format.
             </p>
@@ -321,7 +332,7 @@ export default function Home() {
                 desc: "Calculator estimates help visitors understand possible scenarios before speaking to the team."
               }
             ].map((card, i) => (
-              <div key={i} className="bg-white p-8 border border-border-grey text-center">
+              <div key={i} className="home-brand-card bg-white shadow-[0_8px_30px_rgb(0,0,0,0.06)] hover:shadow-[0_8px_30px_rgb(0,0,0,0.12)] rounded-2xl p-8 text-center transition-shadow">
                 <div className="mx-auto w-12 h-12 bg-soft-grey flex items-center justify-center mb-6">
                   {card.icon}
                 </div>
@@ -334,10 +345,10 @@ export default function Home() {
       </section>
 
       {/* 9. Online Investing Process */}
-      <section className="py-24 bg-white border-t border-border-grey">
+      <section className="py-24 bg-white">
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink text-center">A simple digital-first enquiry journey.</h2>
+            <h2 className="home-two-tone-heading text-3xl md:text-4xl font-serif text-center"><span>A simple digital-first</span> enquiry journey.</h2>
           </div>
           
           <div className="max-w-3xl lg:max-w-none mx-auto relative mt-12">
@@ -391,10 +402,10 @@ export default function Home() {
       </section>
 
       {/* 10. Optional Insurance/Protection Preview */}
-      <section className="py-20 bg-soft-grey border-y border-border-grey">
+      <section className="py-20 bg-white">
         <FadeIn className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Additional Services</span>
-          <h2 className="text-3xl font-serif text-ink mb-6">Protection and insurance-related support.</h2>
+          <h2 className="home-two-tone-heading text-3xl font-serif mb-6"><span>Protection</span> and insurance-related support.</h2>
           <p className="text-muted-blue font-sans text-lg mb-8 leading-relaxed">
             Where applicable, Tiyani Magomani can also introduce protection, insurance-related or broader financial support services as part of the public website offering.
           </p>
@@ -405,17 +416,28 @@ export default function Home() {
       </section>
 
       {/* 11. Stay in Touch Strip */}
-      <section className="bg-white border-b border-border-grey">
-        <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
-          <div className="flex flex-col md:flex-row items-center justify-between gap-6">
-            <div className="w-full md:w-1/3">
-              <h3 className="text-xl font-serif text-ink">Stay connected with Tiyani Magomani</h3>
+      <section className="bg-white py-12">
+        <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-[370px_1fr]">
+            <div className="relative min-h-[230px] overflow-hidden">
+              <img
+                src="/images/investment-enquiry-banner.png"
+                alt="Investment professionals reviewing information together"
+                className="absolute inset-0 w-full h-full object-cover object-center"
+              />
+              <div className="absolute inset-0 bg-navy/75"></div>
+              <div className="absolute -top-28 -left-24 w-72 h-72 rounded-full border-2 border-[#75c8f0]/70"></div>
+              <div className="absolute -top-16 -left-16 w-56 h-56 rounded-full border border-white/45"></div>
+              <div className="absolute -bottom-24 -left-8 w-64 h-64 rounded-full border border-[#75c8f0]/50"></div>
+              <div className="absolute inset-0 flex items-center px-8 sm:px-10">
+                <img src="/tiyani-logo.png" alt="Tiyani Magomani" className="w-56 max-w-full h-auto brightness-0 invert" />
+              </div>
             </div>
-            <div className="w-full md:w-1/3 text-center md:text-left">
-              <p className="text-sm font-sans text-muted-blue">Leave your details and the team will follow up with the next step.</p>
-            </div>
-            <div className="w-full md:w-1/3 flex justify-start md:justify-end">
-              <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors w-full md:w-auto text-center">
+
+            <div className="bg-navy p-8 sm:p-10 lg:px-12 lg:py-10 flex flex-col justify-center">
+              <h3 className="text-2xl md:text-3xl font-serif text-white"><span className="text-[#b7e1f5]">Stay connected</span> with Tiyani Magomani</h3>
+              <p className="mt-4 text-sm md:text-base font-sans text-white/75 max-w-2xl">Leave your details and the team will follow up with the next step.</p>
+              <Link href="/contact" className="mt-8 inline-flex items-center justify-center self-start bg-white text-navy px-7 py-3 font-medium hover:bg-off-white transition-colors w-full sm:w-auto text-center">
                 Submit Enquiry
               </Link>
             </div>
@@ -424,22 +446,22 @@ export default function Home() {
       </section>
 
       {/* 12. Lower Utility Cards */}
-      <section className="py-16 bg-off-white" id="contact">
+      <section className="py-16 bg-white" id="contact">
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            <div className="bg-white p-8 border border-border-grey flex flex-col h-full">
+            <div className="home-brand-card bg-white shadow-md hover:shadow-lg rounded-2xl p-8 flex flex-col h-full transition-shadow">
               <Mail className="w-6 h-6 text-navy mb-4" />
               <h3 className="text-lg font-serif text-ink mb-2">Investment Enquiries</h3>
               <p className="text-sm font-sans text-muted-blue mb-6 flex-grow">Submit your interest and receive follow-up from the team.</p>
               <Link href="/contact" className="text-sm font-medium text-navy underline underline-offset-4 hover:opacity-70 transition-opacity">Contact us</Link>
             </div>
-            <div className="bg-white p-8 border border-border-grey flex flex-col h-full">
+            <div className="home-brand-card bg-white shadow-md hover:shadow-lg rounded-2xl p-8 flex flex-col h-full transition-shadow">
               <PieChart className="w-6 h-6 text-navy mb-4" />
               <h3 className="text-lg font-serif text-ink mb-2">Product Information</h3>
               <p className="text-sm font-sans text-muted-blue mb-6 flex-grow">Review available investment categories and important notes.</p>
               <Link href="/investments" className="text-sm font-medium text-navy underline underline-offset-4 hover:opacity-70 transition-opacity">View categories</Link>
             </div>
-            <div className="bg-white p-8 border border-border-grey flex flex-col h-full">
+            <div className="home-brand-card bg-white shadow-md hover:shadow-lg rounded-2xl p-8 flex flex-col h-full transition-shadow">
               <ShieldCheck className="w-6 h-6 text-navy mb-4" />
               <h3 className="text-lg font-serif text-ink mb-2">Legal and Policies</h3>
               <p className="text-sm font-sans text-muted-blue mb-6 flex-grow">Access policy pages and important public information.</p>
@@ -452,7 +474,7 @@ export default function Home() {
       {/* 13. FAQ Preview */}
       <section className="py-24 bg-white" id="faq">
         <FadeIn className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-3xl md:text-4xl font-serif text-ink text-center mb-16">Questions before you invest?</h2>
+          <h2 className="home-two-tone-heading text-3xl md:text-4xl font-serif text-center mb-16"><span>Questions</span> before you invest?</h2>
           
           <div className="space-y-6">
             {[
@@ -488,7 +510,7 @@ export default function Home() {
           </div>
           
           <div className="mt-12 text-center">
-            <Link href="/faqs" className="inline-block bg-transparent border border-navy text-navy px-8 py-3 font-medium hover:bg-navy hover:text-white transition-colors">
+            <Link href="/faqs" className="inline-block bg-transparent border border-navy text-navy px-7 py-3 font-medium hover:bg-navy hover:text-white transition-colors">
               View All FAQs
             </Link>
           </div>
@@ -496,17 +518,17 @@ export default function Home() {
       </section>
 
       {/* 14. Final CTA */}
-      <section className="py-24 bg-navy text-white text-center">
+      <section className="py-24 bg-white text-navy text-center">
         <FadeIn className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-4xl md:text-5xl font-serif mb-6">Ready to explore your investment options?</h2>
-          <p className="text-soft-grey/90 font-sans text-lg mb-10 leading-relaxed">
+          <h2 className="home-two-tone-heading text-4xl md:text-5xl font-serif mb-6"><span>Ready to explore</span> your investment options?</h2>
+          <p className="text-muted-blue font-sans text-lg mb-10 leading-relaxed">
             Start with a simple enquiry and take the next step with clear information and professional guidance.
           </p>
           <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-            <Link href="/contact" className="bg-white text-navy px-8 py-4 font-medium hover:bg-off-white transition-colors w-full sm:w-auto">
+            <Link href="/contact" className="bg-navy text-white px-7 py-3 font-medium hover:bg-ink transition-colors w-full sm:w-auto">
               Start Investing
             </Link>
-            <Link href="/compare" className="bg-transparent border border-white text-white px-8 py-4 font-medium hover:bg-white/10 transition-colors w-full sm:w-auto">Compare Investments</Link>
+            <Link href="/compare" className="bg-transparent border border-navy text-navy px-7 py-3 font-medium hover:bg-navy/5 transition-colors w-full sm:w-auto">Compare Investments</Link>
           </div>
         </FadeIn>
       </section>
