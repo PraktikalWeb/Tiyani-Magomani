@@ -421,6 +421,7 @@ export default function Home() {
 
         <section className="tm-home-section tm-home-about" id="about">
           <div className="tm-home-about-copy">
+            <p className="tm-home-eyebrow">A New Way to Invest</p>
             <h2>Built for Today&apos;s Investor, Not Yesterday&apos;s Rules.</h2>
             <div className="tm-home-copy-columns">
               <p>
@@ -447,6 +448,7 @@ export default function Home() {
         <section className="tm-home-section tm-home-products" id="products">
           <div className="tm-home-section-heading">
             <div>
+              <p className="tm-home-eyebrow">Choose How You Grow</p>
               <h2>Our Products</h2>
             </div>
             <p>Five ways to put your money to work. Pick the balance of growth, income, and access that fits you.</p>
@@ -471,6 +473,7 @@ export default function Home() {
 
           <div className="tm-home-calculator-prompt">
             <div>
+              <p className="tm-home-eyebrow">See Your Numbers</p>
               <h3>Estimate Your Return in Seconds.</h3>
               <p>Choose a product, set your amount and term, and get an instant estimate.</p>
             </div>
@@ -488,6 +491,7 @@ export default function Home() {
             <div aria-hidden="true" />
           </div>
           <div className="tm-home-services-content">
+            <p className="tm-home-eyebrow">More Than Products</p>
             <h2>Our Services</h2>
             <p className="tm-home-services-intro">A full financial partner, from managing your money to protecting it.</p>
             <div className="tm-home-service-list">
@@ -510,6 +514,7 @@ export default function Home() {
 
         <section className="tm-home-calculator-section" id="calculator">
           <div className="tm-home-calculator-heading">
+            <p className="tm-home-eyebrow">See Your Numbers</p>
             <h2>Estimate Your Return in Seconds.</h2>
             <p>Choose a product, set your amount and term, and get an instant estimate.</p>
           </div>
@@ -636,6 +641,7 @@ export default function Home() {
 
         <section className="tm-home-section tm-home-why">
           <div className="tm-home-why-heading">
+            <p className="tm-home-eyebrow">Why Clients Choose Us</p>
             <h2>Built Differently, On Purpose.</h2>
           </div>
           <div className="tm-home-reason-grid">
@@ -650,6 +656,7 @@ export default function Home() {
         </section>
 
         <section className="tm-home-final-cta">
+          <p className="tm-home-eyebrow">Your Future Doesn&apos;t Wait</p>
           <h2>Neither Should You.</h2>
           <p>See exactly what your money could grow into. Try the calculator, then let&apos;s build a plan around it.</p>
           <div className="tm-home-actions">
