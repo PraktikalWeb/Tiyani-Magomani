@@ -3,6 +3,7 @@ import { useState } from 'react';
 import { ChevronDown } from 'lucide-react';
 import Link from 'next/link';
 import { ReactNode } from 'react';
+import { usePathname } from 'next/navigation';
 
 function FooterSection({ title, children }: { title: string, children: ReactNode }) {
   const [isOpen, setIsOpen] = useState(false);
@@ -25,6 +26,12 @@ function FooterSection({ title, children }: { title: string, children: ReactNode
 }
 
 export default function Footer() {
+  const pathname = usePathname();
+
+  if (pathname === '/') {
+    return null;
+  }
+
   return (
     <footer className="relative overflow-hidden bg-navy text-white py-16">
       <div className="brand-circle-motif" aria-hidden="true"></div>

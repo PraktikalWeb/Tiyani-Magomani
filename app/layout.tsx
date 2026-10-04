@@ -6,6 +6,10 @@ import Footer from "@/components/Footer";
 export const metadata: Metadata = {
   title: "Tiyani Magomani",
   description: "Explore structured investment pathways built around growth, income and flexibility.",
+  icons: {
+    icon: [{ url: "/icon.svg?v=2", type: "image/svg+xml" }],
+    shortcut: "/icon.svg?v=2",
+  },
 };
 
 export default function RootLayout({

@@ -33,6 +33,10 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
+  if (pathname === '/') {
+    return null;
+  }
+
   const isActive = (pathname: string, linkPath: string) => {
     if (linkPath === '/') {
       return pathname === '/';
