@@ -1785,3 +1785,716 @@
     transition-duration: 0.01ms !important;
   }
 }
+
+/* Private Equity Growth page: homepage-aligned editorial treatment. */
+.tm-growth-page {
+  --tm-navy: #142238;
+  --tm-navy-deep: #0d1626;
+  --tm-navy-soft: #1e3054;
+  --tm-paper: #f4f6f8;
+  --tm-white: #ffffff;
+  --tm-gold: #b08d57;
+  --tm-gold-light: #c4a06a;
+  --tm-slate: #6b7280;
+  --tm-slate-light: #9fb0c8;
+  --tm-line: #e4e7ec;
+  --tm-growth-navy: #142238;
+  --tm-growth-deep: #0d1626;
+  --tm-growth-paper: #f4f6f8;
+  --tm-growth-gold: #b08d57;
+  --tm-growth-line: #e4e7ec;
+  --tm-growth-muted: #667085;
+  background: var(--tm-growth-paper);
+  color: #1a1d23;
+  overflow-x: clip;
+}
+
+.tm-growth-page h1,
+.tm-growth-page h2,
+.tm-growth-page h3 {
+  letter-spacing: -0.025em;
+}
+
+.tm-growth-hero {
+  position: relative;
+  height: clamp(420px, 55svh, 560px);
+  min-height: 420px;
+  overflow: hidden;
+  background: var(--tm-growth-deep);
+  color: #ffffff;
+}
+
+.tm-growth-hero-backdrop {
+  position: absolute;
+  inset: 0;
+}
+
+.tm-growth-hero-backdrop img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 42%;
+}
+
+.tm-growth-hero-overlay {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(90deg, rgba(13, 22, 38, 0.95) 0%, rgba(13, 22, 38, 0.8) 38%, rgba(13, 22, 38, 0.34) 67%, rgba(13, 22, 38, 0.18) 100%),
+    linear-gradient(0deg, rgba(13, 22, 38, 0.28), transparent 55%);
+}
+
+.tm-growth-hero-content {
+  position: relative;
+  z-index: 2;
+  width: min(84vw, 1320px);
+  height: 100%;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+}
+
+.tm-growth-hero-copy {
+  width: min(610px, 62%);
+  padding: 2.5rem 0;
+}
+
+.tm-growth-hero-copy h1 {
+  max-width: 640px;
+  margin-bottom: 1.15rem;
+  color: #ffffff;
+  font-size: clamp(2.4rem, 3.25vw, 3.8rem);
+  line-height: 1.02 !important;
+}
+
+.tm-growth-hero-copy > p {
+  max-width: 570px;
+  margin-bottom: 1.65rem;
+  color: #b8c4d5;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.72;
+}
+
+.tm-growth-hero-copy a {
+  min-width: 180px;
+  min-height: 46px;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid rgba(255, 255, 255, 0.38);
+  border-radius: 6px;
+  color: #ffffff;
+  background: transparent;
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.tm-growth-hero-copy a:first-child {
+  border-color: var(--tm-growth-gold);
+  background: var(--tm-growth-gold);
+  color: var(--tm-growth-deep);
+}
+
+.tm-growth-hero-copy a:hover,
+.tm-growth-hero-copy a:focus-visible {
+  background: rgba(255, 255, 255, 0.08);
+  opacity: 1;
+}
+
+.tm-growth-hero-copy a:first-child:hover,
+.tm-growth-hero-copy a:first-child:focus-visible {
+  background: #c4a06a;
+}
+
+.tm-growth-shell {
+  width: min(84vw, 1320px);
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tm-growth-section {
+  border: 0;
+}
+
+.tm-growth-section-heading {
+  max-width: 900px;
+}
+
+.tm-growth-section-heading h2,
+.tm-growth-overview h2,
+.tm-growth-features h2,
+.tm-product-calculator-heading h2,
+.tm-growth-final-cta h2 {
+  font-size: clamp(2.4rem, 3.25vw, 3.8rem);
+  line-height: 1.08 !important;
+}
+
+.tm-growth-section-heading h2 {
+  color: var(--tm-growth-navy);
+}
+
+.tm-growth-section-heading p {
+  color: var(--tm-growth-muted);
+}
+
+.tm-growth-figures-section {
+  border: 0;
+  background: #ffffff;
+}
+
+.tm-growth-figures .bg-soft-grey {
+  border: 0;
+  border-left: 3px solid var(--tm-growth-gold);
+  background: #ffffff;
+  box-shadow: 0 16px 40px rgba(13, 22, 38, 0.1);
+}
+
+.tm-growth-figures .text-xs {
+  color: var(--tm-growth-muted);
+}
+
+.tm-growth-figures .text-2xl {
+  color: var(--tm-growth-navy);
+  font-weight: 600;
+}
+
+.tm-growth-figures-section > div > .bg-soft-grey {
+  border: 0;
+  border-left: 3px solid var(--tm-growth-gold);
+  background: var(--tm-growth-paper);
+}
+
+.tm-growth-overview {
+  background: var(--tm-growth-paper);
+}
+
+.tm-growth-overview-content {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
+  align-items: start;
+  gap: clamp(3rem, 8vw, 8rem);
+}
+
+.tm-growth-overview-content h2,
+.tm-growth-overview-content p {
+  margin: 0;
+}
+
+.tm-growth-overview-content h2 {
+  color: var(--tm-growth-navy);
+}
+
+.tm-growth-overview-content p {
+  padding-left: clamp(1.5rem, 3vw, 3rem);
+  border-left: 3px solid var(--tm-growth-gold);
+  color: var(--tm-growth-muted);
+}
+
+.tm-growth-suit {
+  background: #ffffff;
+}
+
+.tm-growth-card {
+  min-height: 220px;
+  border: 0;
+  border-left: 3px solid var(--tm-growth-gold);
+  background: #ffffff;
+  box-shadow: 0 16px 38px rgba(13, 22, 38, 0.1);
+}
+
+.tm-growth-card h3 {
+  color: var(--tm-growth-navy);
+  font-size: 1.1rem;
+}
+
+.tm-growth-card p {
+  color: var(--tm-growth-muted);
+}
+
+.tm-growth-features {
+  background: var(--tm-growth-navy);
+  color: #ffffff;
+}
+
+.tm-growth-features h2,
+.tm-growth-features h3 {
+  color: #ffffff;
+}
+
+.tm-growth-feature {
+  border-color: rgba(255, 255, 255, 0.2);
+}
+
+.tm-growth-feature p {
+  color: #b8c4d5;
+}
+
+.tm-growth-considerations {
+  background: #ffffff;
+}
+
+.tm-growth-note {
+  border: 0;
+  border-left: 4px solid var(--tm-growth-gold);
+  background: var(--tm-growth-paper);
+  text-align: left;
+}
+
+.tm-growth-note h2,
+.tm-growth-note p {
+  max-width: 100%;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.tm-product-calculator {
+  border: 0;
+  background: var(--tm-growth-navy);
+}
+
+.tm-product-calculator > div {
+  width: min(84vw, 1320px);
+  max-width: none;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.tm-product-calculator-heading {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 0.7fr);
+  align-items: end;
+  gap: 3rem;
+  margin-bottom: 2.5rem;
+}
+
+.tm-product-calculator-heading h2 {
+  margin: 0;
+  color: #ffffff;
+}
+
+.tm-product-calculator-heading p {
+  max-width: 500px;
+  margin: 0 0 0.35rem;
+  color: #b8c4d5;
+  line-height: 1.7;
+}
+
+.tm-product-calculator-entry {
+  width: 100%;
+  border: 0;
+  background: #ffffff;
+}
+
+.tm-product-calculator-entry form {
+  max-width: none;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 210px;
+  grid-template-rows: auto auto;
+  column-gap: clamp(1.5rem, 3vw, 3rem);
+  row-gap: 1rem;
+  align-items: end;
+}
+
+.tm-product-calculator-entry form > * {
+  margin-top: 0 !important;
+  margin-bottom: 0 !important;
+}
+
+.tm-product-calculator-amount-field {
+  grid-column: 1;
+  grid-row: 1 / 3;
+}
+
+.tm-product-calculator-fixed-term {
+  grid-column: 2;
+  grid-row: 1;
+  align-self: end;
+}
+
+.tm-product-calculator-submit {
+  grid-column: 2;
+  grid-row: 2;
+  width: 100%;
+}
+
+.tm-product-calculator-validation {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.tm-product-calculator-entry input,
+.tm-product-calculator-entry select {
+  border-color: var(--tm-growth-line);
+  background: var(--tm-growth-paper);
+}
+
+.tm-product-calculator-entry button[type='submit'] {
+  min-width: 180px;
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  background: var(--tm-growth-gold);
+  color: var(--tm-growth-deep);
+  font-size: 0.875rem;
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: background 180ms ease, color 180ms ease, transform 180ms ease;
+}
+
+.tm-product-calculator-entry button[type='submit']:hover,
+.tm-product-calculator-entry button[type='submit']:focus-visible {
+  background: #c4a06a;
+  transform: translateY(-1px);
+}
+
+.tm-product-calculator-results {
+  background: var(--tm-growth-deep);
+}
+
+.tm-product-calculator-results > span:first-child {
+  color: #52c59a;
+  font-weight: 600;
+}
+
+.tm-product-calculator-result-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 0.88fr) minmax(0, 1.12fr);
+  align-items: start;
+  gap: clamp(2rem, 4vw, 4.5rem);
+  margin-top: 2.4rem;
+}
+
+.tm-product-calculator-breakdown {
+  min-width: 0;
+}
+
+.tm-product-calculator-breakdown .tm-product-calculator-rows {
+  grid-template-columns: 1fr;
+}
+
+.tm-growth-result-chart {
+  margin-top: 0;
+  padding: 1.4rem 1.2rem 0.6rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+}
+
+.tm-growth-chart-heading {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+
+.tm-growth-chart-heading span {
+  color: #ffffff;
+  font-size: 0.82rem;
+  font-weight: 600;
+}
+
+.tm-growth-chart-heading strong {
+  color: #9fb0c8;
+  font-size: 0.72rem;
+  font-weight: 500;
+}
+
+.tm-growth-result-chart svg {
+  display: block;
+  width: 100%;
+  height: auto;
+  overflow: visible;
+}
+
+.tm-growth-chart-grid line {
+  stroke: rgba(159, 176, 200, 0.16);
+  stroke-width: 1;
+  vector-effect: non-scaling-stroke;
+}
+
+.tm-growth-chart-labels text {
+  fill: #8da4c4;
+  font-size: 9px;
+}
+
+.tm-growth-chart-labels .tm-growth-chart-axis-title {
+  fill: #b7c2d3;
+  font-size: 10px;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.tm-growth-chart-line {
+  fill: none;
+  stroke: #1d9a6c;
+  stroke-width: 2.25;
+  stroke-linecap: square;
+  stroke-linejoin: miter;
+  vector-effect: non-scaling-stroke;
+}
+
+.tm-growth-chart-point {
+  outline: none;
+}
+
+.tm-growth-chart-point > circle {
+  fill: transparent;
+  cursor: pointer;
+}
+
+.tm-growth-chart-tooltip rect {
+  fill: #ffffff;
+}
+
+.tm-growth-chart-tooltip text {
+  fill: var(--tm-growth-deep);
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.tm-product-calculator-rows {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: 2.5rem;
+}
+
+.tm-product-calculator-summary {
+  border: 0;
+  border-left: 3px solid var(--tm-growth-gold);
+  background: rgba(255, 255, 255, 0.07);
+}
+
+.tm-product-calculator > div > p {
+  color: #b8c4d5;
+}
+
+.tm-product-calculator > div > p strong {
+  color: #ffffff;
+}
+
+.tm-product-calculator form[action],
+.tm-product-calculator form.mt-8 {
+  border: 0;
+  border-left: 3px solid var(--tm-growth-gold);
+  box-shadow: 0 18px 45px rgba(0, 0, 0, 0.16);
+}
+
+.tm-growth-process {
+  background: #ffffff;
+}
+
+.tm-growth-process .w-12.h-12 {
+  background: var(--tm-growth-navy);
+  box-shadow: 0 0 0 12px #ffffff;
+}
+
+.tm-growth-faq {
+  background: var(--tm-growth-paper);
+}
+
+.tm-growth-faq-item {
+  border: 0;
+  border-left: 3px solid transparent;
+  background: #ffffff;
+  box-shadow: 0 10px 28px rgba(13, 22, 38, 0.07);
+}
+
+.tm-growth-faq-item:has(button + div) {
+  border-left-color: var(--tm-growth-gold);
+}
+
+.tm-growth-related {
+  background: #ffffff;
+}
+
+.tm-growth-related-card {
+  border: 0;
+  border-left: 3px solid var(--tm-growth-gold);
+  box-shadow: 0 16px 38px rgba(13, 22, 38, 0.1);
+}
+
+.tm-growth-related-card a {
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.tm-growth-final-cta {
+  background: var(--tm-growth-gold);
+  color: var(--tm-growth-deep);
+}
+
+.tm-growth-final-cta h2,
+.tm-growth-final-cta p {
+  color: var(--tm-growth-deep);
+}
+
+.tm-growth-final-cta a:first-child {
+  background: var(--tm-growth-deep);
+  color: #ffffff;
+}
+
+.tm-growth-final-cta a {
+  min-height: 46px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.65rem;
+  padding: 0.8rem 1.4rem;
+  border: 1px solid transparent;
+  border-radius: 6px;
+  font-size: 0.875rem;
+  font-weight: 600;
+  text-align: center;
+  letter-spacing: 0;
+  text-transform: none;
+  transition: background 180ms ease, color 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.tm-growth-final-cta a:hover,
+.tm-growth-final-cta a:focus-visible {
+  transform: translateY(-1px);
+}
+
+.tm-growth-final-cta a:last-child {
+  border-color: rgba(13, 22, 38, 0.45);
+  color: var(--tm-growth-deep);
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+@media (max-width: 1023px) {
+  .tm-growth-hero {
+    height: 500px;
+    min-height: 500px;
+  }
+
+  .tm-growth-hero-copy {
+    width: min(680px, 78%);
+    padding: 2.5rem 0;
+  }
+
+  .tm-growth-overview-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .tm-growth-overview-content p {
+    padding-left: 1.5rem;
+  }
+
+  .tm-product-calculator-heading {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .tm-product-calculator-result-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 639px) {
+  .tm-growth-shell,
+  .tm-product-calculator > div {
+    width: 88vw;
+  }
+
+  .tm-growth-hero-copy {
+    width: 100%;
+    padding: 2.5rem 0;
+  }
+
+  .tm-growth-hero {
+    height: 460px;
+    min-height: 460px;
+  }
+
+  .tm-growth-hero-content {
+    width: 88vw;
+  }
+
+  .tm-growth-hero-overlay {
+    background: rgba(13, 22, 38, 0.76);
+  }
+
+  .tm-growth-hero-copy h1 {
+    font-size: clamp(2.35rem, 10vw, 3.2rem);
+  }
+
+  .tm-growth-hero-copy .flex {
+    align-items: stretch;
+    gap: 0.75rem;
+  }
+
+  .tm-growth-hero-copy a {
+    width: 100%;
+  }
+
+  .tm-growth-section-heading h2,
+  .tm-growth-overview h2,
+  .tm-growth-features h2,
+  .tm-product-calculator-heading h2,
+  .tm-growth-final-cta h2 {
+    font-size: clamp(2.35rem, 10vw, 3.2rem);
+  }
+
+  .tm-product-calculator-results {
+    padding: 1.35rem;
+  }
+
+  .tm-product-calculator-entry form {
+    display: block;
+  }
+
+  .tm-product-calculator-fixed-term {
+    margin-top: 1rem !important;
+  }
+
+  .tm-product-calculator-submit {
+    width: 100%;
+    margin-top: 1rem !important;
+  }
+
+  .tm-product-calculator-validation {
+    margin-top: 0.75rem !important;
+  }
+
+  .tm-growth-result-chart {
+    margin-left: -0.5rem;
+    margin-right: -0.5rem;
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .tm-growth-chart-heading {
+    padding: 0 0.5rem;
+  }
+
+  .tm-product-calculator-rows {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-product-calculator-rows > div {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 0.35rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .tm-growth-page *,
+  .tm-growth-page *::before,
+  .tm-growth-page *::after {
+    scroll-behavior: auto !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}

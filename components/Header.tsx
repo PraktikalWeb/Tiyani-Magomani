@@ -33,7 +33,7 @@ export default function Header() {
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, []);
 
-  if (pathname === '/') {
+  if (pathname === '/' || pathname === '/investments/private-equity-growth') {
     return null;
   }
 

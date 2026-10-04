@@ -28,7 +28,7 @@ function FooterSection({ title, children }: { title: string, children: ReactNode
 export default function Footer() {
   const pathname = usePathname();
 
-  if (pathname === '/') {
+  if (pathname === '/' || pathname === '/investments/private-equity-growth') {
     return null;
   }
 

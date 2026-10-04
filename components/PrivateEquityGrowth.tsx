@@ -5,13 +5,14 @@ import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import CalculatorEngine from './CalculatorEngine';
 import ProductFiguresGrid from './ProductFiguresGrid';
+import { HomeStyleFooter, HomeStyleHeader } from './HomeStyleChrome';
 import { useState } from 'react';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
   const { faq } = props;
   const [isOpen, setIsOpen] = useState(false);
   return (
-    <div className="bg-soft-grey border border-border-grey">
+    <div className="tm-growth-faq-item bg-soft-grey border border-border-grey">
       <button 
         onClick={() => setIsOpen(!isOpen)}
         className="w-full text-left cursor-pointer p-6 font-sans font-medium text-ink flex justify-between items-center focus:outline-none"
@@ -30,53 +31,50 @@ function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }
 
 export default function PrivateEquityGrowth() {
   return (
-    <div className="pt-20">
+    <div className="tm-growth-page">
+      <HomeStyleHeader />
+      <main>
       {/* Hero Section */}
-      <section className="bg-off-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Investment Option</span>
-              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Private Equity: Growth
-              </h1>
-              <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                Designed for clients seeking long-term capital growth through private-equity-style exposure.
-              </p>
-              <div className="flex flex-wrap items-center gap-6">
-                <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
-                  Start an Enquiry
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="#calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">Calculate</Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2} className="relative h-full flex justify-end">
-              <div className="w-full lg:w-[90%] aspect-video lg:aspect-[4/3.5] bg-border-grey relative overflow-hidden lg:h-[75%] lg:my-auto">
-                <img 
-                  src="/images/private-equity-growth-hero.png" 
-                  alt="Two entrepreneurs discussing long-term business plans" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-navy/10"></div>
-              </div>
-            </FadeIn>
-          </div>
+      <section className="tm-growth-hero bg-off-white">
+        <div className="tm-growth-hero-backdrop">
+          <img
+            src="/images/private-equity-growth-hero.png"
+            alt="Two entrepreneurs discussing long-term business plans"
+          />
+          <div className="tm-growth-hero-overlay" aria-hidden="true" />
+        </div>
+        <div className="tm-growth-hero-content">
+          <FadeIn className="tm-growth-hero-copy">
+            <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
+              Private Equity: Growth
+            </h1>
+            <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
+              Designed for clients seeking long-term capital growth through private-equity-style exposure.
+            </p>
+            <div className="flex flex-wrap items-center gap-6">
+              <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
+                Start an Enquiry
+                <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link href="#calculator" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">Calculate</Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
             {/* Key Product Figures */}
-      <section className="bg-white border-y border-border-grey py-16 lg:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mb-12">
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Indicative Product Figures</span>
+      <section className="tm-growth-section tm-growth-figures-section bg-white border-y border-border-grey py-16 lg:py-24">
+        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="tm-growth-section-heading mb-12">
             <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Review the core figures for this option before submitting an enquiry.</h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal max-w-3xl">
               Final product terms, risks and eligibility requirements are confirmed through formal documentation.
             </p>
           </FadeIn>
           
-          <ProductFiguresGrid figures={investmentProducts["private-equity-growth"].figures} />
+          <div className="tm-growth-figures">
+            <ProductFiguresGrid figures={investmentProducts["private-equity-growth"].figures} />
+          </div>
           
           <FadeIn className="bg-soft-grey border border-border-grey p-6 md:p-8">
             <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">
@@ -87,10 +85,9 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Overview Section */}
-      <section className="py-20 lg:py-32 bg-off-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="max-w-3xl">
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Overview</span>
+      <section className="tm-growth-section tm-growth-overview py-20 lg:py-32 bg-off-white">
+        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="tm-growth-overview-content max-w-3xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ink mb-8 leading-tight">
               Built for clients focused on future value creation.
             </h2>
@@ -102,9 +99,9 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Who This Option May Suit */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mb-16">
+      <section className="tm-growth-section tm-growth-suit py-20 lg:py-32 bg-white">
+        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="tm-growth-section-heading mb-16">
             <h2 className="text-3xl md:text-4xl font-serif text-ink">Who this option may suit</h2>
           </FadeIn>
           
@@ -115,7 +112,7 @@ export default function PrivateEquityGrowth() {
               { title: "Structured investment seekers", desc: "For clients who want to understand a defined investment category before enquiring." },
               { title: "Diversification-minded clients", desc: "For clients exploring investment routes beyond basic savings or short-term products." }
             ].map((card, i) => (
-              <FadeInStaggerItem key={i} className="bg-soft-grey border border-border-grey p-8 flex flex-col justify-center min-h-[240px]">
+              <FadeInStaggerItem key={i} className="tm-growth-card bg-soft-grey border border-border-grey p-8 flex flex-col justify-center min-h-[240px]">
                 <h3 className="text-lg font-serif text-ink mb-4">{card.title}</h3>
                 <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">{card.desc}</p>
               </FadeInStaggerItem>
@@ -125,8 +122,8 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Key Features Section */}
-      <section className="py-20 lg:py-32 bg-off-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section className="tm-growth-section tm-growth-features py-20 lg:py-32 bg-off-white">
+        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
             <FadeIn className="lg:col-span-1">
               <h2 className="text-3xl md:text-4xl font-serif text-ink">Key features</h2>
@@ -141,7 +138,7 @@ export default function PrivateEquityGrowth() {
                   { title: "Calculator estimate", desc: "Clients can estimate a basic estimate before submitting an enquiry." },
                   { title: "Formal documentation required", desc: "Final product details, risks, terms and eligibility requirements are subject to formal documentation." }
                 ].map((feature, i) => (
-                  <FadeInStaggerItem key={i} className="border-t border-border-grey pt-6">
+                  <FadeInStaggerItem key={i} className="tm-growth-feature border-t border-border-grey pt-6">
                     <h3 className="text-lg font-serif text-ink mb-3">{feature.title}</h3>
                     <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">{feature.desc}</p>
                   </FadeInStaggerItem>
@@ -153,9 +150,9 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Important Considerations Section */}
-      <section className="py-20 bg-white">
+      <section className="tm-growth-section tm-growth-considerations py-20 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
+          <FadeIn className="tm-growth-note bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
             <h2 className="text-xl font-serif text-ink mb-4">Important considerations</h2>
             <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
               Private Equity: Growth is shown for general information and enquiry purposes only. Investment values may rise or fall, and estimates shown on the website do not represent guaranteed outcomes. Clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
@@ -165,12 +162,12 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Product Calculator Section */}
-      <CalculatorEngine lockedProduct={true} productId="private-equity-growth" />
+      <CalculatorEngine lockedProduct={true} productId="private-equity-growth" showGrowthChart presentation="homepage" />
 
       {/* Enquiry Process Section */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="text-center max-w-3xl mx-auto mb-16">
+      <section className="tm-growth-section tm-growth-process py-20 lg:py-32 bg-white">
+        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="tm-growth-section-heading text-center max-w-3xl mx-auto mb-16">
             <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">How to enquire about this option</h2>
           </FadeIn>
           
@@ -201,9 +198,9 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Product FAQ Section */}
-      <section className="py-20 lg:py-32 bg-off-white">
+      <section className="tm-growth-section tm-growth-faq py-20 lg:py-32 bg-off-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mb-12 text-center">
+          <FadeIn className="tm-growth-section-heading mb-12 text-center">
             <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about Private Equity: Growth</h2>
           </FadeIn>
           
@@ -233,9 +230,9 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Related Options Section */}
-      <section className="py-20 lg:py-32 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mb-12 lg:mb-16">
+      <section className="tm-growth-section tm-growth-related py-20 lg:py-32 bg-white">
+        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <FadeIn className="tm-growth-section-heading mb-12 lg:mb-16">
             <h2 className="text-3xl md:text-4xl font-serif text-ink text-center lg:text-left">You may also want to compare</h2>
           </FadeIn>
           
@@ -257,7 +254,7 @@ export default function PrivateEquityGrowth() {
                 link: "/investments/fixed-return-growth"
               }
             ].map((card, i) => (
-              <FadeInStaggerItem key={i} className="border border-border-grey p-8 flex flex-col hover:border-navy/30 transition-colors group">
+              <FadeInStaggerItem key={i} className="tm-growth-related-card border border-border-grey p-8 flex flex-col hover:border-navy/30 transition-colors group">
                 <h3 className="text-xl font-serif text-ink mb-4">{card.title}</h3>
                 <p className="text-sm font-sans text-muted-blue leading-relaxed mb-8 flex-grow">{card.desc}</p>
                 <Link href={card.link} className="inline-flex items-center text-sm font-bold text-navy uppercase tracking-wider group-hover:opacity-70 transition-opacity">
@@ -271,7 +268,7 @@ export default function PrivateEquityGrowth() {
       </section>
 
       {/* Final CTA Section */}
-      <section className="py-20 bg-navy">
+      <section className="tm-growth-final-cta py-20 bg-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
             <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to explore Private Equity: Growth?</h2>
@@ -288,6 +285,8 @@ export default function PrivateEquityGrowth() {
           </FadeIn>
         </div>
       </section>
+      </main>
+      <HomeStyleFooter />
     </div>
   );
 }
