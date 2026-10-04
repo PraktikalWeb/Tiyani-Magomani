@@ -230,6 +230,9 @@
 
 /* Homepage redesign: scoped to `tm-home` so existing routes keep their approved styling. */
 .tm-home {
+  --font-home-display: "Poppins Local";
+  --font-home-body: "Poppins Local";
+  --font-home-mono: "Poppins Local";
   --tm-navy: #142238;
   --tm-navy-deep: #0d1626;
   --tm-navy-soft: #1e3054;
