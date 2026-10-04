@@ -262,7 +262,7 @@
 .tm-home h3,
 .tm-home h4 {
   font-family: var(--font-home-display), sans-serif;
-  font-weight: 700;
+  font-weight: 600;
   letter-spacing: -0.025em;
 }
 
