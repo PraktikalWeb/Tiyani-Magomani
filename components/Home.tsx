@@ -17,6 +17,7 @@ import {
   formatCurrency,
   roundTo2,
 } from '../src/lib/calculators';
+import { HomeFooterLinks } from './HomeStyleChrome';
 
 const heroSlides = [
   {
@@ -731,22 +732,7 @@ export default function Home() {
             <a href="mailto:office@tiyanimagomani.com">office@tiyanimagomani.com</a>
             <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
           </div>
-          <div className="tm-home-footer-links">
-            <div>
-              <span>Explore</span>
-              <Link href="/">Home</Link>
-              <a href="#products">Products</a>
-              <a href="#services">Services</a>
-              <Link href="/about">About</Link>
-            </div>
-            <div>
-              <span>Information</span>
-              <Link href="/legal">Legal Centre</Link>
-              <Link href="/privacy">Privacy Policy</Link>
-              <Link href="/risk-disclosure">Risk Disclosure</Link>
-              <Link href="/contact">Contact</Link>
-            </div>
-          </div>
+          <HomeFooterLinks useHomeAnchors />
         </div>
         <p className="tm-home-footer-note">
           Tiyani Magomani is in the process of registering as a Financial Services Provider (FSP) with the Financial Sector Conduct Authority (FSCA). Return estimates shown on this site are illustrative only and not guaranteed.

@@ -171,6 +171,61 @@ export function HomeStyleHeader() {
   );
 }
 
+export function HomeFooterLinks({ useHomeAnchors = false }: { useHomeAnchors?: boolean }) {
+  const [openSections, setOpenSections] = useState({ explore: false, information: false });
+
+  const toggleSection = (section: 'explore' | 'information') => {
+    setOpenSections((current) => ({ ...current, [section]: !current[section] }));
+  };
+
+  return (
+    <div className="tm-home-footer-links">
+      <div className="tm-home-footer-group">
+        <button
+          type="button"
+          className="tm-home-footer-link-toggle"
+          aria-expanded={openSections.explore}
+          aria-controls="tm-footer-explore-links"
+          onClick={() => toggleSection('explore')}
+        >
+          <span>Explore</span>
+          <ChevronDown aria-hidden="true" className={openSections.explore ? 'is-open' : ''} size={18} />
+        </button>
+        <div
+          id="tm-footer-explore-links"
+          className={`tm-home-footer-link-list${openSections.explore ? ' is-open' : ''}`}
+        >
+          <Link href="/">Home</Link>
+          <Link href={useHomeAnchors ? '#products' : '/#products'}>Products</Link>
+          <Link href={useHomeAnchors ? '#services' : '/#services'}>Services</Link>
+          <Link href="/about">About</Link>
+        </div>
+      </div>
+      <div className="tm-home-footer-group">
+        <button
+          type="button"
+          className="tm-home-footer-link-toggle"
+          aria-expanded={openSections.information}
+          aria-controls="tm-footer-information-links"
+          onClick={() => toggleSection('information')}
+        >
+          <span>Information</span>
+          <ChevronDown aria-hidden="true" className={openSections.information ? 'is-open' : ''} size={18} />
+        </button>
+        <div
+          id="tm-footer-information-links"
+          className={`tm-home-footer-link-list${openSections.information ? ' is-open' : ''}`}
+        >
+          <Link href="/legal">Legal Centre</Link>
+          <Link href="/privacy">Privacy Policy</Link>
+          <Link href="/risk-disclosure">Risk Disclosure</Link>
+          <Link href="/contact">Contact</Link>
+        </div>
+      </div>
+    </div>
+  );
+}
+
 export function HomeStyleFooter() {
   return (
     <footer className="tm-home-footer">
@@ -183,22 +238,7 @@ export function HomeStyleFooter() {
           <a href="mailto:office@tiyanimagomani.com">office@tiyanimagomani.com</a>
           <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
         </div>
-        <div className="tm-home-footer-links">
-          <div>
-            <span>Explore</span>
-            <Link href="/">Home</Link>
-            <Link href="/#products">Products</Link>
-            <Link href="/#services">Services</Link>
-            <Link href="/about">About</Link>
-          </div>
-          <div>
-            <span>Information</span>
-            <Link href="/legal">Legal Centre</Link>
-            <Link href="/privacy">Privacy Policy</Link>
-            <Link href="/risk-disclosure">Risk Disclosure</Link>
-            <Link href="/contact">Contact</Link>
-          </div>
-        </div>
+        <HomeFooterLinks />
       </div>
       <p className="tm-home-footer-note">
         Tiyani Magomani is in the process of registering as a Financial Services Provider (FSP) with the Financial Sector Conduct Authority (FSCA). Return estimates shown on this site are illustrative only and not guaranteed.
