@@ -35,6 +35,33 @@ const fixedTerms: Record<ProductId, string> = {
   'offshore-global': '5 years',
 };
 
+const calculatorPresentationCopy: Record<ProductId, { title: string; description: string }> = {
+  'private-equity-growth': {
+    title: 'Estimate your potential growth.',
+    description: 'Enter an investment amount to view the five year projection and yearly breakdown.',
+  },
+  'private-equity-income': {
+    title: 'Estimate your potential income.',
+    description: 'Enter an investment amount to view the income estimate and result breakdown.',
+  },
+  'private-equity-flexible-access': {
+    title: 'Estimate this flexible access option.',
+    description: 'Enter an investment amount and choose a calculation mode to view the estimate.',
+  },
+  'fixed-return-growth': {
+    title: 'Estimate your fixed return growth.',
+    description: 'Enter an investment amount and select a term to view the result breakdown.',
+  },
+  'fixed-return-income': {
+    title: 'Estimate your fixed return income.',
+    description: 'Enter an investment amount and select a term to view the income estimate.',
+  },
+  'offshore-global': {
+    title: 'Estimate your offshore projection.',
+    description: 'Enter an investment amount to view the indicative result breakdown.',
+  },
+};
+
 const privateEquityDisclaimer = 'Expected yields are projections based on prevailing market conditions and are not guaranteed. Historical performance offers no assurance of future outcomes, and investor capital remains subject to risk, including the potential loss of principal.';
 const fixedReturnDisclaimer = 'Capital protection applies to the original investment amount at maturity, subject to the terms of the product. Expected yields are projections based on prevailing market conditions and are not guaranteed. Historical performance offers no assurance of future outcomes.';
 const offshoreDisclaimer = 'Calculator results are estimates based on the information entered and the selected product assumptions. They are shown for general information and enquiry purposes only and do not constitute financial advice or a guaranteed return. Final figures, risks, fees, tax treatment, eligibility requirements and terms are subject to formal product documentation. Nett figures use an assumed 20% tax deduction and are shown for estimate purposes only. Final tax treatment depends on formal product documentation and the client’s tax position.';
@@ -300,8 +327,8 @@ export default function CalculatorEngine({ productId = 'private-equity-growth', 
       <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
         {presentation === 'homepage' && (
           <div className="tm-product-calculator-heading">
-            <h2>Estimate your potential growth.</h2>
-            <p>Enter an investment amount to view the five year projection and yearly breakdown.</p>
+            <h2>{calculatorPresentationCopy[activeProduct].title}</h2>
+            <p>{calculatorPresentationCopy[activeProduct].description}</p>
           </div>
         )}
         <FadeIn className="tm-product-calculator-entry border border-border-grey bg-white p-6 md:p-10 lg:p-12">
@@ -315,10 +342,10 @@ export default function CalculatorEngine({ productId = 'private-equity-growth', 
               <input type="number" min="0" inputMode="decimal" value={amount} onChange={(event) => setAmount(event.target.value)} placeholder="e.g. 500000" className="mt-3 w-full border border-border-grey p-4 text-base normal-case tracking-normal text-ink placeholder:text-muted-blue/50 focus:outline-none focus:border-navy" />
             </label>
             {validationError && <p className="tm-product-calculator-validation text-sm font-sans text-red-600">{validationError}</p>}
-            {canSelectFlexMode && <div><span className="block text-xs font-sans font-semibold uppercase tracking-widest text-muted-blue mb-3">Select Calculation Mode</span><div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {canSelectFlexMode && <div className="tm-product-calculator-mode-selector"><span className="block text-xs font-sans font-semibold uppercase tracking-widest text-muted-blue mb-3">Select Calculation Mode</span><div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {([['growth', 'Growth on Capital'], ['dividend', 'Monthly Dividend on Capital']] as const).map(([value, label]) => <label key={value} className={`flex cursor-pointer items-center gap-3 border p-4 text-sm font-sans font-medium ${flexMode === value ? 'border-navy bg-navy/5 text-navy' : 'border-border-grey text-muted-blue'}`}><input type="radio" name={`flex-mode-${activeProduct}`} checked={flexMode === value} onChange={() => setFlexMode(value)} className="accent-navy" />{label}</label>)}
             </div></div>}
-            {canSelectTerm ? <div><span className="block text-xs font-sans font-semibold uppercase tracking-widest text-muted-blue mb-3">Select Term</span><div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+            {canSelectTerm ? <div className="tm-product-calculator-term-selector"><span className="block text-xs font-sans font-semibold uppercase tracking-widest text-muted-blue mb-3">Select Term</span><div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
               {(['24', '60'] as const).map((value) => <label key={value} className={`flex cursor-pointer items-center gap-3 border p-4 text-sm font-sans font-medium ${term === value ? 'border-navy bg-navy/5 text-navy' : 'border-border-grey text-muted-blue'}`}><input type="radio" name={`term-${activeProduct}`} checked={term === value} onChange={() => setTerm(value)} className="accent-navy" />{value === '24' ? '2 Year Term' : '5 Year Term'}</label>)}
             </div></div> : <p className="tm-product-calculator-fixed-term text-sm font-sans text-muted-blue">Term: {fixedTerms[activeProduct]}</p>}
             <button type="submit" className="tm-product-calculator-submit bg-navy px-8 py-4 text-[13px] font-sans font-bold uppercase tracking-wider text-white cursor-pointer">Calculate</button>

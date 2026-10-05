@@ -1,45 +1,20 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
+import LegalHero from './LegalHero';
 
 export default function Terms() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-off-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Terms and Conditions</span>
-              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Terms for using this website.
-              </h1>
-              <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                These Terms and Conditions explain the general rules for using the Tiyani Magomani website, including investment information, calculator estimates and enquiry pathways.
-              </p>
-              <div className="flex flex-wrap items-center gap-6">
-                <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">
-                  Contact Us
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="/privacy" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
-                  View Privacy Policy
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2} className="relative h-full flex justify-end">
-              <div className="w-full lg:w-[90%] aspect-video lg:aspect-[4/3.5] bg-border-grey relative overflow-hidden lg:h-[75%] lg:my-auto">
-                <img 
-                  src="/images/about-advisory-team.png" 
-                  alt="Professional finance documents and advisory" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-navy/10"></div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+    <div className="pt-20 tm-legal-page tm-site-page">
+      <LegalHero
+        eyebrow="Terms and Conditions"
+        title="Terms for using this website."
+        description="Review the rules that apply when using our information, tools and enquiry services."
+        imageSrc="/images/about-advisory-team.png"
+        imageAlt="A professional team reviewing website terms"
+        primaryLink={{ href: '/contact', label: 'Contact Us' }}
+        secondaryLink={{ href: '/privacy', label: 'View Privacy Policy' }}
+      />
 
       {/* Terms Summary Strip */}
       <section className="bg-white border-b border-border-grey">

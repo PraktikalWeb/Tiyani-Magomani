@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 
@@ -17,6 +17,40 @@ export function HomeStyleHeader() {
   const [investmentMenuOpen, setInvestmentMenuOpen] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [mobileInvestmentsOpen, setMobileInvestmentsOpen] = useState(false);
+  const [headerHidden, setHeaderHidden] = useState(false);
+  const previousScrollPosition = useRef(0);
+
+  useEffect(() => {
+    previousScrollPosition.current = window.scrollY;
+    let animationFrame: number | null = null;
+
+    const updateHeaderVisibility = () => {
+      const currentScrollPosition = window.scrollY;
+      const scrollDifference = currentScrollPosition - previousScrollPosition.current;
+
+      if (currentScrollPosition <= 24 || investmentMenuOpen || mobileMenuOpen) {
+        setHeaderHidden(false);
+      } else if (Math.abs(scrollDifference) >= 6) {
+        setHeaderHidden(scrollDifference > 0);
+      }
+
+      previousScrollPosition.current = currentScrollPosition;
+      animationFrame = null;
+    };
+
+    const handleScroll = () => {
+      if (animationFrame === null) {
+        animationFrame = window.requestAnimationFrame(updateHeaderVisibility);
+      }
+    };
+
+    window.addEventListener('scroll', handleScroll, { passive: true });
+
+    return () => {
+      window.removeEventListener('scroll', handleScroll);
+      if (animationFrame !== null) window.cancelAnimationFrame(animationFrame);
+    };
+  }, [investmentMenuOpen, mobileMenuOpen]);
 
   const closeNavigation = () => {
     setInvestmentMenuOpen(false);
@@ -25,13 +59,14 @@ export function HomeStyleHeader() {
   };
 
   return (
-    <header className="tm-home-header">
+    <header className={`tm-home-header${headerHidden ? ' is-hidden' : ''}`}>
       <div className="tm-home-nav">
         <Link href="/" className="tm-home-logo" aria-label="Tiyani Magomani home" onClick={closeNavigation}>
           <img src="/tiyani-logo.png" alt="Tiyani Magomani" />
         </Link>
 
         <nav className="tm-home-nav-links" aria-label="Primary navigation">
+          <Link href="/" className="tm-home-nav-link" onClick={closeNavigation}>Home</Link>
           <div
             className="tm-home-investment-menu"
             onMouseEnter={() => setInvestmentMenuOpen(true)}
@@ -42,7 +77,7 @@ export function HomeStyleHeader() {
               className="tm-home-nav-link"
               aria-expanded={investmentMenuOpen}
               aria-haspopup="true"
-              onClick={() => setInvestmentMenuOpen((open) => !open)}
+              onClick={() => setInvestmentMenuOpen(true)}
             >
               Investments
               <ChevronDown aria-hidden="true" size={15} />
@@ -50,35 +85,50 @@ export function HomeStyleHeader() {
 
             {investmentMenuOpen && (
               <div className="tm-home-dropdown">
-                <div className="tm-home-dropdown-heading">
-                  <span>Investment options</span>
-                  <Link href="/investments" onClick={closeNavigation}>
-                    View all
-                    <ArrowRight aria-hidden="true" size={14} />
-                  </Link>
-                </div>
-                <div className="tm-home-dropdown-links">
-                  {investmentLinks.map((item, index) => (
-                    <Link href={item.href} key={item.href} onClick={closeNavigation}>
-                      <span>{index + 1}</span>
-                      {item.label}
+                <div className="tm-home-dropdown-inner">
+                  <div className="tm-home-dropdown-products">
+                    <div className="tm-home-dropdown-heading">
+                      <div>
+                        <span>Investment options</span>
+                        <p>Explore the available growth, income, flexible access and offshore routes.</p>
+                      </div>
+                      <Link href="/investments" onClick={closeNavigation}>
+                        View all options
+                        <ArrowRight aria-hidden="true" size={14} />
+                      </Link>
+                    </div>
+                    <div className="tm-home-dropdown-links">
+                      {investmentLinks.map((item, index) => (
+                        <Link href={item.href} key={item.href} onClick={closeNavigation}>
+                          <span>{index + 1}</span>
+                          {item.label}
+                          <ArrowRight aria-hidden="true" size={14} />
+                        </Link>
+                      ))}
+                    </div>
+                  </div>
+                  <div className="tm-home-dropdown-feature">
+                    <div>
+                      <span>Useful tool</span>
+                      <h3>Compare before you enquire.</h3>
+                      <p>Review estimates across the available investment categories before taking the next step.</p>
+                    </div>
+                    <Link href="/compare" className="tm-home-dropdown-tool" onClick={closeNavigation}>
+                      Compare Investments
+                      <ArrowRight aria-hidden="true" size={15} />
                     </Link>
-                  ))}
+                  </div>
                 </div>
-                <Link href="/compare" className="tm-home-dropdown-tool" onClick={closeNavigation}>
-                  Compare investment estimates
-                  <ArrowRight aria-hidden="true" size={15} />
-                </Link>
               </div>
             )}
           </div>
 
           <Link href="/digital-investing" className="tm-home-nav-link" onClick={closeNavigation}>Digital Investing</Link>
           <Link href="/about" className="tm-home-nav-link" onClick={closeNavigation}>About</Link>
-          <a href="#calculator" className="tm-home-nav-link" onClick={closeNavigation}>Calculator</a>
+          <Link href="/contact" className="tm-home-nav-link" onClick={closeNavigation}>Contact Us</Link>
         </nav>
 
-        <Link href="/contact" className="tm-home-header-cta" onClick={closeNavigation}>Contact Us</Link>
+        <Link href="/contact" className="tm-home-header-cta" onClick={closeNavigation}>Start Investing</Link>
 
         <button
           type="button"
@@ -93,6 +143,7 @@ export function HomeStyleHeader() {
 
       {mobileMenuOpen && (
         <div className="tm-home-mobile-nav">
+          <Link href="/" onClick={closeNavigation}>Home</Link>
           <button
             type="button"
             className="tm-home-mobile-investments"
@@ -112,8 +163,8 @@ export function HomeStyleHeader() {
           )}
           <Link href="/digital-investing" onClick={closeNavigation}>Digital Investing</Link>
           <Link href="/about" onClick={closeNavigation}>About</Link>
-          <a href="#calculator" onClick={closeNavigation}>Calculator</a>
-          <Link href="/contact" className="tm-home-mobile-cta" onClick={closeNavigation}>Contact Us</Link>
+          <Link href="/contact" onClick={closeNavigation}>Contact Us</Link>
+          <Link href="/contact" className="tm-home-mobile-cta" onClick={closeNavigation}>Start Investing</Link>
         </div>
       )}
     </header>
@@ -135,9 +186,9 @@ export function HomeStyleFooter() {
         <div className="tm-home-footer-links">
           <div>
             <span>Explore</span>
+            <Link href="/">Home</Link>
             <Link href="/#products">Products</Link>
             <Link href="/#services">Services</Link>
-            <a href="#calculator">Calculator</a>
             <Link href="/about">About</Link>
           </div>
           <div>

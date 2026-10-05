@@ -28,40 +28,29 @@ function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }
 
 export default function Calculator() {
   return (
-    <div className="pt-20">
+    <div className="tm-editorial-page tm-compare-page tm-site-page">
       {/* Hero Section */}
-      <section className="bg-off-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Compare Investments</span>
-              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
+      <section className="tm-editorial-hero">
+        <img src="/images/calculator-investment-planning.png" alt="" aria-hidden="true" className="tm-editorial-hero-image" />
+        <div className="tm-editorial-hero-overlay" />
+        <div className="tm-editorial-shell tm-editorial-hero-content">
+            <FadeIn className="tm-editorial-hero-copy">
+              <h1>
                 Compare Investment Options
               </h1>
-              <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                Enter an initial amount and compare estimated growth or income across available investment options. Calculator results are estimates only and are shown for general information purposes. They do not constitute financial advice or a guaranteed return. Final figures may differ and are subject to formal product documentation.
+              <p>
+                Enter an amount and compare estimated outcomes across the available investment options before submitting an enquiry.
               </p>
-              <div className="flex flex-wrap items-center gap-6">
-                <a href="#calculator" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
+              <div className="tm-editorial-hero-actions">
+                <a href="#calculator" className="tm-editorial-button tm-editorial-button-primary group">
                   Start Calculating
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
-                <Link href="/investments" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
+                <Link href="/investments" className="tm-editorial-button tm-editorial-button-secondary">
                   View Investment Options
                 </Link>
               </div>
             </FadeIn>
-            <FadeIn delay={0.2} className="relative h-full flex justify-end">
-              <div className="w-full lg:w-[90%] aspect-video lg:aspect-[4/3.5] bg-border-grey relative overflow-hidden lg:h-[75%] lg:my-auto">
-                <img 
-                  src="/images/calculator-investment-planning.png" 
-                  alt="Two people comparing investment options online" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-navy/10"></div>
-              </div>
-            </FadeIn>
-          </div>
         </div>
       </section>
 
@@ -176,18 +165,6 @@ export default function Calculator() {
               ))}
             </FadeInStagger>
           </div>
-        </div>
-      </section>
-
-      {/* Important Information Section */}
-      <section className="py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
-            <h2 className="text-xl font-serif text-ink mb-4">Important information</h2>
-            <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              This calculator is provided for general information and enquiry purposes only. Results are estimates and do not represent financial advice or guaranteed outcomes. Investment values may rise or fall. Clients should review formal documentation and seek appropriate financial guidance before making any investment decision.
-            </p>
-          </FadeIn>
         </div>
       </section>
 

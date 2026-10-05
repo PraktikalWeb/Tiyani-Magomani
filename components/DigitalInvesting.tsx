@@ -27,7 +27,7 @@ function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }
 
 export default function DigitalInvesting() {
   return (
-    <div className="pt-20">
+    <div className="pt-20 tm-site-page">
       {/* Hero Section */}
       <section className="bg-off-white py-16 md:py-24">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">

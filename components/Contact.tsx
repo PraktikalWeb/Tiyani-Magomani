@@ -6,27 +6,6 @@ import { useRouter, useSearchParams } from 'next/navigation';
 import { Suspense, useEffect } from 'react';
 import React, { useState } from 'react';
 
-function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
-  const { faq } = props;
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="bg-soft-grey border border-border-grey">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left cursor-pointer p-6 font-sans font-medium text-ink flex justify-between items-center focus:outline-none"
-      >
-        <span className="pr-4 block">{faq.q}</span>
-        <span className="text-navy font-bold text-xl flex-shrink-0">{isOpen ? '-' : '+'}</span>
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 pt-2 font-sans text-muted-blue leading-relaxed border-t border-border-grey/50">
-          <p className="m-0">{faq.a}</p>
-        </div>
-      )}
-    </div>
-  );
-}
-
 function ContactContent() {
   const router = useRouter();
   const searchParams = useSearchParams();
@@ -149,54 +128,29 @@ function ContactContent() {
   };
 
   return (
-    <div className="pt-20">
+    <div className="tm-editorial-page tm-contact-page tm-site-page">
       {/* Hero Section */}
-      <section className="bg-white border-b border-border-grey overflow-hidden relative flex flex-col lg:block">
-        <div className="absolute inset-0 z-0 hidden lg:block">
-          <div className="absolute inset-0 bg-gradient-to-r from-off-white to-white opacity-80"></div>
-        </div>
-        
-        <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 flex flex-col lg:flex-row items-center">          
-          <FadeIn delay={0.2} className="w-full lg:w-[55%] relative z-20">
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block mt-4 lg:mt-0">Contact Tiyani Magomani</span>
-            <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
+      <section className="tm-editorial-hero">
+        <img src="/images/contact-advisory-meeting.png" alt="" aria-hidden="true" className="tm-editorial-hero-image" />
+        <div className="tm-editorial-hero-overlay" />
+        <div className="tm-editorial-shell tm-editorial-hero-content">
+          <FadeIn delay={0.2} className="tm-editorial-hero-copy">
+            <h1>
               Start with a simple investment enquiry.
             </h1>
-            <p className="text-lg md:text-xl font-sans text-[#4B5563] leading-relaxed mb-10 max-w-2xl font-normal">
+            <p>
               Submit your details and the team can follow up with the relevant information about Tiyani Magomani’s investment categories, calculator estimates and next steps.
             </p>
-            <div className="flex flex-wrap items-center gap-6 mb-8 lg:mb-0">
-              <a href="#enquiry-form" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">
+            <div className="tm-editorial-hero-actions">
+              <a href="#enquiry-form" className="tm-editorial-button tm-editorial-button-primary group">
                 Start Enquiry
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
-              <Link href="/investments" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
+              <Link href="/investments" className="tm-editorial-button tm-editorial-button-secondary">
                 View Investment Options
               </Link>
             </div>
           </FadeIn>
-
-          {/* Mobile/Tablet Image */}
-          <FadeIn delay={0.4} className="w-full lg:hidden relative z-10 mt-8 mb-4"> 
-             <div className="relative w-full aspect-video">
-                <img 
-                  src="/images/contact-advisory-meeting.png" 
-                  alt="Clients meeting with a financial adviser" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-navy/5 mix-blend-multiply"></div>
-             </div>
-          </FadeIn>
-        </div>
-
-        {/* Desktop Absolute Image */}
-        <div className="hidden lg:block absolute top-1/2 -translate-y-1/2 right-0 w-[42vw] h-[70%] z-10">
-          <img 
-            src="/images/contact-advisory-meeting.png" 
-            alt="Clients meeting with a financial adviser" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-navy/5 mix-blend-multiply"></div>
         </div>
       </section>
 
@@ -570,54 +524,6 @@ function ContactContent() {
               </FadeInStaggerItem>
             ))}
           </FadeInStagger>
-        </div>
-      </section>
-
-      {/* Important Information Section */}
-      <section className="py-20 bg-white border-b border-border-grey">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
-            <h2 className="text-xl font-serif text-ink mb-4">Important information</h2>
-            <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              This contact page is provided for general enquiry purposes only. Submitting an enquiry does not represent financial advice, a completed application, confirmed product terms or an investment commitment. Investment values may rise or fall. Clients should review formal documentation and seek appropriate financial guidance before making any investment decision.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Contact FAQ Section */}
-      <section className="py-20 lg:py-32 bg-off-white border-b border-border-grey">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions before you enquire?</h2>
-          </FadeIn>
-          
-          <div className="space-y-4">
-            {[
-              {
-                q: "Do I need to know which investment option I want?",
-                a: "No. You can select “Not sure yet” and submit a general enquiry. The team can follow up with relevant information."
-              },
-              {
-                q: "Does submitting an enquiry mean I have applied?",
-                a: "No. Submitting an enquiry only requests follow-up information. It does not represent a completed application or investment commitment."
-              },
-              {
-                q: "Can I Compare Investments before enquiring?",
-                a: "Yes. You can use the Compare Investments to compare estimated results before submitting an enquiry."
-              },
-              {
-                q: "Are the calculator and comparison results guaranteed?",
-                a: "No. Calculator results are estimates only and do not represent guaranteed outcomes or confirmed product figures."
-              },
-              {
-                q: "Should I upload documents here?",
-                a: "No. Do not submit sensitive personal documents through this form. Formal documentation requirements can be handled through the appropriate process after enquiry."
-              }
-            ].map((faq, i) => (
-              <FAQItem key={i} faq={faq} />
-            ))}
-          </div>
         </div>
       </section>
 

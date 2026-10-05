@@ -28,7 +28,7 @@ function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }
 
 export default function Investments() {
   return (
-    <main className="flex-grow pt-20">
+    <main className="flex-grow pt-20 tm-site-page">
       {/* 1. Page Hero */}
       <section className="bg-white border-b border-border-grey overflow-hidden relative flex flex-col lg:block">
         <div className="absolute inset-0 z-0 hidden lg:block">

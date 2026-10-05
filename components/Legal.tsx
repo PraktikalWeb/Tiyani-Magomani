@@ -1,8 +1,9 @@
 "use client";
-import { ArrowRight, ArrowUpRight } from 'lucide-react';
+import { ArrowRight } from 'lucide-react';
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import React, { useState } from 'react';
+import LegalHero from './LegalHero';
 
 function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
   const { faq } = props;
@@ -27,42 +28,16 @@ function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }
 
 export default function LegalCenter() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-off-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Legal Centre</span>
-              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Important website policies and legal information.
-              </h1>
-              <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                Find the key policies that explain how the Tiyani Magomani website should be used, how visitor information may be handled, and how concerns can be raised.
-              </p>
-              <div className="flex flex-wrap items-center gap-6">
-                <Link href="/terms" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">
-                  View Terms
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="/contact" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
-                  Contact Us
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2} className="relative h-full flex justify-end">
-              <div className="w-full lg:w-[90%] aspect-video lg:aspect-[4/3.5] bg-border-grey relative overflow-hidden lg:h-[75%] lg:my-auto">
-                <img 
-                  src="/images/about-advisory-team.png" 
-                  alt="Professional legal and compliance documents" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-navy/10"></div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+    <div className="pt-20 tm-legal-page tm-site-page">
+      <LegalHero
+        eyebrow="Legal Centre"
+        title="Legal information, clearly explained."
+        description="Review the policies that govern this website, its information and how concerns are handled."
+        imageSrc="/images/about-advisory-team.png"
+        imageAlt="A professional team discussing legal and compliance information"
+        primaryLink={{ href: '/terms', label: 'View Terms' }}
+        secondaryLink={{ href: '/contact', label: 'Contact Us' }}
+      />
 
       {/* Legal Summary Strip */}
       <section className="bg-white border-b border-border-grey">

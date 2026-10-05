@@ -4,7 +4,7 @@ import Link from 'next/link';
 
 export default function NotFound() {
   return (
-    <div className="pt-20 min-h-screen flex items-center bg-off-white">
+    <div className="pt-20 min-h-screen flex items-center bg-off-white tm-site-page">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 text-center">
         <FadeIn>
           <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">404 Error</span>

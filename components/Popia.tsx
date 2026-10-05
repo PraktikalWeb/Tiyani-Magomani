@@ -1,45 +1,20 @@
 import { ArrowRight, ArrowUpRight } from 'lucide-react';
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
+import LegalHero from './LegalHero';
 
 export default function Popia() {
   return (
-    <div className="pt-20">
-      {/* Hero Section */}
-      <section className="bg-off-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">POPIA Policy</span>
-              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                Responsible handling of personal information.
-              </h1>
-              <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                This POPIA Policy explains how personal information submitted through the Tiyani Magomani website may be collected, processed, protected and managed when visitors explore investment options, Compare Investments or submit an enquiry.
-              </p>
-              <div className="flex flex-wrap items-center gap-6">
-                <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">
-                  Contact Us
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="/privacy" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">
-                  View Privacy Policy
-                </Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2} className="relative h-full flex justify-end">
-              <div className="w-full lg:w-[90%] aspect-video lg:aspect-[4/3.5] bg-border-grey relative overflow-hidden lg:h-[75%] lg:my-auto">
-                <img 
-                  src="/images/digital-investing-planning.png" 
-                  alt="Professional finance and privacy" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-navy/10"></div>
-              </div>
-            </FadeIn>
-          </div>
-        </div>
-      </section>
+    <div className="pt-20 tm-legal-page tm-site-page">
+      <LegalHero
+        eyebrow="POPIA Policy"
+        title="How personal information is protected."
+        description="Understand how personal information may be collected, processed and managed under POPIA."
+        imageSrc="/images/digital-investing-planning.png"
+        imageAlt="Two people reviewing personal information together"
+        primaryLink={{ href: '/contact', label: 'Contact Us' }}
+        secondaryLink={{ href: '/privacy', label: 'View Privacy Policy' }}
+      />
 
       {/* POPIA Summary Strip */}
       <section className="bg-white border-b border-border-grey">

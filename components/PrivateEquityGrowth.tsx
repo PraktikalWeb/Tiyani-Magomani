@@ -1,37 +1,16 @@
 "use client";
-import { ArrowRight, ChevronDown, ChevronUp } from 'lucide-react';import { investmentProducts } from '../src/lib/investment-products';
+import { ArrowRight } from 'lucide-react';
+import { investmentProducts } from '../src/lib/investment-products';
 
 import FadeIn, { FadeInStagger, FadeInStaggerItem } from './FadeIn';
 import Link from 'next/link';
 import CalculatorEngine from './CalculatorEngine';
 import ProductFiguresGrid from './ProductFiguresGrid';
 import { HomeStyleFooter, HomeStyleHeader } from './HomeStyleChrome';
-import { useState } from 'react';
-
-function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }) {
-  const { faq } = props;
-  const [isOpen, setIsOpen] = useState(false);
-  return (
-    <div className="tm-growth-faq-item bg-soft-grey border border-border-grey">
-      <button 
-        onClick={() => setIsOpen(!isOpen)}
-        className="w-full text-left cursor-pointer p-6 font-sans font-medium text-ink flex justify-between items-center focus:outline-none"
-      >
-        <span className="pr-4 block">{faq.q}</span>
-        <span className="text-navy font-bold text-xl flex-shrink-0">{isOpen ? '-' : '+'}</span>
-      </button>
-      {isOpen && (
-        <div className="px-6 pb-6 pt-2 font-sans text-muted-blue leading-relaxed border-t border-border-grey/50">
-          <p className="m-0">{faq.a}</p>
-        </div>
-      )}
-    </div>
-  );
-}
 
 export default function PrivateEquityGrowth() {
   return (
-    <div className="tm-growth-page">
+    <div className="tm-growth-page tm-site-page">
       <HomeStyleHeader />
       <main>
       {/* Hero Section */}
@@ -121,151 +100,8 @@ export default function PrivateEquityGrowth() {
         </div>
       </section>
 
-      {/* Key Features Section */}
-      <section className="tm-growth-section tm-growth-features py-20 lg:py-32 bg-off-white">
-        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-3 gap-12 lg:gap-8">
-            <FadeIn className="lg:col-span-1">
-              <h2 className="text-3xl md:text-4xl font-serif text-ink">Key features</h2>
-            </FadeIn>
-            <div className="lg:col-span-2">
-              <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 gap-x-8 gap-y-12">
-                {[
-                  { title: "Growth-focused positioning", desc: "Designed around the objective of long-term capital growth." },
-                  { title: "Private-equity-style exposure", desc: "Presented as a structured category for clients exploring private-market-style opportunities." },
-                  { title: "Longer-term view", desc: "Best understood as an investment route for clients with a longer investment horizon." },
-                  { title: "Enquiry-led process", desc: "Visitors can request more information before making any investment decision." },
-                  { title: "Calculator estimate", desc: "Clients can estimate a basic estimate before submitting an enquiry." },
-                  { title: "Formal documentation required", desc: "Final product details, risks, terms and eligibility requirements are subject to formal documentation." }
-                ].map((feature, i) => (
-                  <FadeInStaggerItem key={i} className="tm-growth-feature border-t border-border-grey pt-6">
-                    <h3 className="text-lg font-serif text-ink mb-3">{feature.title}</h3>
-                    <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">{feature.desc}</p>
-                  </FadeInStaggerItem>
-                ))}
-              </FadeInStagger>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      {/* Important Considerations Section */}
-      <section className="tm-growth-section tm-growth-considerations py-20 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="tm-growth-note bg-soft-grey border border-border-grey p-8 md:p-12 text-center">
-            <h2 className="text-xl font-serif text-ink mb-4">Important considerations</h2>
-            <p className="text-sm font-sans text-muted-blue leading-relaxed font-normal m-0 max-w-2xl mx-auto">
-              Private Equity: Growth is shown for general information and enquiry purposes only. Investment values may rise or fall, and estimates shown on the website do not represent guaranteed outcomes. Clients should review formal product documentation and seek appropriate financial guidance before making any investment decision.
-            </p>
-          </FadeIn>
-        </div>
-      </section>
-
       {/* Product Calculator Section */}
       <CalculatorEngine lockedProduct={true} productId="private-equity-growth" showGrowthChart presentation="homepage" />
-
-      {/* Enquiry Process Section */}
-      <section className="tm-growth-section tm-growth-process py-20 lg:py-32 bg-white">
-        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="tm-growth-section-heading text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">How to enquire about this option</h2>
-          </FadeIn>
-          
-          <div className="relative">
-            {/* Connecting line for desktop */}
-            <div className="hidden lg:block absolute top-6 left-[10%] right-[10%] h-[1px] bg-border-grey z-0"></div>
-            
-            <FadeInStagger className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6">
-              {[
-                { step: "1", title: "Review the option", desc: "Understand the purpose, positioning and general considerations." },
-                { step: "2", title: "Compare Investments", desc: "View a basic estimate based on your selected amount and period." },
-                { step: "3", title: "Submit an enquiry", desc: "Send your contact details so the team can follow up." },
-                { step: "4", title: "Review formal information", desc: "The team can provide the relevant information and next steps." }
-              ].map((item, i) => (
-                <FadeInStaggerItem key={i} className="relative z-10 flex flex-row lg:flex-col gap-6 lg:gap-0">
-                  <div className="w-12 h-12 bg-navy text-white font-serif flex items-center justify-center text-xl flex-shrink-0 shadow-[0_0_0_12px_#ffffff] lg:mb-6 lg:mx-auto">
-                    {item.step}
-                  </div>
-                  <div className="text-left lg:text-center pt-1 lg:pt-0">
-                    <h3 className="text-lg font-serif text-ink mb-3">{item.title}</h3>
-                    <p className="text-sm font-sans text-muted-blue leading-relaxed m-0">{item.desc}</p>
-                  </div>
-                </FadeInStaggerItem>
-              ))}
-            </FadeInStagger>
-          </div>
-        </div>
-      </section>
-
-      {/* Product FAQ Section */}
-      <section className="tm-growth-section tm-growth-faq py-20 lg:py-32 bg-off-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="tm-growth-section-heading mb-12 text-center">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Questions about Private Equity: Growth</h2>
-          </FadeIn>
-          
-          <div className="space-y-4">
-            {[
-              {
-                q: "Is this option for short-term investing?",
-                a: "This option is positioned for clients considering a longer investment horizon. It may not be suitable for clients who need short-term access or immediate income."
-              },
-              {
-                q: "Does this option provide regular income?",
-                a: "The primary focus is capital growth. Clients interested in regular income may prefer to review income-focused options."
-              },
-              {
-                q: "Are returns guaranteed?",
-                a: "No. Any figures shown on the website are estimates only and do not represent guaranteed outcomes."
-              },
-              {
-                q: "What happens after I enquire?",
-                a: "The team can follow up with the relevant information and guide you through the next appropriate step."
-              }
-            ].map((faq, i) => (
-              <FAQItem key={i} faq={faq} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Related Options Section */}
-      <section className="tm-growth-section tm-growth-related py-20 lg:py-32 bg-white">
-        <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <FadeIn className="tm-growth-section-heading mb-12 lg:mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink text-center lg:text-left">You may also want to compare</h2>
-          </FadeIn>
-          
-          <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {[
-              {
-                title: "Private Equity: Income",
-                desc: "For clients interested in income-focused investment positioning.",
-                link: "/investments/private-equity-income"
-              },
-              {
-                title: "Private Equity: Flexi Access",
-                desc: "For clients who may need a more adaptable investment route.",
-                link: "/investments/private-equity-flexible-access"
-              },
-              {
-                title: "Fixed Return Growth Portfolio",
-                desc: "For clients who prefer defined terms with structured growth positioning.",
-                link: "/investments/fixed-return-growth"
-              }
-            ].map((card, i) => (
-              <FadeInStaggerItem key={i} className="tm-growth-related-card border border-border-grey p-8 flex flex-col hover:border-navy/30 transition-colors group">
-                <h3 className="text-xl font-serif text-ink mb-4">{card.title}</h3>
-                <p className="text-sm font-sans text-muted-blue leading-relaxed mb-8 flex-grow">{card.desc}</p>
-                <Link href={card.link} className="inline-flex items-center text-sm font-bold text-navy uppercase tracking-wider group-hover:opacity-70 transition-opacity">
-                  View Details
-                  <ArrowRight className="ml-2 w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </Link>
-              </FadeInStaggerItem>
-            ))}
-          </FadeInStagger>
-        </div>
-      </section>
 
       {/* Final CTA Section */}
       <section className="tm-growth-final-cta py-20 bg-navy">

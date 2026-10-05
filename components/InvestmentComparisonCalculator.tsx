@@ -194,31 +194,31 @@ export default function InvestmentComparisonCalculator() {
 
         {/* STEP 4: RESULTS */}
         {step === 4 && (
-          <div ref={resultsRef} className="animate-in fade-in duration-500 scroll-mt-24">
-            <div className="flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-border-grey pb-6">
+          <div ref={resultsRef} className="tm-compare-results animate-in fade-in duration-500 scroll-mt-24">
+            <div className="tm-compare-results-header flex flex-col md:flex-row md:items-center justify-between mb-8 border-b border-border-grey pb-6">
               <div>
                 <h3 className="text-2xl font-serif text-ink mb-2">Comparison Estimate</h3>
                 <p className="text-muted-blue font-sans text-sm">
                   Comparing {term} term {interest} options for {formatCurrency(amount)}
                 </p>
               </div>
-              <div className="flex gap-4 mt-4 md:mt-0">
+              <div className="tm-compare-results-controls flex gap-4 mt-4 md:mt-0">
                 <button 
                   onClick={handlePrevStep}
-                  className="text-navy font-bold text-[13px] hover:opacity-70 transition-opacity uppercase tracking-wider flex items-center cursor-pointer"
+                  className="tm-compare-results-back text-navy font-bold text-[13px] hover:opacity-70 transition-opacity uppercase tracking-wider flex items-center cursor-pointer"
                 >
                   <ArrowLeft className="w-4 h-4 mr-2" /> Back
                 </button>
                 <button 
                   onClick={handleStartOver}
-                  className="text-navy font-bold text-[13px] hover:opacity-70 transition-opacity uppercase tracking-wider flex items-center border border-border-grey px-4 py-2 bg-soft-grey cursor-pointer"
+                  className="tm-compare-results-reset text-navy font-bold text-[13px] hover:opacity-70 transition-opacity uppercase tracking-wider flex items-center border border-border-grey px-4 py-2 bg-soft-grey cursor-pointer"
                 >
                   <RefreshCw className="w-4 h-4 mr-2" /> Start Over
                 </button>
               </div>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
+            <div className="tm-compare-results-grid grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 mb-12">
               {matchedProducts.length === 0 && <div className="md:col-span-2 lg:col-span-3 border border-border-grey bg-soft-grey p-8 text-center text-sm font-sans text-muted-blue">No document-supported options are available for this selection. Please choose another term or investment focus.</div>}
               {matchedProducts.map(product => {
                 const estimatedValue = calculateResult(product, amount);
@@ -233,17 +233,24 @@ export default function InvestmentComparisonCalculator() {
                 const scenarios = isOffshore ? calculateOffshoreScenarios(amount) : null;
                 
                 return (
-                  <div key={product.id} className="bg-soft-grey border border-border-grey p-8 flex flex-col hover:border-navy transition-colors">
-                    <div className="mb-6 flex-grow">
-                      <h4 className="text-xl font-serif text-ink mb-2">{product.name}</h4>
-                      <p className="text-sm font-sans text-muted-blue mb-4 leading-relaxed">{product.description}</p>
-                      <div className="flex gap-3 mb-6 flex-wrap">
-                        <span className="text-xs font-sans uppercase tracking-widest bg-white border border-border-grey px-3 py-1 text-ink">{product.termMonths === 12 ? '12 Months' : `${product.termMonths / 12} Years`}</span>
-                        <span className="text-xs font-sans uppercase tracking-widest bg-white border border-border-grey px-3 py-1 text-ink">{(product.rate * 100).toFixed(1)}% p.a.</span>
+                  <div key={product.id} className="tm-compare-result-card bg-soft-grey border border-border-grey p-8 flex flex-col hover:border-navy transition-colors">
+                    <div className="tm-compare-result-main">
+                      <div className="tm-compare-result-info">
+                        <h4 className="text-xl font-serif text-ink mb-2">{product.name}</h4>
+                        <p className="text-sm font-sans text-muted-blue mb-4 leading-relaxed">{product.description}</p>
+                        <div className="tm-compare-result-tags flex gap-3 flex-wrap">
+                          <span className="text-xs font-sans uppercase tracking-widest bg-white border border-border-grey px-3 py-1 text-ink">{product.termMonths === 12 ? '12 Months' : `${product.termMonths / 12} Years`}</span>
+                          <span className="text-xs font-sans uppercase tracking-widest bg-white border border-border-grey px-3 py-1 text-ink">{(product.rate * 100).toFixed(1)}% p.a.</span>
+                        </div>
+                        {product.capitalProtection && (
+                          <p className="tm-compare-result-protection text-xs font-sans text-muted-blue">
+                            * Capital protection: {product.capitalProtection}
+                          </p>
+                        )}
                       </div>
-                      
-                                            {isOffshore ? (
-                        <div className="grid grid-cols-1 gap-4">
+
+                      {isOffshore ? (
+                        <div className="tm-compare-result-metrics tm-compare-result-metrics-double grid grid-cols-2 gap-4">
                           <div className="bg-white border border-border-grey p-6 text-center">
                             <span className="block text-xs font-sans text-muted-blue uppercase tracking-widest mb-2">Scenario 1: Rand Stays Flat</span>
                             <span className="block text-3xl font-serif text-navy mb-2">{formatCurrency(scenarios!.scenario1Value)}</span>
@@ -256,7 +263,7 @@ export default function InvestmentComparisonCalculator() {
                           </div>
                         </div>
                       ) : isIncomeProduct ? (
-                        <div className="grid grid-cols-1 gap-4">
+                        <div className="tm-compare-result-metrics tm-compare-result-metrics-double grid grid-cols-2 gap-4">
                           <div className="bg-white border border-border-grey p-6 text-center">
                             <span className="block text-xs font-sans text-muted-blue uppercase tracking-widest mb-2">{isDividendProduct ? 'Monthly Dividend Before Tax' : 'Monthly Income Before Tax'}</span>
                             <span className="block text-3xl font-serif text-navy mb-2">{formatCurrency(income!.grossMonthly)}</span>
@@ -269,27 +276,23 @@ export default function InvestmentComparisonCalculator() {
                           </div>
                         </div>
                       ) : (
-                        <div className="bg-white border border-border-grey p-6 text-center">
-                          <span className="block text-xs font-sans text-muted-blue uppercase tracking-widest mb-2">{product.resultLabel}</span>
-                          <span className="block text-3xl font-serif text-navy mb-2">{formatCurrency(estimatedValue)}</span>
-                          <span className="block text-sm font-sans text-muted-blue">{product.supportingLabel}</span>
+                        <div className="tm-compare-result-metrics">
+                          <div className="bg-white border border-border-grey p-6 text-center">
+                            <span className="block text-xs font-sans text-muted-blue uppercase tracking-widest mb-2">{product.resultLabel}</span>
+                            <span className="block text-3xl font-serif text-navy mb-2">{formatCurrency(estimatedValue)}</span>
+                            <span className="block text-sm font-sans text-muted-blue">{product.supportingLabel}</span>
+                          </div>
                         </div>
                       )}
-                      
                     </div>
-                    
-                    {product.capitalProtection && (
-                      <p className="text-xs font-sans text-muted-blue mb-6">
-                        * Capital protection: {product.capitalProtection}
-                      </p>
-                    )}
 
-                    <div className="mt-auto">
+                    <div className="tm-compare-result-action">
                       <Link 
                         href={product.route === '/contact' ? `/contact?source=compare-investments&amount=${amount}&term=${term}&interest=${interest}&product=${encodeURIComponent(product.name)}` : product.route}
-                        className="bg-navy text-white text-center w-full block py-4 text-[13px] font-bold hover:bg-ink transition-colors uppercase tracking-wider"
+                        className="tm-compare-result-cta bg-navy text-white text-center w-full block py-4 text-[13px] font-bold hover:bg-ink transition-colors uppercase tracking-wider"
                       >
                         {product.route === '/contact' ? 'Start an Enquiry' : 'View Product'}
+                        <ArrowRight className="w-4 h-4" />
                       </Link>
                     </div>
                   </div>
@@ -297,7 +300,7 @@ export default function InvestmentComparisonCalculator() {
               })}
             </div>
 
-            <div className="bg-soft-grey border border-border-grey p-8 text-center max-w-4xl mx-auto">
+            <div className="tm-compare-results-disclaimer bg-soft-grey border border-border-grey p-8 text-center max-w-4xl mx-auto">
               <p className="text-xs font-sans text-muted-blue leading-relaxed font-normal mb-4">
                 Calculator results are estimates based on the information entered and the displayed product assumptions. They are shown for general information and enquiry purposes only and do not constitute financial advice or a guaranteed return. Final figures, risks, fees, tax treatment, eligibility requirements and terms are subject to formal product documentation.
               </p>
