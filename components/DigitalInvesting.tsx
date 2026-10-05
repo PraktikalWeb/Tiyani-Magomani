@@ -27,38 +27,27 @@ function FAQItem(props: { faq: { q: string, a: string }, key?: string | number }
 
 export default function DigitalInvesting() {
   return (
-    <div className="pt-20 tm-site-page">
+    <div className="tm-editorial-page tm-digital-investing-page tm-site-page">
       {/* Hero Section */}
-      <section className="bg-off-white py-16 md:py-24">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-8 items-center">
-            <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block">Digital Investing</span>
-              <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-                A simpler way to explore investment options online.
-              </h1>
-              <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-                Tiyani Magomani gives visitors a clear digital pathway to explore investment categories, compare estimated results and submit an enquiry before taking the next step.
-              </p>
-              <div className="flex flex-wrap items-center gap-6">
-                <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[13px] uppercase tracking-wider">
-                  Start an Enquiry
-                  <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
-                </Link>
-                <Link href="/compare" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto">Compare Investments</Link>
-              </div>
-            </FadeIn>
-            <FadeIn delay={0.2} className="relative h-full flex justify-end">
-              <div className="w-full lg:w-[90%] aspect-video lg:aspect-[4/3.5] bg-border-grey relative overflow-hidden lg:h-[75%] lg:my-auto">
-                <img 
-                  src="/images/digital-investing-planning.png" 
-                  alt="Two people exploring investment information online" 
-                  className="w-full h-full object-cover"
-                />
-                <div className="absolute inset-0 bg-navy/10"></div>
-              </div>
-            </FadeIn>
-          </div>
+      <section className="tm-editorial-hero">
+        <img src="/images/digital-investing-planning.png" alt="Two people exploring investment information online" className="tm-editorial-hero-image" />
+        <div className="tm-editorial-hero-overlay" />
+        <div className="tm-editorial-shell tm-editorial-hero-content">
+          <FadeIn className="tm-editorial-hero-copy">
+            <h1>A simpler way to explore investment options online.</h1>
+            <p>
+              Review investment categories, compare estimates and submit an enquiry when you are ready for the next step.
+            </p>
+            <div className="tm-editorial-hero-actions">
+              <Link href="/contact" className="tm-editorial-button tm-editorial-button-primary group">
+                Start an Enquiry
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+              <Link href="/compare" className="tm-editorial-button tm-editorial-button-secondary">
+                Compare Investments
+              </Link>
+            </div>
+          </FadeIn>
         </div>
       </section>
 
@@ -113,7 +102,7 @@ export default function DigitalInvesting() {
           </FadeIn>
           
           <div className="max-w-5xl mx-auto">
-            <FadeInStagger className="space-y-12 relative before:absolute before:inset-0 before:ml-[23px] before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-px before:bg-border-grey">
+            <FadeInStagger className="tm-digital-pathway-grid">
               {[
                 { title: "Explore the options", desc: "Review the available investment categories, including growth, income, flexible-access, fixed-return and offshore-focused options." },
                 { title: "Compare the categories", desc: "Use the Investment Options page to understand the purpose, flexibility and positioning of each category." },
@@ -121,12 +110,9 @@ export default function DigitalInvesting() {
                 { title: "Submit an enquiry", desc: "Send your contact details so the team can follow up with the relevant information." },
                 { title: "Review formal information", desc: "The team can provide the relevant product details, risks, terms and next steps before any decision is made." }
               ].map((step, index) => (
-                <FadeInStaggerItem key={index} className="relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group is-active">
-                  <div className="flex items-center justify-center w-12 h-12 bg-white text-navy font-serif border border-border-grey shadow-[0_0_0_8px_#ffffff] shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 relative z-10 text-xl font-bold">
-                    {index + 1}
-                  </div>
-                  
-                  <div className="w-[calc(100%-4rem)] md:w-[calc(50%-3rem)] bg-soft-grey border border-border-grey p-6 lg:p-8">
+                <FadeInStaggerItem key={index} className="tm-digital-pathway-step">
+                  <span>{index + 1}</span>
+                  <div>
                     <h3 className="text-lg font-serif text-ink mb-3">{step.title}</h3>
                     <p className="text-sm font-sans text-muted-blue leading-relaxed m-0 font-normal">{step.desc}</p>
                   </div>

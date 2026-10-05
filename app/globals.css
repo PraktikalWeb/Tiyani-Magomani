@@ -4708,6 +4708,113 @@
   }
 }
 
+/* Digital Investing uses the same editorial structure as the investment, about and contact pages. */
+.tm-digital-investing-page {
+  --tm-editorial-blue: var(--tm-editorial-gold);
+}
+
+.tm-digital-investing-page .tm-editorial-hero-copy {
+  width: min(650px, 62%);
+}
+
+.tm-digital-investing-page .tm-editorial-hero-copy h1 {
+  max-width: 650px;
+  margin-bottom: 1.15rem;
+  font-family: "Poppins Local", Arial, sans-serif;
+  font-size: var(--tm-page-heading-size) !important;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.02 !important;
+}
+
+.tm-digital-investing-page .tm-editorial-hero-copy > p {
+  max-width: 590px;
+  margin-bottom: 1.65rem;
+  color: #b8c4d5;
+  font-size: clamp(1rem, 1.15vw, 1.1rem);
+  line-height: 1.72;
+}
+
+.tm-digital-investing-page section span.uppercase {
+  color: var(--tm-editorial-gold);
+}
+
+.tm-digital-investing-page section h2 {
+  font-family: "Poppins Local", Arial, sans-serif;
+  font-size: var(--tm-page-heading-size) !important;
+  font-weight: 600;
+  letter-spacing: -0.025em;
+  line-height: 1.12 !important;
+}
+
+.tm-digital-pathway-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+}
+
+.tm-digital-pathway-step {
+  min-height: 190px;
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: start;
+  gap: 1rem;
+  padding: 1.6rem;
+  border-left: 3px solid var(--tm-editorial-gold);
+  background: #ffffff;
+  box-shadow: 0 14px 34px rgba(13, 22, 38, 0.08);
+}
+
+.tm-digital-pathway-step > span {
+  color: var(--tm-editorial-gold);
+  font-size: 0.78rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+.tm-digital-pathway-step h3 {
+  margin: 0 0 0.6rem;
+  color: var(--tm-editorial-deep);
+  font-size: 1.05rem;
+}
+
+.tm-digital-pathway-step p {
+  margin: 0;
+  color: var(--tm-editorial-muted);
+  font-size: 0.88rem;
+  line-height: 1.65;
+}
+
+@media (max-width: 1023px) {
+  .tm-digital-investing-page .tm-editorial-hero-copy {
+    width: min(650px, 78%);
+  }
+
+  .tm-digital-pathway-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 639px) {
+  .tm-digital-investing-page .tm-editorial-hero-copy {
+    width: 100%;
+  }
+
+  .tm-digital-investing-page .tm-editorial-hero-copy h1,
+  .tm-digital-investing-page section h2 {
+    font-size: var(--tm-page-heading-size-mobile) !important;
+  }
+
+  .tm-digital-pathway-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tm-digital-pathway-step {
+    min-height: 0;
+    padding: 1.35rem;
+  }
+}
+
 
 
 
