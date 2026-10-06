@@ -316,7 +316,7 @@ export default function Home() {
           </Link>
 
           <nav className="tm-home-nav-links" aria-label="Primary navigation">
-            <Link href="/" className="tm-home-nav-link" onClick={closeNavigation}>
+            <Link href="/" className="tm-home-nav-link is-active" onClick={closeNavigation}>
               Home
             </Link>
             <div
@@ -403,7 +403,7 @@ export default function Home() {
 
         {mobileMenuOpen && (
           <div className="tm-home-mobile-nav">
-            <Link href="/" onClick={closeNavigation}>Home</Link>
+            <Link href="/" className="is-active" onClick={closeNavigation}>Home</Link>
             <button
               type="button"
               className="tm-home-mobile-investments"
@@ -741,3 +741,4 @@ export default function Home() {
     </div>
   );
 }
+

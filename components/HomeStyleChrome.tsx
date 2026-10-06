@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from 'react';
 import Link from 'next/link';
+import { usePathname } from 'next/navigation';
 import { ArrowRight, ChevronDown, Menu, X } from 'lucide-react';
 
 const investmentLinks = [
@@ -19,6 +20,7 @@ export function HomeStyleHeader() {
   const [mobileInvestmentsOpen, setMobileInvestmentsOpen] = useState(false);
   const [headerHidden, setHeaderHidden] = useState(false);
   const previousScrollPosition = useRef(0);
+  const pathname = usePathname();
 
   useEffect(() => {
     previousScrollPosition.current = window.scrollY;
@@ -66,7 +68,7 @@ export function HomeStyleHeader() {
         </Link>
 
         <nav className="tm-home-nav-links" aria-label="Primary navigation">
-          <Link href="/" className="tm-home-nav-link" onClick={closeNavigation}>Home</Link>
+          <Link href="/" className={`tm-home-nav-link${pathname === '/' ? ' is-active' : ''}`} onClick={closeNavigation}>Home</Link>
           <div
             className="tm-home-investment-menu"
             onMouseEnter={() => setInvestmentMenuOpen(true)}
@@ -74,7 +76,7 @@ export function HomeStyleHeader() {
           >
             <button
               type="button"
-              className="tm-home-nav-link"
+              className={`tm-home-nav-link${pathname.startsWith('/investments') ? ' is-active' : ''}`}
               aria-expanded={investmentMenuOpen}
               aria-haspopup="true"
               onClick={() => setInvestmentMenuOpen(true)}
@@ -123,9 +125,9 @@ export function HomeStyleHeader() {
             )}
           </div>
 
-          <Link href="/digital-investing" className="tm-home-nav-link" onClick={closeNavigation}>Digital Investing</Link>
-          <Link href="/about" className="tm-home-nav-link" onClick={closeNavigation}>About</Link>
-          <Link href="/contact" className="tm-home-nav-link" onClick={closeNavigation}>Contact Us</Link>
+          <Link href="/digital-investing" className={`tm-home-nav-link${pathname === '/digital-investing' ? ' is-active' : ''}`} onClick={closeNavigation}>Digital Investing</Link>
+          <Link href="/about" className={`tm-home-nav-link${pathname === '/about' ? ' is-active' : ''}`} onClick={closeNavigation}>About</Link>
+          <Link href="/contact" className={`tm-home-nav-link${pathname === '/contact' ? ' is-active' : ''}`} onClick={closeNavigation}>Contact Us</Link>
         </nav>
 
         <Link href="/contact" className="tm-home-header-cta" onClick={closeNavigation}>Start Investing</Link>
@@ -143,10 +145,10 @@ export function HomeStyleHeader() {
 
       {mobileMenuOpen && (
         <div className="tm-home-mobile-nav">
-          <Link href="/" onClick={closeNavigation}>Home</Link>
+          <Link href="/" className={pathname === '/' ? 'is-active' : ''} onClick={closeNavigation}>Home</Link>
           <button
             type="button"
-            className="tm-home-mobile-investments"
+            className={`tm-home-mobile-investments${pathname.startsWith('/investments') ? ' is-active' : ''}`}
             aria-expanded={mobileInvestmentsOpen}
             onClick={() => setMobileInvestmentsOpen((open) => !open)}
           >
@@ -155,15 +157,15 @@ export function HomeStyleHeader() {
           </button>
           {mobileInvestmentsOpen && (
             <div className="tm-home-mobile-products">
-              <Link href="/investments" onClick={closeNavigation}>All Investment Options</Link>
+              <Link href="/investments" className={pathname === '/investments' ? 'is-active' : ''} onClick={closeNavigation}>All Investment Options</Link>
               {investmentLinks.map((item) => (
-                <Link href={item.href} key={item.href} onClick={closeNavigation}>{item.label}</Link>
+                <Link href={item.href} key={item.href} className={pathname === item.href ? 'is-active' : ''} onClick={closeNavigation}>{item.label}</Link>
               ))}
             </div>
           )}
-          <Link href="/digital-investing" onClick={closeNavigation}>Digital Investing</Link>
-          <Link href="/about" onClick={closeNavigation}>About</Link>
-          <Link href="/contact" onClick={closeNavigation}>Contact Us</Link>
+          <Link href="/digital-investing" className={pathname === '/digital-investing' ? 'is-active' : ''} onClick={closeNavigation}>Digital Investing</Link>
+          <Link href="/about" className={pathname === '/about' ? 'is-active' : ''} onClick={closeNavigation}>About</Link>
+          <Link href="/contact" className={pathname === '/contact' ? 'is-active' : ''} onClick={closeNavigation}>Contact Us</Link>
           <Link href="/contact" className="tm-home-mobile-cta" onClick={closeNavigation}>Start Investing</Link>
         </div>
       )}
