@@ -38,19 +38,19 @@ export default function Investments() {
         <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-20 lg:py-32 flex flex-col lg:flex-row items-center">
           
           <FadeIn delay={0.2} className="w-full lg:w-[55%] relative z-20">
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block mt-4 lg:mt-0">Investment Options</span>
+            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-6 block mt-4 lg:mt-0">Our Investment Products</span>
             <h1 className="text-5xl md:text-6xl lg:text-7xl font-serif leading-tight mb-8 text-ink">
-              Explore structured investment pathways built around growth, income and flexibility.
+              Don&apos;t Just Save for the Future. Invest in Its Potential.
             </h1>
             <p className="text-lg md:text-xl font-sans text-[#4B5563] leading-relaxed mb-10 max-w-2xl font-normal">
-              Tiyani Magomani presents a clear range of investment categories for clients considering growth-focused, income-focused, flexible-access, fixed-return and offshore opportunities. Each option is designed to help visitors understand the purpose of the investment before submitting an enquiry.
+              Five investment solutions. Different goals. One financial future. Your ambitions are personal, and your investment choices should be too.
             </p>
             <div className="flex flex-wrap items-center gap-6 mb-8 lg:mb-0">
               <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto">
-                Start an Enquiry
+                Speak to an Investment Specialist
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </Link>
-              <Link href="/compare" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-sm flex items-center justify-center w-full sm:w-auto">Compare Investments</Link>
+              <Link href="/compare" className="text-navy font-medium hover:opacity-70 transition-opacity uppercase tracking-wider text-sm flex items-center justify-center w-full sm:w-auto">Compare Products</Link>
             </div>
           </FadeIn>
 
@@ -83,30 +83,30 @@ export default function Investments() {
         <FadeIn className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex flex-col lg:flex-row gap-16">
             <div className="w-full lg:w-1/3">
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Structured Choices</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Different goals need different investment routes.</h2>
+              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Invest Around Your Ambitions</span>
+              <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">What Do You Want Your Money to Do for You?</h2>
               <p className="text-muted-blue font-sans leading-relaxed text-lg mb-8">
-                Some clients may be looking for long-term capital growth, while others may prefer income potential, flexible access, defined terms or offshore exposure. This page groups the main investment options into clear categories so visitors can compare them before making an enquiry.
+                Grow it. Earn from it. Keep it flexible. Protect it. Pass it on. Whatever your goal, the right investment journey starts with knowing your options.
               </p>
             </div>
             
             <div className="w-full lg:w-2/3">
               <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
                 <div className="border-t border-border-grey pt-6">
-                  <h3 className="text-lg font-serif text-ink mb-2">Growth</h3>
-                  <p className="text-sm font-sans text-muted-blue leading-relaxed">For clients considering long-term value creation and capital growth.</p>
+                  <h3 className="text-lg font-serif text-ink mb-2">Grow My Wealth</h3>
+                  <p className="text-sm font-sans text-muted-blue leading-relaxed">Put your capital to work through long-term strategies built for compounding growth.</p>
                 </div>
                 <div className="border-t border-border-grey pt-6">
-                  <h3 className="text-lg font-serif text-ink mb-2">Income</h3>
-                  <p className="text-sm font-sans text-muted-blue leading-relaxed">For clients interested in regular income potential.</p>
+                  <h3 className="text-lg font-serif text-ink mb-2">Earn Investment Income</h3>
+                  <p className="text-sm font-sans text-muted-blue leading-relaxed">Explore income-focused investments designed around your financial objectives.</p>
                 </div>
                 <div className="border-t border-border-grey pt-6">
-                  <h3 className="text-lg font-serif text-ink mb-2">Flexibility</h3>
-                  <p className="text-sm font-sans text-muted-blue leading-relaxed">For clients who may need a more adaptable investment route.</p>
+                  <h3 className="text-lg font-serif text-ink mb-2">Invest With Greater Flexibility</h3>
+                  <p className="text-sm font-sans text-muted-blue leading-relaxed">Choose solutions that respect how your needs for access may change.</p>
                 </div>
                 <div className="border-t border-border-grey pt-6">
-                  <h3 className="text-lg font-serif text-ink mb-2">Global Exposure</h3>
-                  <p className="text-sm font-sans text-muted-blue leading-relaxed">For clients exploring offshore-focused opportunities.</p>
+                  <h3 className="text-lg font-serif text-ink mb-2">Manage and Protect My Wealth</h3>
+                  <p className="text-sm font-sans text-muted-blue leading-relaxed">Tap into management, advisory and protection solutions that safeguard the bigger picture.</p>
                 </div>
               </div>
             </div>
@@ -121,52 +121,52 @@ export default function Investments() {
             {[
               {
                 id: "growth",
-                category: "Capital Growth",
-                title: "Private Equity: Growth",
-                desc: "For clients considering long-term growth-focused investment exposure through a structured private-equity-style category.",
-                focus: "Long-term capital growth",
-                suited: "Clients looking for future value creation and a longer investment horizon.",
+                category: "Target return: 13.2% p.a. | Long-term growth",
+                title: "Private Equity Growth",
+                desc: "Why watch businesses grow when your capital could grow with them? Private Equity Growth gives you exposure to selected private businesses with strong long-term potential. Through a compounding approach, it is built to accumulate capital over time.",
+                focus: "Your Capital Could Be Part of Something Bigger",
+                suited: "Investors focused on compounding capital growth over a longer investment horizon.",
                 route: "/investments/private-equity-growth",
                 icon: <TrendingUp className="w-5 h-5" />
               },
               {
                 id: "income",
-                category: "Regular Income",
-                title: "Private Equity: Income",
-                desc: "For clients interested in income-focused investment structures and regular income potential.",
-                focus: "Income potential",
-                suited: "Clients who want an investment category positioned around income generation.",
+                category: "Target return: 13.2% p.a. | Additional income",
+                title: "Private Equity Income",
+                desc: "Financial independence means making your money support the life you want. Private Equity Income takes an income-focused approach to private business investing, with the objective of generating periodic distributions from eligible investments.",
+                focus: "Let Your Investment Do More Than Grow",
+                suited: "Investors seeking periodic income distributions from eligible private business investments.",
                 route: "/investments/private-equity-income",
                 icon: <Wallet className="w-5 h-5" />
               },
               {
                 id: "flexible-access",
-                category: "Flexible Access",
-                title: "Private Equity: Flexi Access",
-                desc: "For clients who want a more adaptable investment route with flexible-access positioning.",
-                focus: "Flexibility and access",
-                suited: "Clients who may need more flexibility while still exploring structured investment opportunities.",
+                category: "Target return: 11% p.a. | Growth with conditional access",
+                title: "Private Equity Flexible Access",
+                desc: "You want your capital to grow, and you know life can shift your priorities. Private Equity Flexible Access combines exposure to private equity opportunities with defined arrangements for accessing your invested capital.",
+                focus: "Ambitions Change. Your Investment Should Be Ready.",
+                suited: "Investors seeking private equity growth exposure with defined arrangements for accessing capital.",
                 route: "/investments/private-equity-flexible-access",
                 icon: <SlidersHorizontal className="w-5 h-5" />
               },
               {
                 id: "fixed-return",
-                category: "Structured Growth",
-                title: "Fixed Return Growth Portfolio",
-                desc: "For clients interested in structured growth with defined investment terms and fixed-return style positioning.",
-                focus: "Defined terms and growth positioning",
-                suited: "Clients who prefer a clearer investment structure and a defined investment period.",
+                category: "Indicative rate: 12.6% p.a. | Structured capital growth",
+                title: "Fixed Return Growth",
+                desc: "Building wealth takes planning, patience and consistency. Fixed Return Growth offers a defined-rate structure for investors who want compounding growth over an agreed term. See what time and compounding could do for your goals.",
+                focus: "Give Your Goals a Clear Direction",
+                suited: "Investors who want compounding growth over an agreed term under a defined-rate structure.",
                 route: "/investments/fixed-return-growth",
                 icon: <Lock className="w-5 h-5" />
               },
               {
-                category: "Fixed Income",
-                title: "Fixed Return Income Portfolio",
-                desc: "For clients looking at fixed-income style positioning and regular income potential.",
-                focus: "Income structure",
-                suited: "Clients considering an income-focused route with defined terms.",
+                category: "Indicative rate: 12.6% p.a. | Defined income structure",
+                title: "Fixed Return Income",
+                desc: "Your goals may call for more than long-term growth. Fixed Return Income is built for investors who want scheduled income payments under a defined-rate arrangement.",
+                focus: "Create Another Stream of Income",
+                suited: "Investors who want scheduled income payments under a defined-rate arrangement.",
                 route: "/investments/fixed-return-income",
-                icon: <Lock className="w-5 h-5" /> // both fixed return get lock
+                icon: <Lock className="w-5 h-5" />
               },
               {
                 id: "offshore",
@@ -438,17 +438,17 @@ export default function Investments() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div className="w-full lg:w-1/2">
               <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Guided Enquiry Process</span>
-              <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Not sure which option fits your goals?</h2>
+              <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Not Sure Which Investment Fits?</h2>
               <p className="text-muted-blue font-sans text-lg mb-8 leading-relaxed">
-                You can start with a simple enquiry. The team can follow up with the relevant information and help you understand which investment category may be most appropriate for your needs.
+                Never choose on a headline percentage alone. Compare objectives, terms, risks and access conditions, then move forward with confidence.
               </p>
               
               <ul className="space-y-4 mb-10">
                 {[
                   "Choose the investment category you are interested in",
                   "Submit your basic contact details",
-                  "Receive follow-up from the team",
-                  "Review the relevant information before continuing"
+                  "Receive follow-up from an Investment Specialist",
+                  "Review the formal product documentation before continuing"
                 ].map((item, i) => (
                   <li key={i} className="flex items-start">
                     <span className="w-1.5 h-1.5 bg-navy mt-2 mr-3 flex-shrink-0"></span>
@@ -457,17 +457,22 @@ export default function Investments() {
                 ))}
               </ul>
               
-              <Link href="/contact" className="inline-block bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors">
-                Speak to the Team
-              </Link>
+              <div className="flex flex-wrap gap-4">
+                <Link href="/compare" className="inline-block bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors">
+                  Compare Products
+                </Link>
+                <Link href="/contact" className="inline-block bg-white border border-border-grey text-navy px-8 py-4 font-medium hover:border-navy transition-colors">
+                  Speak to an Investment Specialist
+                </Link>
+              </div>
             </div>
             
             <div className="w-full lg:w-1/2">
               <div className="bg-white border border-border-grey p-8 md:p-12 h-full flex flex-col justify-center">
                 <div className="border-l-4 border-navy pl-6 mb-6">
-                  <h3 className="text-xl font-serif text-ink mb-2">A clear pathway</h3>
+                  <h3 className="text-xl font-serif text-ink mb-2">Invest With Purpose. Grow With Vision.</h3>
                   <p className="text-muted-blue font-sans leading-relaxed">
-                    We believe in providing transparent, structured information so you can make considered decisions about your financial future.
+                    Successful investing is not about chasing the highest advertised return. It is about understanding opportunities, respecting risk, choosing the right structures and staying committed to the long term.
                   </p>
                 </div>
               </div>

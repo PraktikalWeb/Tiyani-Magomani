@@ -34,13 +34,13 @@ export default function DigitalInvesting() {
         <div className="tm-editorial-hero-overlay" />
         <div className="tm-editorial-shell tm-editorial-hero-content">
           <FadeIn className="tm-editorial-hero-copy">
-            <h1>A simpler way to explore investment options online.</h1>
+            <h1>Your Wealth Deserves More Than an Investment Product.</h1>
             <p>
-              Review investment categories, compare estimates and submit an enquiry when you are ready for the next step.
+              Solutions for every stage of your wealth journey. Growing wealth matters. So does managing it responsibly, planning for uncertainty and making informed decisions along the way.
             </p>
             <div className="tm-editorial-hero-actions">
               <Link href="/contact" className="tm-editorial-button tm-editorial-button-primary group">
-                Start an Enquiry
+                Discover Our Financial Solutions
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </Link>
               <Link href="/compare" className="tm-editorial-button tm-editorial-button-secondary">
@@ -56,26 +56,26 @@ export default function DigitalInvesting() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10">
           <FadeInStagger className="grid grid-cols-2 md:grid-cols-4 gap-6 divide-x-0 md:divide-x divide-border-grey mb-8">
             <FadeInStaggerItem className="flex flex-col md:pl-6 first:md:pl-0">
-              <span className="text-lg font-serif text-ink mb-1">Explore</span>
-              <span className="text-sm font-sans text-muted-blue">View investment categories</span>
+              <span className="text-lg font-serif text-ink mb-1">Asset Management</span>
+              <span className="text-sm font-sans text-muted-blue">Your wealth deserves direction</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
-              <span className="text-lg font-serif text-ink mb-1">Compare</span>
-              <span className="text-sm font-sans text-muted-blue">Use the Compare Investments</span>
+              <span className="text-lg font-serif text-ink mb-1">Fund Management</span>
+              <span className="text-sm font-sans text-muted-blue">Structured capital approach</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
-              <span className="text-lg font-serif text-ink mb-1">Enquire</span>
-              <span className="text-sm font-sans text-muted-blue">Submit your details</span>
+              <span className="text-lg font-serif text-ink mb-1">Insurance &amp; Advisory</span>
+              <span className="text-sm font-sans text-muted-blue">Protect &amp; align what matters</span>
             </FadeInStaggerItem>
             <FadeInStaggerItem className="flex flex-col md:pl-6">
-              <span className="text-lg font-serif text-ink mb-1">Follow Up</span>
-              <span className="text-sm font-sans text-muted-blue">Receive relevant information</span>
+              <span className="text-lg font-serif text-ink mb-1">Digital Investing</span>
+              <span className="text-sm font-sans text-muted-blue">Your financial future, closer to you</span>
             </FadeInStaggerItem>
           </FadeInStagger>
           
           <FadeIn>
             <p className="text-xs font-sans text-muted-blue pt-6 border-t border-border-grey/50 max-w-4xl font-normal leading-relaxed">
-              This digital pathway is for general information and enquiry purposes only. It does not represent financial advice, real onboarding or guaranteed outcomes.
+              Investments involve risk, including possible loss of capital. Target and projected returns are not guaranteed. Product availability, eligibility, fees, liquidity and applicable terms must be confirmed in formal documentation.
             </p>
           </FadeIn>
         </div>
@@ -85,10 +85,10 @@ export default function DigitalInvesting() {
       <section className="py-20 lg:py-32 bg-off-white border-b border-border-grey">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Overview</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Designed to help visitors understand before they enquire.</h2>
+            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">One Connected Approach</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Your Ambitions Deserve a Connected Strategy.</h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              The Digital Investing page gives visitors a simple way to explore Tiyani Magomani’s investment categories online. Instead of starting with complex paperwork, visitors can first review the available options, compare basic estimates using the calculator and submit an enquiry for follow-up.
+              From investing and managing assets to planning for risk and tracking progress, our solutions work together to support your entire wealth journey. Investing should be clear, convenient and within reach—our digital experience helps you explore products, understand projections and keep track of your investments through modern online tools.
             </p>
           </FadeIn>
         </div>
@@ -98,17 +98,17 @@ export default function DigitalInvesting() {
       <section className="py-20 lg:py-32 bg-white border-b border-border-grey">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="text-center max-w-3xl mx-auto mb-16">
-            <h2 className="text-3xl md:text-4xl font-serif text-ink">How the digital investing pathway works</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-ink">Our Financial Services</h2>
           </FadeIn>
           
           <div className="max-w-5xl mx-auto">
             <FadeInStagger className="tm-digital-pathway-grid">
               {[
-                { title: "Explore the options", desc: "Review the available investment categories, including growth, income, flexible-access, fixed-return and offshore-focused options." },
-                { title: "Compare the categories", desc: "Use the Investment Options page to understand the purpose, flexibility and positioning of each category." },
-                { title: "Compare Investments", desc: "Enter an amount, select a period and compare estimated results across the available investment categories." },
-                { title: "Submit an enquiry", desc: "Send your contact details so the team can follow up with the relevant information." },
-                { title: "Review formal information", desc: "The team can provide the relevant product details, risks, terms and next steps before any decision is made." }
+                { title: "Asset Management — Your Wealth Deserves Direction", desc: "Your money should be managed with a clear view of where you are headed. Our approach combines investment strategy, diversification, risk assessment and long-term objectives, because your future deserves more than guesswork." },
+                { title: "Investment Fund Management — A Structured Approach", desc: "Some opportunities are best approached through carefully designed capital structures. Our fund management vision connects pooled capital with selected investments, backed by oversight and disciplined management." },
+                { title: "Insurance — Build Your Wealth. Protect What Matters", desc: "You have worked hard to build your financial future. Protecting that progress means preparing for the unexpected. Explore insurance solutions designed to help you manage risks to your family, business and assets." },
+                { title: "Digital Investing — Your Financial Future, Closer to You", desc: "Investing should be clear, convenient and within reach. Our digital experience helps you explore products, understand projections and keep track of your investments through modern online tools." },
+                { title: "Portfolio Advisory — Make Every Decision an Informed One", desc: "Goals evolve. Markets move. Strategy has to keep up. Our portfolio advisory approach helps you evaluate opportunities, understand risk and align every investment choice with what you want to achieve." }
               ].map((step, index) => (
                 <FadeInStaggerItem key={index} className="tm-digital-pathway-step">
                   <span>{index + 1}</span>

@@ -126,7 +126,7 @@ export function HomeStyleHeader() {
           </div>
 
           <Link href="/digital-investing" className={`tm-home-nav-link${pathname === '/digital-investing' ? ' is-active' : ''}`} onClick={closeNavigation}>Digital Investing</Link>
-          <Link href="/about" className={`tm-home-nav-link${pathname === '/about' ? ' is-active' : ''}`} onClick={closeNavigation}>About</Link>
+          <Link href="/about" className={`tm-home-nav-link${pathname === '/about' ? ' is-active' : ''}`} onClick={closeNavigation}>About Us</Link>
           <Link href="/contact" className={`tm-home-nav-link${pathname === '/contact' ? ' is-active' : ''}`} onClick={closeNavigation}>Contact Us</Link>
         </nav>
 
@@ -164,7 +164,7 @@ export function HomeStyleHeader() {
             </div>
           )}
           <Link href="/digital-investing" className={pathname === '/digital-investing' ? 'is-active' : ''} onClick={closeNavigation}>Digital Investing</Link>
-          <Link href="/about" className={pathname === '/about' ? 'is-active' : ''} onClick={closeNavigation}>About</Link>
+          <Link href="/about" className={pathname === '/about' ? 'is-active' : ''} onClick={closeNavigation}>About Us</Link>
           <Link href="/contact" className={pathname === '/contact' ? 'is-active' : ''} onClick={closeNavigation}>Contact Us</Link>
           <Link href="/contact" className="tm-home-mobile-cta" onClick={closeNavigation}>Start Investing</Link>
         </div>
@@ -198,9 +198,11 @@ export function HomeFooterLinks({ useHomeAnchors = false }: { useHomeAnchors?: b
           className={`tm-home-footer-link-list${openSections.explore ? ' is-open' : ''}`}
         >
           <Link href="/">Home</Link>
-          <Link href={useHomeAnchors ? '#products' : '/#products'}>Products</Link>
-          <Link href={useHomeAnchors ? '#services' : '/#services'}>Services</Link>
-          <Link href="/about">About</Link>
+          <Link href="/about">About Us</Link>
+          <Link href={useHomeAnchors ? '#products' : '/investments'}>Investment Products</Link>
+          <Link href={useHomeAnchors ? '#services' : '/digital-investing'}>Our Services</Link>
+          <Link href={useHomeAnchors ? '#calculator' : '/calculator'}>Investment Calculator</Link>
+          <Link href="/contact">Contact Us</Link>
         </div>
       </div>
       <div className="tm-home-footer-group">
@@ -218,10 +220,10 @@ export function HomeFooterLinks({ useHomeAnchors = false }: { useHomeAnchors?: b
           id="tm-footer-information-links"
           className={`tm-home-footer-link-list${openSections.information ? ' is-open' : ''}`}
         >
-          <Link href="/legal">Legal Centre</Link>
+          <Link href="/terms">Product Terms</Link>
+          <Link href="/risk-disclosure">Investment Risks</Link>
           <Link href="/privacy">Privacy Policy</Link>
-          <Link href="/risk-disclosure">Risk Disclosure</Link>
-          <Link href="/contact">Contact</Link>
+          <Link href="/legal">Regulatory Disclosures</Link>
         </div>
       </div>
     </div>
@@ -234,8 +236,10 @@ export function HomeStyleFooter() {
       <div className="tm-home-footer-main">
         <div>
           <Link href="/" className="tm-home-footer-logo" aria-label="Tiyani Magomani home">
-            <img src="/tiyani-logo.png" alt="Tiyani Magomani" />
+            <img src="/tiyani-logo.png" alt="Tiyani Magomani Capital" />
           </Link>
+          <p><strong>Where Capital Meets Opportunity.</strong></p>
+          <p>We Don&apos;t Just See Capital. We See Potential, Opportunity and Generational Wealth. Access to Investments That Protect and Grow Your Wealth.</p>
           <p>Johannesburg | Limpopo Province, South Africa</p>
           <a href="mailto:office@tiyanimagomani.com">office@tiyanimagomani.com</a>
           <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
@@ -243,7 +247,7 @@ export function HomeStyleFooter() {
         <HomeFooterLinks />
       </div>
       <p className="tm-home-footer-note">
-        Tiyani Magomani is in the process of registering as a Financial Services Provider (FSP) with the Financial Sector Conduct Authority (FSCA). Return estimates shown on this site are illustrative only and not guaranteed.
+        Investments involve risk, including possible loss of capital. Target and projected returns are not guaranteed. Product availability, eligibility, fees, liquidity and applicable terms must be confirmed in formal documentation. © Tiyani Magomani Capital. All rights reserved.
       </p>
     </footer>
   );

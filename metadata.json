@@ -1,0 +1,8 @@
+{
+  "name": "Tiyani Magomani",
+  "description": "Modern, accessible investment products and structured wealth solutions for individuals and businesses.",
+  "permissions": [],
+  "capabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

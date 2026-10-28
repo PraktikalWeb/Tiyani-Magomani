@@ -24,10 +24,10 @@ export default function FixedReturnGrowth() {
         <div className="tm-growth-hero-content">
           <FadeIn className="tm-growth-hero-copy">
             <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-              Fixed Return Growth Portfolio
+              Fixed Return Growth
             </h1>
             <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-              A structured growth investment category for clients considering defined-term investment positioning with a focus on future value creation.
+              Give Your Goals a Clear Direction. Indicative rate: 12.6% p.a. | Structured capital growth.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
@@ -68,10 +68,10 @@ export default function FixedReturnGrowth() {
         <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="tm-growth-overview-content max-w-3xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ink mb-8 leading-tight">
-              Built for clients who prefer defined growth positioning.
+              Give Your Goals a Clear Direction.
             </h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              Fixed Return Growth Portfolio is positioned for clients who are considering a structured investment route with a defined-term approach and a focus on capital growth. It is suited to visitors who want clearer investment positioning while still reviewing all formal product details before making a decision.
+              Building wealth takes planning, patience and consistency. Fixed Return Growth offers a defined-rate structure for investors who want compounding growth over an agreed term. See what time and compounding could do for your goals.
             </p>
           </FadeIn>
         </div>

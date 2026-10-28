@@ -24,10 +24,10 @@ export default function PrivateEquityFlexibleAccess() {
         <div className="tm-growth-hero-content">
           <FadeIn className="tm-growth-hero-copy">
             <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-              Private Equity: Flexi Access
+              Private Equity Flexible Access
             </h1>
             <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-              A growth-focused investment category for clients considering long-term value creation through structured private-equity-style exposure.
+              Ambitions Change. Your Investment Should Be Ready. Target return: 11% p.a. | Growth with conditional access.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
@@ -68,10 +68,10 @@ export default function PrivateEquityFlexibleAccess() {
         <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="tm-growth-overview-content max-w-3xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ink mb-8 leading-tight">
-              Built for clients focused on future value creation.
+              Ambitions Change. Your Investment Should Be Ready.
             </h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              Private Equity: Flexi Access is positioned for clients who are considering a 12-month investment route. It is suited to visitors who want to explore structured investment opportunities before making an enquiry.
+              You want your capital to grow, and you know life can shift your priorities. Private Equity Flexible Access combines exposure to private equity opportunities with defined arrangements for accessing your invested capital.
             </p>
           </FadeIn>
         </div>

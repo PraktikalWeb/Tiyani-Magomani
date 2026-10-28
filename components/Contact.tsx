@@ -136,18 +136,18 @@ function ContactContent() {
         <div className="tm-editorial-shell tm-editorial-hero-content">
           <FadeIn delay={0.2} className="tm-editorial-hero-copy">
             <h1>
-              Start with a simple investment enquiry.
+              Your Next Financial Chapter Starts With a Decision.
             </h1>
             <p>
-              Submit your details and the team can follow up with the relevant information about Tiyani Magomani’s investment categories, calculator estimates and next steps.
+              The opportunities are here. Whether you want to grow capital, earn additional income or build a long-term strategy, the first step is knowing your options. Explore our products, review the information and speak to our team about how investing with us works.
             </p>
             <div className="tm-editorial-hero-actions">
               <a href="#enquiry-form" className="tm-editorial-button tm-editorial-button-primary group">
-                Start Enquiry
+                Request Investment Information
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <Link href="/investments" className="tm-editorial-button tm-editorial-button-secondary">
-                View Investment Options
+                Explore Investment Products
               </Link>
             </div>
           </FadeIn>
@@ -188,10 +188,10 @@ function ContactContent() {
       <section id="enquiry-form" className="py-20 lg:py-32 bg-off-white border-b border-border-grey scroll-mt-20">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="mb-16">
-            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Investment Enquiry</span>
-            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Tell us what you would like to explore.</h2>
+            <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Your Financial Goals Matter. Let&apos;s Explore What&apos;s Possible.</span>
+            <h2 className="text-3xl md:text-4xl font-serif text-ink mb-6">Ready to Take the Next Step?</h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal max-w-3xl">
-              Complete the enquiry form and select the investment category you are interested in. If you are not sure which option fits your goals, you can choose “Not sure yet”.
+              Tell us what you want to achieve and we will direct you to the right investment information. Complete the enquiry form and select the investment category you are interested in.
             </p>
           </FadeIn>
           
@@ -531,17 +531,17 @@ function ContactContent() {
       <section className="py-20 bg-navy">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <FadeIn>
-            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Ready to submit your enquiry?</h2>
+            <h2 className="text-3xl md:text-4xl font-serif text-white mb-6">Your Future Is Worth Planning For.</h2>
             <p className="text-lg font-sans text-soft-grey/90 leading-relaxed mb-10 max-w-2xl mx-auto font-normal">
-              Start with a simple enquiry and the team can follow up with the relevant information about the investment category you are interested in.
+              Tell us what you want to achieve and we will direct you to the right investment information.
             </p>
             <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
               <a href="#enquiry-form" className="bg-white text-navy px-8 py-4 text-[13px] font-bold hover:bg-off-white transition-colors flex items-center group justify-center w-full sm:w-auto uppercase tracking-wider">
-                Start Enquiry
+                Start Your Investment Journey
                 <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
               </a>
               <Link href="/investments" className="text-white font-bold hover:opacity-70 transition-opacity uppercase tracking-wider text-[13px] flex items-center justify-center w-full sm:w-auto border border-white/30 px-8 py-4">
-                View Investment Options
+                Explore Investment Products
               </Link>
             </div>
           </FadeIn>

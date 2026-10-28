@@ -24,10 +24,10 @@ export default function PrivateEquityIncome() {
         <div className="tm-growth-hero-content">
           <FadeIn className="tm-growth-hero-copy">
             <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-              Private Equity: Income
+              Private Equity Income
             </h1>
             <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-              An income-focused investment category for clients considering structured private-equity-style exposure with regular income potential.
+              Let Your Investment Do More Than Grow. Target return: 13.2% p.a. | Additional income.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
@@ -68,10 +68,10 @@ export default function PrivateEquityIncome() {
         <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="tm-growth-overview-content max-w-3xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ink mb-8 leading-tight">
-              Built for clients focused on income potential.
+              Let Your Investment Do More Than Grow.
             </h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              Private Equity: Income is positioned for clients who are considering an investment route with regular income potential. It is suited to visitors who want to explore structured investment opportunities where the primary objective is income positioning rather than only long-term capital growth.
+              Financial independence means making your money support the life you want. Private Equity Income takes an income-focused approach to private business investing, with the objective of generating periodic distributions from eligible investments.
             </p>
           </FadeIn>
         </div>

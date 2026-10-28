@@ -24,30 +24,30 @@ const heroSlides = [
     src: '/images/investment-options-team.png',
     alt: 'Investment professionals discussing a client strategy',
     position: 'center',
-    title: 'Investing, Built for Right Now.',
-    text: 'Modern, accessible investment products for individuals and businesses without the outdated gatekeeping of traditional finance.',
-    primaryLabel: 'Start Investing',
-    primaryHref: '#calculator',
-    secondaryLabel: 'Explore Our Products',
-    secondaryHref: '#products',
+    title: "We Don't Just See Capital. We See Potential, Opportunity and Generational Wealth.",
+    text: "Your money is not just what you have today. It is the businesses you could back, the independence you could secure and the legacy you could leave. Your capital was built to do more than sit still.",
+    primaryLabel: 'Explore Investments',
+    primaryHref: '#products',
+    secondaryLabel: 'About Us',
+    secondaryHref: '/about',
   },
   {
     src: '/images/investment-solutions-advisory.png',
     alt: 'An adviser and client reviewing investment information',
     position: 'center',
-    title: 'From Private Equity to Fixed Returns. Pick Your Path.',
-    text: 'Growth, income, or flexibility. Choose the product that matches how you want your money to work.',
+    title: 'Your Money. Your Ambitions. Your Strategy.',
+    text: 'From private equity to fixed-return investments, five solutions give you the power to choose growth, income or flexibility. Pick the path that matches your goals.',
     primaryLabel: 'View All Products',
     primaryHref: '#products',
-    secondaryLabel: 'Try the Returns Calculator',
+    secondaryLabel: 'Try the Calculator',
     secondaryHref: '#calculator',
   },
   {
     src: '/images/contact-advisory-meeting.png',
     alt: 'An adviser meeting with clients in a bright office',
     position: 'center',
-    title: "Wealth That's Protected. Investments You Can Reach Anytime.",
-    text: "Insurance to safeguard what you've built, and digital tools to manage it, all in one place and on your terms.",
+    title: 'Building Wealth Is the Start. Managing It Is What Makes It Last.',
+    text: 'Asset management. Investment funds. Insurance. Digital investing. Portfolio advisory. One connected approach to your entire financial journey.',
     primaryLabel: 'Explore Our Services',
     primaryHref: '#services',
   },
@@ -56,8 +56,8 @@ const heroSlides = [
     alt: 'Clients reviewing an investment estimate together',
     position: 'center',
     title: 'What Could Your Money Grow To?',
-    text: 'Enter an amount, choose a term, and get an instant estimate across every product we offer.',
-    primaryLabel: 'Try the Calculator',
+    text: "Choose a product. Enter your amount. See what your capital could become over time. Your next big financial decision starts with seeing what's possible.",
+    primaryLabel: 'Calculate Your Potential Returns',
     primaryHref: '#calculator',
   },
 ];
@@ -75,41 +75,41 @@ const products = [
   {
     number: '1',
     title: 'Private Equity Growth',
-    tag: 'Growth · Compounding',
+    tag: 'Long-term growth · Your Capital Could Be Part of Something Bigger',
     rate: '13.2% p.a.',
-    description: 'Long term capital growth by investing in high potential private businesses.',
+    description: 'Why watch businesses grow when your capital could grow with them? Private Equity Growth gives you exposure to selected private businesses with strong long-term potential. Through a compounding approach, it is built to accumulate capital over time.',
     href: '/investments/private-equity-growth',
   },
   {
     number: '2',
     title: 'Private Equity Income',
-    tag: 'Income · Paid Out',
+    tag: 'Additional income · Let Your Investment Do More Than Grow',
     rate: '13.2% p.a.',
-    description: 'Regular income generated from private equity holdings, paid out along the way.',
+    description: 'Financial independence means making your money support the life you want. Private Equity Income takes an income-focused approach to private business investing, with the objective of generating periodic distributions from eligible investments.',
     href: '/investments/private-equity-income',
   },
   {
     number: '3',
     title: 'Private Equity Flexible Access',
-    tag: 'Growth · Flexible',
+    tag: 'Growth with conditional access · Ambitions Change. Your Investment Should Be Ready.',
     rate: '11% p.a.',
-    description: 'Private equity exposure with easier access to your capital when you need it.',
+    description: 'You want your capital to grow, and you know life can shift your priorities. Private Equity Flexible Access combines exposure to private equity opportunities with defined arrangements for accessing your invested capital.',
     href: '/investments/private-equity-flexible-access',
   },
   {
     number: '4',
     title: 'Fixed Return Growth',
-    tag: 'Fixed · Compounding',
+    tag: 'Structured capital growth · Give Your Goals a Clear Direction',
     rate: '12.6% p.a.',
-    description: 'A set growth rate over your chosen term. Predictable. Compounding. No surprises.',
+    description: 'Building wealth takes planning, patience and consistency. Fixed Return Growth offers a defined-rate structure for investors who want compounding growth over an agreed term. See what time and compounding could do for your goals.',
     href: '/investments/fixed-return-growth',
   },
   {
     number: '5',
     title: 'Fixed Return Income',
-    tag: 'Fixed · Paid Out',
+    tag: 'Defined income structure · Create Another Stream of Income',
     rate: '12.6% p.a.',
-    description: 'A fixed, regular income paid out over your chosen term for investors who want certainty.',
+    description: 'Your goals may call for more than long-term growth. Fixed Return Income is built for investors who want scheduled income payments under a defined-rate arrangement.',
     href: '/investments/fixed-return-income',
   },
 ];
@@ -117,47 +117,55 @@ const products = [
 const services = [
   {
     number: '1',
-    title: 'Asset Management',
-    description: 'Portfolios built and managed around your goals, not a generic model.',
+    title: 'Asset Management — Your Wealth Deserves Direction.',
+    description: 'Your money should be managed with a clear view of where you are headed. Our approach combines investment strategy, diversification, risk assessment and long-term objectives, because your future deserves more than guesswork.',
   },
   {
     number: '2',
-    title: 'Investment Fund Management',
-    description: 'Pooled investment solutions giving you access to opportunities designed for scale.',
+    title: 'Investment Fund Management — Access Opportunities Through a Structured Approach.',
+    description: 'Some opportunities are best approached through carefully designed capital structures. Our fund management vision connects pooled capital with selected investments, backed by oversight and disciplined management.',
   },
   {
     number: '3',
-    title: 'Insurance',
-    description: 'Protection built into your financial plan, so growth is never undone by the unexpected.',
+    title: 'Insurance — Build Your Wealth. Protect What Matters.',
+    description: 'You have worked hard to build your financial future. Protecting that progress means preparing for the unexpected. Explore insurance solutions designed to help you manage risks to your family, business and assets.',
   },
   {
     number: '4',
-    title: 'Digital Investing',
-    description: 'Manage, track, and grow your investments online. Built for how you invest today.',
+    title: 'Digital Investing — Your Financial Future, Closer to You.',
+    description: 'Investing should be clear, convenient and within reach. Our digital experience helps you explore products, understand projections and keep track of your investments through modern online tools.',
   },
   {
     number: '5',
-    title: 'Portfolio Advisory',
-    description: 'Ongoing guidance to keep your strategy aligned as markets and goals shift.',
+    title: 'Portfolio Advisory — Make Every Decision an Informed One.',
+    description: 'Goals evolve. Markets move. Strategy has to keep up. Our portfolio advisory approach helps you evaluate opportunities, understand risk and align every investment choice with what you want to achieve.',
   },
 ];
 
 const reasons = [
   {
-    title: "Built for Today's Investor",
-    description: 'Modern products designed for how people actually invest now, not decades ago.',
+    title: 'Investment Choice That Reflects Your Ambitions',
+    description: 'Structures built for different goals, from compounding growth to income-focused investing.',
   },
   {
-    title: 'Your Goals First',
-    description: 'No generic portfolios. Every strategy starts with a conversation about you.',
+    title: 'A Long-Term View of Wealth',
+    description: 'Real wealth takes discipline and patience, and the vision to look beyond immediate returns.',
   },
   {
-    title: 'Rooted, Not Remote',
-    description: 'Based in Johannesburg and Limpopo Province. We understand this market because we live in it.',
+    title: 'More Than Investment Products',
+    description: 'Investments, asset management, protection, digital tools and portfolio guidance, working together.',
   },
   {
-    title: 'Committed to Compliance',
-    description: 'Actively completing our FSCA registration, because trust is earned through accountability.',
+    title: 'Investment Information You Can Understand',
+    description: 'Options that are easy to explore, compare and evaluate before you commit.',
+  },
+  {
+    title: 'A Commitment to Responsible Investing',
+    description: 'Every opportunity is weighed against risk, liquidity, suitability and your long-term objectives.',
+  },
+  {
+    title: 'A Vision That Thinks Beyond Generations',
+    description: 'We are building valuable assets and financial opportunities for tomorrow.',
   },
 ];
 
@@ -379,7 +387,7 @@ export default function Home() {
               Digital Investing
             </Link>
             <Link href="/about" className="tm-home-nav-link" onClick={closeNavigation}>
-              About
+              About Us
             </Link>
             <Link href="/contact" className="tm-home-nav-link" onClick={closeNavigation}>
               Contact Us
@@ -424,7 +432,7 @@ export default function Home() {
               </div>
             )}
             <Link href="/digital-investing" onClick={closeNavigation}>Digital Investing</Link>
-            <Link href="/about" onClick={closeNavigation}>About</Link>
+            <Link href="/about" onClick={closeNavigation}>About Us</Link>
             <Link href="/contact" onClick={closeNavigation}>Contact Us</Link>
             <Link href="/contact" className="tm-home-mobile-cta" onClick={closeNavigation}>Start Investing</Link>
           </div>
@@ -477,26 +485,29 @@ export default function Home() {
 
         <section className="tm-home-section tm-home-about" id="about">
           <div className="tm-home-about-copy">
-            <p className="tm-home-eyebrow">A New Way to Invest</p>
-            <h2>Built for Today&apos;s Investor, Not Yesterday&apos;s Rules.</h2>
+            <p className="tm-home-eyebrow">Invest Around Your Ambitions</p>
+            <h2>What Do You Want Your Money to Do for You?</h2>
             <div className="tm-home-copy-columns">
               <p>
-                Tiyani Magomani was founded on a simple idea: investing shouldn&apos;t be reserved for the old guard. We&apos;re building a company for today&apos;s investor, someone who wants real products, real transparency, and real growth without the outdated gatekeeping of traditional finance.
+                Grow it. Earn from it. Keep it flexible. Protect it. Pass it on. Whatever your goal, the right investment journey starts with knowing your options. Tiyani Magomani Capital connects ambitious people with investment opportunities built for long-term growth, additional income and lasting prosperity.
               </p>
               <p>
-                Based in Johannesburg and Limpopo Province, we&apos;re bringing a fresh, digitally driven approach to asset management, investment funds, insurance, and more.
+                <strong>Grow My Wealth:</strong> Put your capital to work through long-term strategies built for compounding growth. <strong>Earn Investment Income:</strong> Explore income-focused investments designed around your financial objectives.
+              </p>
+              <p>
+                <strong>Invest With Greater Flexibility:</strong> Choose solutions that respect how your needs for access may change. <strong>Manage and Protect My Wealth:</strong> Tap into management, advisory and protection solutions that safeguard the bigger picture.
               </p>
             </div>
-            <Link href="/about" className="tm-home-text-link">
-              Discover Our Story
+            <Link href="/investments" className="tm-home-text-link">
+              Find Your Investment Path
               <ArrowRight aria-hidden="true" size={17} />
             </Link>
           </div>
           <div className="tm-home-about-image">
             <img src="/images/investment-options-team.png" alt="Investment professionals in conversation" />
             <div className="tm-home-about-caption">
-              <span>Johannesburg</span>
-              <span>Limpopo Province</span>
+              <span>Your Capital. Your Ambitions.</span>
+              <span>Your Future.</span>
             </div>
           </div>
         </section>
@@ -504,10 +515,10 @@ export default function Home() {
         <section className="tm-home-section tm-home-products" id="products">
           <div className="tm-home-section-heading">
             <div>
-              <p className="tm-home-eyebrow">Choose How You Grow</p>
-              <h2>Our Products</h2>
+              <p className="tm-home-eyebrow">Our Investment Products</p>
+              <h2>Don&apos;t Just Save for the Future. Invest in Its Potential.</h2>
             </div>
-            <p>Five ways to put your money to work. Pick the balance of growth, income, and access that fits you.</p>
+            <p>Five investment solutions. Different goals. One financial future. Your ambitions are personal, and your investment choices should be too.</p>
           </div>
 
           <div className="tm-home-product-list">
@@ -529,16 +540,16 @@ export default function Home() {
 
           <div className="tm-home-calculator-prompt">
             <div>
-              <p className="tm-home-eyebrow">See Your Numbers</p>
-              <h3>Estimate Your Return in Seconds.</h3>
-              <p>Choose a product, set your amount and term, and get an instant estimate.</p>
+              <p className="tm-home-eyebrow">Not Sure Which Investment Fits?</p>
+              <h3>Compare Objectives, Terms, Risks and Access Conditions.</h3>
+              <p>Never choose on a headline percentage alone. Compare objectives, terms, risks and access conditions, then move forward with confidence.</p>
             </div>
-            <a href="#calculator" className="tm-home-button tm-home-button-navy">
-              Try the Calculator
+            <Link href="/compare" className="tm-home-button tm-home-button-navy">
+              Compare Products
               <ArrowRight aria-hidden="true" size={17} />
-            </a>
+            </Link>
           </div>
-          <p className="tm-home-product-disclaimer">Target returns are projections based on prevailing market conditions and are not guaranteed.</p>
+          <p className="tm-home-product-disclaimer">Investments involve risk, including possible loss of capital. Target and projected returns are not guaranteed. Product availability, eligibility, fees, liquidity and applicable terms must be confirmed in formal documentation.</p>
         </section>
 
         <section className="tm-home-services" id="services">
@@ -547,9 +558,9 @@ export default function Home() {
             <div aria-hidden="true" />
           </div>
           <div className="tm-home-services-content">
-            <p className="tm-home-eyebrow">More Than Products</p>
-            <h2>Our Services</h2>
-            <p className="tm-home-services-intro">A full financial partner, from managing your money to protecting it.</p>
+            <p className="tm-home-eyebrow">Our Financial Services</p>
+            <h2>Your Wealth Deserves More Than an Investment Product.</h2>
+            <p className="tm-home-services-intro">Solutions for every stage of your wealth journey. Growing wealth matters. So does managing it responsibly, planning for uncertainty and making informed decisions along the way.</p>
             <div className="tm-home-service-list">
               {services.map((service) => (
                 <div className="tm-home-service-row" key={service.title}>
@@ -561,8 +572,8 @@ export default function Home() {
                 </div>
               ))}
             </div>
-            <Link href="/contact" className="tm-home-text-link tm-home-text-link-light">
-              Explore All Services
+            <Link href="/digital-investing" className="tm-home-text-link tm-home-text-link-light">
+              Discover Our Financial Solutions
               <ArrowRight aria-hidden="true" size={17} />
             </Link>
           </div>
@@ -570,14 +581,14 @@ export default function Home() {
 
         <section className="tm-home-calculator-section" id="calculator">
           <div className="tm-home-calculator-heading">
-            <p className="tm-home-eyebrow">See Your Numbers</p>
-            <h2>Estimate Your Return in Seconds.</h2>
-            <p>Choose a product, set your amount and term, and get an instant estimate.</p>
+            <p className="tm-home-eyebrow">Investment Calculator · Your Money Has Potential. See the Numbers.</p>
+            <h2>What Could Your Money Grow To?</h2>
+            <p>What could R100,000 become in five years? How much difference could compounding make? What could an income-focused investment add to your goals? Stop wondering. Our calculator shows illustrative outcomes based on your chosen product, amount and investment term.</p>
           </div>
 
           <div className="tm-home-calculator-grid">
             <div className="tm-home-calculator-panel">
-              <p className="tm-home-calculator-label">1 Choose a Product</p>
+              <p className="tm-home-calculator-label">Step 1 | Choose Your Investment Product</p>
               <div className="tm-home-calculator-products">
                 {calculatorProducts.map((product) => (
                   <button
@@ -596,7 +607,7 @@ export default function Home() {
               </div>
 
               <label className="tm-home-calculator-field">
-                <span className="tm-home-calculator-label">2 Investment Amount</span>
+                <span className="tm-home-calculator-label">Step 2 | Enter Your Investment Amount</span>
                 <span className="tm-home-calculator-amount">
                   <span>R</span>
                   <input
@@ -614,10 +625,10 @@ export default function Home() {
 
               <div className="tm-home-calculator-field">
                 <span className="tm-home-calculator-term-heading">
-                  <span className="tm-home-calculator-label">3 Term</span>
+                  <span className="tm-home-calculator-label">Step 3 | See Your Potential Outcome (Term)</span>
                   <strong>{calculatorYears} {calculatorYears === 1 ? 'year' : 'years'}</strong>
                 </span>
-                <p className="tm-home-calculator-fixed-term">The term is fixed for the selected product.</p>
+                <p className="tm-home-calculator-fixed-term">Review estimated growth or income based on the product&apos;s stated assumptions.</p>
               </div>
             </div>
 
@@ -691,14 +702,14 @@ export default function Home() {
           </div>
 
           <p className="tm-home-calculator-disclaimer">
-            <strong>Important:</strong> Calculator results are estimates based on the information entered and the selected product assumptions. They are shown for general information and enquiry purposes only and do not constitute financial advice or a guaranteed return. Final figures, risks, fees, tax treatment, eligibility requirements and terms are subject to formal product documentation.
+            <strong>Important:</strong> Calculator results are estimates, not guarantees or personalised investment advice. Actual outcomes depend on product terms, risks, fees, taxes and other factors.
           </p>
         </section>
 
         <section className="tm-home-section tm-home-why">
           <div className="tm-home-why-heading">
-            <p className="tm-home-eyebrow">Why Clients Choose Us</p>
-            <h2>Built Differently, On Purpose.</h2>
+            <p className="tm-home-eyebrow">Why Tiyani Magomani Capital?</p>
+            <h2>Your Future Deserves More Than One-Size-Fits-All.</h2>
           </div>
           <div className="tm-home-reason-grid">
             {reasons.map((reason, index) => (
@@ -712,12 +723,12 @@ export default function Home() {
         </section>
 
         <section className="tm-home-final-cta">
-          <p className="tm-home-eyebrow">Your Future Doesn&apos;t Wait</p>
-          <h2>Neither Should You.</h2>
-          <p>See exactly what your money could grow into. Try the calculator, then let&apos;s build a plan around it.</p>
+          <p className="tm-home-eyebrow">Your Financial Goals Matter. Let&apos;s Explore What&apos;s Possible.</p>
+          <h2>Your Next Financial Chapter Starts With a Decision.</h2>
+          <p>The opportunities are here. Whether you want to grow capital, earn additional income or build a long-term strategy, the first step is knowing your options. Tell us what you want to achieve and we will direct you to the right investment information.</p>
           <div className="tm-home-actions">
-            <a href="#calculator" className="tm-home-button tm-home-button-navy">Try the Calculator</a>
-            <Link href="/contact" className="tm-home-button tm-home-button-outline-dark">Book a Consultation</Link>
+            <Link href="/investments" className="tm-home-button tm-home-button-navy">Explore Investment Products</Link>
+            <Link href="/contact" className="tm-home-button tm-home-button-outline-dark">Start Your Investment Journey</Link>
           </div>
         </section>
       </main>
@@ -726,8 +737,10 @@ export default function Home() {
         <div className="tm-home-footer-main">
           <div>
             <Link href="/" className="tm-home-footer-logo" aria-label="Tiyani Magomani home">
-              <img src="/tiyani-logo.png" alt="Tiyani Magomani" />
+              <img src="/tiyani-logo.png" alt="Tiyani Magomani Capital" />
             </Link>
+            <p><strong>Where Capital Meets Opportunity.</strong></p>
+            <p>We Don&apos;t Just See Capital. We See Potential, Opportunity and Generational Wealth. Access to Investments That Protect and Grow Your Wealth.</p>
             <p>Johannesburg | Limpopo Province, South Africa</p>
             <a href="mailto:office@tiyanimagomani.com">office@tiyanimagomani.com</a>
             <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
@@ -735,7 +748,7 @@ export default function Home() {
           <HomeFooterLinks useHomeAnchors />
         </div>
         <p className="tm-home-footer-note">
-          Tiyani Magomani is in the process of registering as a Financial Services Provider (FSP) with the Financial Sector Conduct Authority (FSCA). Return estimates shown on this site are illustrative only and not guaranteed.
+          Investments involve risk, including possible loss of capital. Target and projected returns are not guaranteed. Product availability, eligibility, fees, liquidity and applicable terms must be confirmed in formal documentation. © Tiyani Magomani Capital. All rights reserved.
         </p>
       </footer>
     </div>

@@ -36,18 +36,18 @@ export default function Calculator() {
         <div className="tm-editorial-shell tm-editorial-hero-content">
             <FadeIn className="tm-editorial-hero-copy">
               <h1>
-                Compare Investment Options
+                What Could Your Money Grow To?
               </h1>
               <p>
-                Enter an amount and compare estimated outcomes across the available investment options before submitting an enquiry.
+                What could R100,000 become in five years? How much difference could compounding make? What could an income-focused investment add to your goals? Stop wondering. Our calculator shows illustrative outcomes based on your chosen product, amount and investment term.
               </p>
               <div className="tm-editorial-hero-actions">
                 <a href="#calculator" className="tm-editorial-button tm-editorial-button-primary group">
-                  Start Calculating
+                  Calculate Your Potential Returns
                   <ArrowRight className="ml-2 w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
                 <Link href="/investments" className="tm-editorial-button tm-editorial-button-secondary">
-                  View Investment Options
+                  Explore Investment Products
                 </Link>
               </div>
             </FadeIn>
@@ -59,21 +59,21 @@ export default function Calculator() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="max-w-3xl mb-16">
             <FadeIn>
-              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Compare Investments</span>
+              <span className="text-xs font-sans uppercase tracking-widest text-muted-blue mb-4 block">Investment Calculator</span>
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ink mb-8 leading-tight">
-                One calculator for all investment categories.
+                Your Money Has Potential. See the Numbers.
               </h2>
               <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-                The calculator allows visitors to select an investment option, enter an amount and choose a period. The result gives a detailed breakdown estimate to help visitors compare investment categories before submitting an enquiry.
+                Choose a product. Enter your amount. See what your capital could become over time. Calculator results are estimates, not guarantees or personalised investment advice. Actual outcomes depend on product terms, risks, fees, taxes and other factors.
               </p>
             </FadeIn>
           </div>
           
           <FadeInStagger className="grid grid-cols-1 md:grid-cols-3 gap-8 border-t border-border-grey pt-12">
             {[
-              { title: "Product selection", desc: "Choose from the available investment categories." },
-              { title: "Estimated result", desc: "View a detailed breakdown estimate based on the selected amount and period." },
-              { title: "Next step", desc: "Submit an enquiry if you would like the team to follow up." }
+              { title: "Step 1 | Choose Your Investment Product", desc: "Compare growth-focused and income-focused structures." },
+              { title: "Step 2 | Enter Your Investment Amount", desc: "Start with an amount that suits your circumstances and meets the product's eligibility requirements." },
+              { title: "Step 3 | See Your Potential Outcome", desc: "Review estimated growth or income based on the product's stated assumptions." }
             ].map((point, i) => (
               <FadeInStaggerItem key={i}>
                 <h3 className="text-lg font-serif text-ink mb-3">{point.title}</h3>

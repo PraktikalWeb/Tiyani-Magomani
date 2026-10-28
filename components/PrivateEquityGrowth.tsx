@@ -25,10 +25,10 @@ export default function PrivateEquityGrowth() {
         <div className="tm-growth-hero-content">
           <FadeIn className="tm-growth-hero-copy">
             <h1 className="text-5xl md:text-6xl font-serif leading-tight mb-8 text-ink">
-              Private Equity: Growth
+              Private Equity Growth
             </h1>
             <p className="text-lg font-sans text-[#4B5563] leading-relaxed mb-10 max-w-xl font-normal">
-              Designed for clients seeking long-term capital growth through private-equity-style exposure.
+              Your Capital Could Be Part of Something Bigger. Target return: 13.2% p.a. | Long-term growth.
             </p>
             <div className="flex flex-wrap items-center gap-6">
               <Link href="/contact" className="bg-navy text-white px-8 py-4 font-medium hover:bg-ink transition-colors flex items-center group justify-center w-full sm:w-auto text-[15px]">
@@ -68,10 +68,10 @@ export default function PrivateEquityGrowth() {
         <div className="tm-growth-shell max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <FadeIn className="tm-growth-overview-content max-w-3xl">
             <h2 className="text-3xl md:text-4xl lg:text-5xl font-serif text-ink mb-8 leading-tight">
-              Built for clients focused on future value creation.
+              Your Capital Could Be Part of Something Bigger.
             </h2>
             <p className="text-lg font-sans text-muted-blue leading-relaxed font-normal">
-              Private Equity: Growth is positioned for clients who are considering a longer-term investment route with a focus on capital growth. It is suited to visitors who want to explore structured investment opportunities where the primary objective is future value creation rather than immediate income.
+              Why watch businesses grow when your capital could grow with them? Private Equity Growth gives you exposure to selected private businesses with strong long-term potential. Through a compounding approach, it is built to accumulate capital over time.
             </p>
           </FadeIn>
         </div>
