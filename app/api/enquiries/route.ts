@@ -2,8 +2,7 @@ import { NextResponse } from 'next/server';
 import { Resend } from 'resend';
 import { buildInternalEnquiryEmail, buildUserConfirmationEmail } from '@/src/lib/emails';
 
-// Initialise Resend with API key if available
-const resend = new Resend(process.env.RESEND_API_KEY || 're_dummy');
+export const dynamic = 'force-dynamic';
 
 export async function POST(request: Request) {
   try {
@@ -43,11 +42,12 @@ export async function POST(request: Request) {
       );
     }
 
-    const internalEmail = process.env.RESEND_INTERNAL_EMAIL;
-    const fromEmail = process.env.RESEND_FROM_EMAIL || 'Tiyani Magomani <enquiries@tiyanimagomani.com>';
-    const replyToEmail = process.env.RESEND_REPLY_TO_EMAIL || internalEmail;
+    const apiKey = process.env.RESEND_API_KEY?.trim();
+    const internalEmail = process.env.RESEND_INTERNAL_EMAIL?.trim();
+    const fromEmail = process.env.RESEND_FROM_EMAIL?.trim() || 'Tiyani Magomani <enquiries@tiyanimagomani.com>';
+    const replyToEmail = process.env.RESEND_REPLY_TO_EMAIL?.trim() || internalEmail;
 
-    if (!process.env.RESEND_API_KEY) {
+    if (!apiKey) {
       console.error('RESEND_API_KEY is not set. Email was not sent.');
       return NextResponse.json(
         { error: 'Email delivery is not configured yet. Please contact the site administrator.' },
@@ -62,6 +62,8 @@ export async function POST(request: Request) {
         { status: 500 }
       );
     }
+
+    const resend = new Resend(apiKey);
 
     const firstName = fullName.split(' ')[0];
 
