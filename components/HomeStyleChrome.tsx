@@ -240,8 +240,6 @@ export function HomeStyleFooter() {
           </Link>
           <p><strong>Where Capital Meets Opportunity.</strong></p>
           <p>We Don&apos;t Just See Capital. We See Potential, Opportunity and Generational Wealth. Access to Investments That Protect and Grow Your Wealth.</p>
-          <p>Johannesburg | Limpopo Province, South Africa</p>
-          <a href="mailto:office@tiyanimagomani.com">office@tiyanimagomani.com</a>
           <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
         </div>
         <HomeFooterLinks />

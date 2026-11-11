@@ -24,7 +24,7 @@ const heroSlides = [
     src: '/images/investment-options-team.png',
     alt: 'Investment professionals discussing a client strategy',
     position: 'center',
-    title: "We Don't Just See Capital. We See Potential, Opportunity and Generational Wealth.",
+    title: 'We See Beyond Capital: Potential, Opportunity and Generational Wealth.',
     text: "Your money is not just what you have today. It is the businesses you could back, the independence you could secure and the legacy you could leave. Your capital was built to do more than sit still.",
     primaryLabel: 'Explore Investments',
     primaryHref: '#products',
@@ -741,8 +741,6 @@ export default function Home() {
             </Link>
             <p><strong>Where Capital Meets Opportunity.</strong></p>
             <p>We Don&apos;t Just See Capital. We See Potential, Opportunity and Generational Wealth. Access to Investments That Protect and Grow Your Wealth.</p>
-            <p>Johannesburg | Limpopo Province, South Africa</p>
-            <a href="mailto:office@tiyanimagomani.com">office@tiyanimagomani.com</a>
             <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
           </div>
           <HomeFooterLinks useHomeAnchors />

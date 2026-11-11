@@ -633,7 +633,7 @@
   max-width: 670px;
   margin: 0;
   color: var(--tm-white);
-  font-size: clamp(2.4rem, 3.25vw, 3.8rem);
+  font-size: clamp(2.25rem, 3vw, 3.55rem);
 }
 
 .tm-home-hero-intro {
@@ -1824,7 +1824,7 @@
   }
 
   .tm-home-hero h1 {
-    font-size: clamp(2.35rem, 10vw, 3.2rem);
+    font-size: clamp(2.15rem, 9vw, 2.95rem);
   }
 
   .tm-home-hero-intro {
@@ -3167,6 +3167,23 @@
   align-self: end;
 }
 
+/* Fixed-term product pages: keep the term with the amount label and the action with its input. */
+.tm-product-calculator-entry form.tm-product-calculator-fixed-layout {
+  grid-template-rows: auto;
+  row-gap: 0;
+}
+
+.tm-product-calculator-entry form.tm-product-calculator-fixed-layout .tm-product-calculator-fixed-term {
+  align-self: start;
+  margin: 0 !important;
+}
+
+.tm-product-calculator-entry form.tm-product-calculator-fixed-layout .tm-product-calculator-submit {
+  grid-row: 1;
+  align-self: end;
+  margin: 0 !important;
+}
+
 .tm-product-calculator-submit {
   grid-column: 2;
   grid-row: 2;
@@ -3475,6 +3492,11 @@
 
   .tm-product-calculator-submit {
     max-width: 320px;
+  }
+
+  .tm-product-calculator-entry form.tm-product-calculator-fixed-layout .tm-product-calculator-submit {
+    grid-row: auto;
+    align-self: auto;
   }
 
   .tm-product-calculator-result-grid {
@@ -4797,9 +4819,14 @@
 :root {
   --tm-page-heading-size: clamp(2.4rem, 3.25vw, 3.8rem);
   --tm-page-heading-size-mobile: clamp(2.35rem, 10vw, 3.2rem);
+  --tm-page-hero-heading-size: clamp(2.25rem, 3vw, 3.55rem);
+  --tm-page-hero-heading-size-mobile: clamp(2.15rem, 9vw, 2.95rem);
 }
 
-.tm-site-page section h1,
+.tm-site-page section h1 {
+  font-size: var(--tm-page-hero-heading-size) !important;
+}
+
 .tm-site-page section h2 {
   font-size: var(--tm-page-heading-size) !important;
 }
@@ -4807,9 +4834,16 @@
 .tm-contact-page .tm-editorial-hero-copy h1,
 .tm-contact-page section h2 {
   font-family: "Poppins Local", Arial, sans-serif;
-  font-size: var(--tm-page-heading-size) !important;
   font-weight: 600;
   letter-spacing: -0.025em;
+}
+
+.tm-contact-page .tm-editorial-hero-copy h1 {
+  font-size: var(--tm-page-hero-heading-size) !important;
+}
+
+.tm-contact-page section h2 {
+  font-size: var(--tm-page-heading-size) !important;
 }
 
 .tm-contact-page .tm-editorial-hero-copy h1 {
@@ -4821,12 +4855,18 @@
 }
 
 @media (max-width: 639px) {
-  .tm-site-page section h1,
+  .tm-site-page section h1 {
+    font-size: var(--tm-page-hero-heading-size-mobile) !important;
+  }
+
   .tm-site-page section h2 {
     font-size: var(--tm-page-heading-size-mobile) !important;
   }
 
-  .tm-contact-page .tm-editorial-hero-copy h1,
+  .tm-contact-page .tm-editorial-hero-copy h1 {
+    font-size: var(--tm-page-hero-heading-size-mobile) !important;
+  }
+
   .tm-contact-page section h2 {
     font-size: var(--tm-page-heading-size-mobile) !important;
   }
@@ -4845,7 +4885,7 @@
   max-width: 650px;
   margin-bottom: 1.15rem;
   font-family: "Poppins Local", Arial, sans-serif;
-  font-size: var(--tm-page-heading-size) !important;
+  font-size: var(--tm-page-hero-heading-size) !important;
   font-weight: 600;
   letter-spacing: -0.025em;
   line-height: 1.02 !important;
@@ -4924,7 +4964,10 @@
     width: 100%;
   }
 
-  .tm-digital-investing-page .tm-editorial-hero-copy h1,
+  .tm-digital-investing-page .tm-editorial-hero-copy h1 {
+    font-size: var(--tm-page-hero-heading-size-mobile) !important;
+  }
+
   .tm-digital-investing-page section h2 {
     font-size: var(--tm-page-heading-size-mobile) !important;
   }
