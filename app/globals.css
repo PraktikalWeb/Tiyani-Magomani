@@ -4835,10 +4835,14 @@
 
 /* Match every page hero and section heading to the homepage heading scale. */
 :root {
-  --tm-page-heading-size: clamp(2.4rem, 3.25vw, 3.8rem);
-  --tm-page-heading-size-mobile: clamp(2.35rem, 10vw, 3.2rem);
   --tm-page-hero-heading-size: clamp(2.1rem, 2.75vw, 3.25rem);
   --tm-page-hero-heading-size-mobile: clamp(2rem, 8.5vw, 2.7rem);
+  --tm-page-heading-size: var(--tm-page-hero-heading-size);
+  --tm-page-heading-size-mobile: var(--tm-page-hero-heading-size-mobile);
+}
+
+.tm-home main h2 {
+  font-size: var(--tm-page-hero-heading-size) !important;
 }
 
 .tm-site-page section h1 {
@@ -4873,6 +4877,10 @@
 }
 
 @media (max-width: 639px) {
+  .tm-home main h2 {
+    font-size: var(--tm-page-hero-heading-size-mobile) !important;
+  }
+
   .tm-site-page section h1 {
     font-size: var(--tm-page-hero-heading-size-mobile) !important;
   }
