@@ -298,6 +298,7 @@ export default function CalculatorEngine({ productId = 'private-equity-growth', 
     || activeProduct === 'private-equity-income'
     || activeProduct === 'offshore-global'
   );
+  const usesFlexModeTermLayout = lockedProduct && activeProduct === 'private-equity-flexible-access';
   const showsAfterTaxEstimate = activeProduct === 'private-equity-income' || activeProduct === 'fixed-return-income' || (activeProduct === 'private-equity-flexible-access' && flexMode === 'dividend');
 
   useEffect(() => {
@@ -337,7 +338,7 @@ export default function CalculatorEngine({ productId = 'private-equity-growth', 
           </div>
         )}
         <FadeIn className="tm-product-calculator-entry border border-border-grey bg-white p-6 md:p-10 lg:p-12">
-          <form onSubmit={(event) => { event.preventDefault(); setHasCalculated(true); }} className={`space-y-6 max-w-2xl${usesFixedTermInlineLayout ? ' tm-product-calculator-fixed-layout' : ''}`}>
+          <form onSubmit={(event) => { event.preventDefault(); setHasCalculated(true); }} className={`space-y-6 max-w-2xl${usesFixedTermInlineLayout ? ' tm-product-calculator-fixed-layout' : ''}${usesFlexModeTermLayout ? ' tm-product-calculator-flex-term-layout' : ''}`}>
             {!lockedProduct && <label className="block text-xs font-sans font-semibold uppercase tracking-widest text-muted-blue">Investment Category
               <select value={selectedProduct} onChange={(event) => { setSelectedProduct(event.target.value as ProductId); setHasCalculated(false); }} className="mt-3 w-full border border-border-grey bg-white p-4 text-base normal-case tracking-normal text-ink focus:outline-none focus:border-navy">
                 {Object.entries(productNames).map(([id, name]) => <option value={id} key={id}>{name}</option>)}

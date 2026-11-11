@@ -24,7 +24,7 @@ const heroSlides = [
     src: '/images/investment-options-team.png',
     alt: 'Investment professionals discussing a client strategy',
     position: 'center',
-    title: 'We See Beyond Capital: Potential, Opportunity and Generational Wealth.',
+    title: 'Beyond Capital. Building Generational Wealth.',
     text: "Your money is not just what you have today. It is the businesses you could back, the independence you could secure and the legacy you could leave. Your capital was built to do more than sit still.",
     primaryLabel: 'Explore Investments',
     primaryHref: '#products',

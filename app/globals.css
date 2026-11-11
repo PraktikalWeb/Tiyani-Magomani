@@ -633,7 +633,7 @@
   max-width: 670px;
   margin: 0;
   color: var(--tm-white);
-  font-size: clamp(2.25rem, 3vw, 3.55rem);
+  font-size: clamp(2.1rem, 2.75vw, 3.25rem);
 }
 
 .tm-home-hero-intro {
@@ -1824,7 +1824,7 @@
   }
 
   .tm-home-hero h1 {
-    font-size: clamp(2.15rem, 9vw, 2.95rem);
+    font-size: clamp(2rem, 8.5vw, 2.7rem);
   }
 
   .tm-home-hero-intro {
@@ -3184,6 +3184,18 @@
   margin: 0 !important;
 }
 
+/* Flexible Access has a mode toggle, so its fixed term needs its own row below the choices. */
+.tm-product-calculator-entry form.tm-product-calculator-flex-term-layout .tm-product-calculator-fixed-term {
+  grid-row: 2;
+  align-self: start;
+  margin: 0 !important;
+}
+
+.tm-product-calculator-entry form.tm-product-calculator-flex-term-layout .tm-product-calculator-submit {
+  grid-row: 3;
+  margin: 0 !important;
+}
+
 .tm-product-calculator-submit {
   grid-column: 2;
   grid-row: 2;
@@ -3495,6 +3507,12 @@
   }
 
   .tm-product-calculator-entry form.tm-product-calculator-fixed-layout .tm-product-calculator-submit {
+    grid-row: auto;
+    align-self: auto;
+  }
+
+  .tm-product-calculator-entry form.tm-product-calculator-flex-term-layout .tm-product-calculator-fixed-term,
+  .tm-product-calculator-entry form.tm-product-calculator-flex-term-layout .tm-product-calculator-submit {
     grid-row: auto;
     align-self: auto;
   }
@@ -4819,8 +4837,8 @@
 :root {
   --tm-page-heading-size: clamp(2.4rem, 3.25vw, 3.8rem);
   --tm-page-heading-size-mobile: clamp(2.35rem, 10vw, 3.2rem);
-  --tm-page-hero-heading-size: clamp(2.25rem, 3vw, 3.55rem);
-  --tm-page-hero-heading-size-mobile: clamp(2.15rem, 9vw, 2.95rem);
+  --tm-page-hero-heading-size: clamp(2.1rem, 2.75vw, 3.25rem);
+  --tm-page-hero-heading-size-mobile: clamp(2rem, 8.5vw, 2.7rem);
 }
 
 .tm-site-page section h1 {
