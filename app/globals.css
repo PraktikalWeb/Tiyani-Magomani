@@ -1464,7 +1464,7 @@
 
 .tm-home-footer-main {
   display: grid;
-  grid-template-columns: 1.25fr 0.75fr;
+  grid-template-columns: minmax(260px, 0.9fr) minmax(0, 1.1fr);
   gap: 3rem;
   padding-bottom: 3rem;
 }
@@ -1505,8 +1505,8 @@
 
 .tm-home-footer-links {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.5rem;
 }
 
 .tm-home-footer-link-toggle {

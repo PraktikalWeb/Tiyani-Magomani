@@ -117,28 +117,28 @@ const products = [
 const services = [
   {
     number: '1',
-    title: 'Asset Management — Your Wealth Deserves Direction.',
-    description: 'Your money should be managed with a clear view of where you are headed. Our approach combines investment strategy, diversification, risk assessment and long-term objectives, because your future deserves more than guesswork.',
+    title: 'Asset Management',
+    description: 'Your wealth deserves direction. Your money should be managed with a clear view of where you are headed. Our approach combines investment strategy, diversification, risk assessment and long-term objectives, because your future deserves more than guesswork.',
   },
   {
     number: '2',
-    title: 'Investment Fund Management — Access Opportunities Through a Structured Approach.',
-    description: 'Some opportunities are best approached through carefully designed capital structures. Our fund management vision connects pooled capital with selected investments, backed by oversight and disciplined management.',
+    title: 'Investment Fund Management',
+    description: 'Access opportunities through a structured approach. Some opportunities are best approached through carefully designed capital structures. Our fund management vision connects pooled capital with selected investments, backed by oversight and disciplined management.',
   },
   {
     number: '3',
-    title: 'Insurance — Build Your Wealth. Protect What Matters.',
-    description: 'You have worked hard to build your financial future. Protecting that progress means preparing for the unexpected. Explore insurance solutions designed to help you manage risks to your family, business and assets.',
+    title: 'Insurance',
+    description: 'Build your wealth. Protect what matters. You have worked hard to build your financial future. Protecting that progress means preparing for the unexpected. Explore insurance solutions designed to help you manage risks to your family, business and assets.',
   },
   {
     number: '4',
-    title: 'Digital Investing — Your Financial Future, Closer to You.',
-    description: 'Investing should be clear, convenient and within reach. Our digital experience helps you explore products, understand projections and keep track of your investments through modern online tools.',
+    title: 'Digital Investing',
+    description: 'Your financial future, closer to you. Investing should be clear, convenient and within reach. Our digital experience helps you explore products, understand projections and keep track of your investments through modern online tools.',
   },
   {
     number: '5',
-    title: 'Portfolio Advisory — Make Every Decision an Informed One.',
-    description: 'Goals evolve. Markets move. Strategy has to keep up. Our portfolio advisory approach helps you evaluate opportunities, understand risk and align every investment choice with what you want to achieve.',
+    title: 'Portfolio Advisory',
+    description: 'Make every decision an informed one. Goals evolve. Markets move. Strategy has to keep up. Our portfolio advisory approach helps you evaluate opportunities, understand risk and align every investment choice with what you want to achieve.',
   },
 ];
 
@@ -740,7 +740,6 @@ export default function Home() {
               <img src="/tiyani-logo.png" alt="Tiyani Magomani Capital" />
             </Link>
             <p><strong>Where Capital Meets Opportunity.</strong></p>
-            <p>We Don&apos;t Just See Capital. We See Potential, Opportunity and Generational Wealth. Access to Investments That Protect and Grow Your Wealth.</p>
             <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
           </div>
           <HomeFooterLinks useHomeAnchors />

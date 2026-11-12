@@ -174,9 +174,9 @@ export function HomeStyleHeader() {
 }
 
 export function HomeFooterLinks({ useHomeAnchors = false }: { useHomeAnchors?: boolean }) {
-  const [openSections, setOpenSections] = useState({ explore: false, information: false });
+  const [openSections, setOpenSections] = useState({ explore: false, services: false, information: false });
 
-  const toggleSection = (section: 'explore' | 'information') => {
+  const toggleSection = (section: 'explore' | 'services' | 'information') => {
     setOpenSections((current) => ({ ...current, [section]: !current[section] }));
   };
 
@@ -201,8 +201,29 @@ export function HomeFooterLinks({ useHomeAnchors = false }: { useHomeAnchors?: b
           <Link href="/about">About Us</Link>
           <Link href={useHomeAnchors ? '#products' : '/investments'}>Investment Products</Link>
           <Link href={useHomeAnchors ? '#services' : '/digital-investing'}>Our Services</Link>
-          <Link href={useHomeAnchors ? '#calculator' : '/calculator'}>Investment Calculator</Link>
           <Link href="/contact">Contact Us</Link>
+        </div>
+      </div>
+      <div className="tm-home-footer-group">
+        <button
+          type="button"
+          className="tm-home-footer-link-toggle"
+          aria-expanded={openSections.services}
+          aria-controls="tm-footer-services-links"
+          onClick={() => toggleSection('services')}
+        >
+          <span>Financial Services</span>
+          <ChevronDown aria-hidden="true" className={openSections.services ? 'is-open' : ''} size={18} />
+        </button>
+        <div
+          id="tm-footer-services-links"
+          className={`tm-home-footer-link-list${openSections.services ? ' is-open' : ''}`}
+        >
+          <Link href={useHomeAnchors ? '#services' : '/#services'}>Asset Management</Link>
+          <Link href={useHomeAnchors ? '#services' : '/#services'}>Investment Fund Management</Link>
+          <Link href={useHomeAnchors ? '#services' : '/#services'}>Insurance</Link>
+          <Link href={useHomeAnchors ? '#services' : '/#services'}>Digital Investing</Link>
+          <Link href={useHomeAnchors ? '#services' : '/#services'}>Portfolio Advisory</Link>
         </div>
       </div>
       <div className="tm-home-footer-group">
@@ -239,7 +260,6 @@ export function HomeStyleFooter() {
             <img src="/tiyani-logo.png" alt="Tiyani Magomani Capital" />
           </Link>
           <p><strong>Where Capital Meets Opportunity.</strong></p>
-          <p>We Don&apos;t Just See Capital. We See Potential, Opportunity and Generational Wealth. Access to Investments That Protect and Grow Your Wealth.</p>
           <a href="https://tiyanimagomani.com">tiyanimagomani.com</a>
         </div>
         <HomeFooterLinks />
