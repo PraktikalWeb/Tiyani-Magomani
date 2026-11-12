@@ -558,8 +558,8 @@ export default function Home() {
             <div aria-hidden="true" />
           </div>
           <div className="tm-home-services-content">
-            <p className="tm-home-eyebrow">Our Financial Services</p>
-            <h2>Your Wealth Deserves More Than an Investment Product.</h2>
+            <p className="tm-home-eyebrow">Your Wealth Deserves More Than an Investment Product.</p>
+            <h2>Our Financial Services</h2>
             <p className="tm-home-services-intro">Solutions for every stage of your wealth journey. Growing wealth matters. So does managing it responsibly, planning for uncertainty and making informed decisions along the way.</p>
             <div className="tm-home-service-list">
               {services.map((service) => (
